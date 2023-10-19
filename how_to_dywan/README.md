@@ -1,3 +1,5 @@
-# how_to_dywan
+# How to Dywan?
 
-A new Flutter project.
+Affliction Warlock guide for World of Warcraft Wrath of the Lich King.
+
+TODO: Long description
