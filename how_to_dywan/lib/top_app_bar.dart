@@ -15,7 +15,7 @@ class TopAppBar extends StatelessWidget {
             onTap: () {
               context.read<BottomNavCubit>().select(0);
             },
-            child: Text('How to Dywan?'),
+            child: const Text('How to Dywan?'),
           );
         },
       ),

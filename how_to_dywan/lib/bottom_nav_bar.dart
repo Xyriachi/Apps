@@ -15,7 +15,7 @@ class BottomNavBar extends StatelessWidget {
                   context.read<BottomNavCubit>().select(value),
                 },
             selectedIndex: state,
-            destinations: Destinations().getNavDestinations(state));
+            destinations: Destinations().getNavDestinations());
       },
     );
   }

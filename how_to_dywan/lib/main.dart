@@ -22,18 +22,21 @@ class MainApp extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: ThemeData(
-            useMaterial3: true, colorScheme: const ColorScheme.dark()),
+          useMaterial3: true,
+          colorScheme: const ColorScheme.dark(),
+          cardTheme: const CardTheme(color: Color.fromARGB(255, 28, 28, 34)),
+        ),
         home: Scaffold(
           body: NestedScrollView(
             floatHeaderSlivers: true,
             headerSliverBuilder: (BuildContext context, bool isScrolled) {
               return [
-                TopAppBar(),
+                const TopAppBar(),
               ];
             },
-            body: NavigationLogic(),
+            body: const NavigationLogic(),
           ),
-          bottomNavigationBar: BottomNavBar(),
+          bottomNavigationBar: const BottomNavBar(),
         ),
       ),
     );
