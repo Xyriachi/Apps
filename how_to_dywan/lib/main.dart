@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:how_to_dywan/bottom_nav_bar.dart';
 import 'package:how_to_dywan/navigation_logic.dart';
-import 'package:how_to_dywan/state/bottom_nav_cubit.dart';
+import 'package:how_to_dywan/state/selected_screen_cubit.dart';
 import 'package:how_to_dywan/top_app_bar.dart';
 
 void main() {
@@ -16,8 +16,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<BottomNavCubit>(
-          create: (context) => BottomNavCubit(),
+        BlocProvider<SelectedScreenCubit>(
+          create: (context) => SelectedScreenCubit(),
         ),
       ],
       child: MaterialApp(
@@ -26,17 +26,31 @@ class MainApp extends StatelessWidget {
           colorScheme: const ColorScheme.dark(),
           cardTheme: const CardTheme(color: Color.fromARGB(255, 28, 28, 34)),
         ),
-        home: Scaffold(
-          body: NestedScrollView(
-            floatHeaderSlivers: true,
-            headerSliverBuilder: (BuildContext context, bool isScrolled) {
-              return [
-                const TopAppBar(),
-              ];
-            },
-            body: const NavigationLogic(),
-          ),
-          bottomNavigationBar: const BottomNavBar(),
+        home: BlocBuilder<SelectedScreenCubit, SelectedScreenState>(
+          builder: (context, state) {
+            return WillPopScope(
+              onWillPop: () async {
+                context
+                    .read<SelectedScreenCubit>()
+                    .selectAll(['basic', 'none']);
+                return false;
+              },
+              child: const Scaffold(
+                appBar: TopAppBar(),
+                body: NavigationLogic(),
+                // NestedScrollView(
+                //   floatHeaderSlivers: true,
+                //   headerSliverBuilder: (BuildContext context, bool isScrolled) {
+                //     return [
+                //       const TopAppBar(),
+                //     ];
+                //   },
+                //   body: const NavigationLogic(),
+                // ),
+                bottomNavigationBar: BottomNavBar(),
+              ),
+            );
+          },
         ),
       ),
     );

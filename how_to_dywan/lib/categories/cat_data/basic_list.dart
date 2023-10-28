@@ -1,12 +1,12 @@
 class BasicList {
-  List<String> basicList = [
-    'Gear',
-    'Talenty',
-    'Gemy',
-    'Glyphy',
-    'Enchanty',
-    'Profesje',
-    'Rasy',
+  List<Map<String, String>> basicList = [
+    {'title': 'Gear', 'subtitle': 'Test'},
+    {'title': 'Talenty', 'subtitle': 'Test'},
+    {'title': 'Gemy', 'subtitle': 'Test'},
+    {'title': 'Glyphy', 'subtitle': 'Test'},
+    {'title': 'Enchanty', 'subtitle': 'Test'},
+    {'title': 'Profesje', 'subtitle': 'Test'},
+    {'title': 'Rasy', 'subtitle': 'Test'},
   ];
 
   get length => null;

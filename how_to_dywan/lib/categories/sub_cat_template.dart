@@ -3,7 +3,7 @@ import 'package:how_to_dywan/categories/cat_data/basic_list.dart';
 import 'package:how_to_dywan/categories/cat_data/advanced_list.dart';
 import 'package:how_to_dywan/categories/cat_data/tactics_list.dart';
 import 'package:how_to_dywan/categories/cat_data/addons_list.dart';
-import 'package:how_to_dywan/state/bottom_nav_cubit.dart';
+import 'package:how_to_dywan/state/selected_screen_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SubCategoriesTemplate extends StatelessWidget {
@@ -11,25 +11,43 @@ class SubCategoriesTemplate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BottomNavCubit, int>(
+    return BlocBuilder<SelectedScreenCubit, SelectedScreenState>(
       builder: (context, state) {
-        List subCategoryList = state == 0
-            ? BasicList().getBasicList()
-            : state == 1
-                ? AdvancedList().getAdvancedList()
-                : state == 2
-                    ? TacticsList().getTacticsList()
-                    : AddonsList().getAddonsList();
+        List<Map<String, String>> subCategoryList =
+            state.selectedScreen.first == 'basic'
+                ? BasicList().getBasicList()
+                : state.selectedScreen.first == 'advanced'
+                    ? AdvancedList().getAdvancedList()
+                    : state.selectedScreen.first == 'tactics'
+                        ? TacticsList().getTacticsList()
+                        : AddonsList().getAddonsList();
         return ListView.builder(
             itemCount: subCategoryList.length,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
-              return Card(
-                  elevation: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(subCategoryList[index]),
-                  ));
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    context.read<SelectedScreenCubit>().selectSecond(
+                        subCategoryList[index]['title'] as String);
+                  },
+                  child: ListTile(
+                    minLeadingWidth: 32,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    // TODO different icons for different subcategories
+                    leading: const SizedBox(
+                        height: double.infinity,
+                        child: Icon(Icons.anchor_sharp)),
+                    title: Text(subCategoryList[index]['title'] as String),
+                    // TODO subtitles
+                    subtitle:
+                        Text(subCategoryList[index]['subtitle'] as String),
+                    tileColor: Theme.of(context).cardTheme.color,
+                  ),
+                ),
+              );
             });
       },
     );

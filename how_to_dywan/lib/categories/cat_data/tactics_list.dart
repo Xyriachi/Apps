@@ -1,8 +1,8 @@
 class TacticsList {
-  List<String> tacticsList = [
-    'Icecrown Citadel',
-    'The Ruby Sanctum',
-    'Trial of the Crusader',
+  List<Map<String, String>> tacticsList = [
+    {'title': 'Icecrown Citadel', 'subtitle': 'Test'},
+    {'title': 'The Ruby Sanctum', 'subtitle': 'Test'},
+    {'title': 'Trial of the Crusader', 'subtitle': 'Test'},
   ];
 
   getTacticsList() {

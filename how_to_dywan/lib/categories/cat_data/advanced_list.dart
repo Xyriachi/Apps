@@ -1,9 +1,9 @@
 class AdvancedList {
-  List<String> advancedList = [
-    'Lista Spelli',
-    'Rotacja',
-    'Opener',
-    'Jedzenie i Mikstury',
+  List<Map<String, String>> advancedList = [
+    {'title': 'Lista Spelli', 'subtitle': 'Test'},
+    {'title': 'Rotacja', 'subtitle': 'Test'},
+    {'title': 'Opener', 'subtitle': 'Test'},
+    {'title': 'Jedzenie i Mikstury', 'subtitle': 'Test'},
   ];
 
   getAdvancedList() {
