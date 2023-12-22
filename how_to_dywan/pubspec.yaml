@@ -23,6 +23,8 @@ flutter:
     - assets/images/gear/
     - assets/images/glyphs/
     - assets/images/gems/
+    - assets/images/professions/
+    - assets/images/races/
     - assets/images/talents/affi/
     - assets/images/talents/demo/
     - assets/images/talents/destro/
