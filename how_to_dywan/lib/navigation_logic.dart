@@ -14,8 +14,7 @@ class NavigationLogic extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SelectedScreenCubit, SelectedScreenState>(
       builder: (context, state) {
-        return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 6),
+        return SizedBox(
             child: state.selectedScreen.last != 'none'
                 ? state.selectedScreen.first == 'basic'
                     ? const BasicSub()
