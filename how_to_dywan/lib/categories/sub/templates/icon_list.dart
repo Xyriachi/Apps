@@ -8,10 +8,11 @@ class IconList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.symmetric(vertical: 6),
+        padding: const EdgeInsets.symmetric(vertical: 6),
         child: ListView.builder(
           itemCount: data.length,
           itemBuilder: (context, index) {
+            var mainIndex = index;
             return Padding(
               padding: const EdgeInsets.all(6.0),
               child: GestureDetector(
@@ -51,41 +52,75 @@ class IconList extends StatelessWidget {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Align(
-                                      alignment: Alignment.topLeft,
-                                      //TODO if desc is not string, map it
-                                      child: data[index]['desc'] is String
-                                          ? Text(
-                                              data[index]['name'],
-                                              softWrap: true,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .titleMedium,
-                                            )
-                                          : Column(
-                                              children: [
-                                                (data[index]['desc'])
-                                                    .map((item) => {
-                                                          Text(
-                                                            item['subName'],
-                                                            softWrap: true,
-                                                            style: Theme.of(
-                                                                    context)
-                                                                .textTheme
-                                                                .titleMedium,
-                                                          ),
-                                                        })
-                                              ],
-                                            ),
-                                    ),
+                                        alignment: Alignment.topLeft,
+                                        child: Text(
+                                          data[index]['name'],
+                                          softWrap: true,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .titleMedium,
+                                        )),
                                     const SizedBox(
                                       height: 10,
                                     ),
                                     Align(
                                       alignment: Alignment.topLeft,
-                                      child: Text(
-                                        data[index]['desc'],
-                                        softWrap: true,
-                                      ),
+                                      child: data[index]['desc'] != null
+                                          ? Text(
+                                              data[index]['desc'],
+                                              softWrap: true,
+                                            )
+                                          : ListView.separated(
+                                              shrinkWrap: true,
+                                              separatorBuilder: (context,
+                                                      index) =>
+                                                  const SizedBox(height: 10),
+                                              itemCount: data[mainIndex]
+                                                      ['descList']
+                                                  .length,
+                                              itemBuilder: (context, index) {
+                                                return Column(
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        Image.asset(
+                                                          'assets/images/$source/${data[mainIndex]['descList'][index]['subImg']}',
+                                                          width: 24,
+                                                        ),
+                                                        const SizedBox(
+                                                          width: 6,
+                                                        ),
+                                                        Text(data[mainIndex]
+                                                                ['descList']
+                                                            [index]['subName']),
+                                                      ],
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 3,
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          Alignment.topLeft,
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(left: 6),
+                                                        child: data[mainIndex][
+                                                                            'descList']
+                                                                        [index][
+                                                                    'subDesc'] !=
+                                                                ''
+                                                            ? Text(data[mainIndex]
+                                                                    ['descList']
+                                                                [
+                                                                index]['subDesc'])
+                                                            : const SizedBox(),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            ),
                                     ),
                                   ],
                                 ),

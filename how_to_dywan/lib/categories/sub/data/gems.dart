@@ -3,55 +3,50 @@ class Gems {
     {
       'name': 'Meta Socket',
       'img': 'meta.jpg',
-      'desc': [
+      'descList': [
         {
           'subName': 'Chaotic Skyflare Diamond',
           'subImg': 'meta.jpg',
-          'subDesc':
-              '+21 Critical Strike Rating and 3% Increased Critical Damage'
+          'subDesc': ''
         },
       ],
     },
     {
       'name': 'Czerwony Socket',
       'img': 'ruby.jpg',
-      'desc': [
-        {
-          'subName': 'Runed Cardinal Ruby',
-          'subImg': 'ruby.jpg',
-          'subDesc': '+23 Spell Power'
-        },
+      'descList': [
+        {'subName': 'Runed Cardinal Ruby', 'subImg': 'ruby.jpg', 'subDesc': ''},
       ],
     },
     {
       'name': 'Żółty Socket',
       'img': 'ametrine.jpg',
-      'desc': [
+      'descList': [
         {
           'subName': 'Veiled Ametrine',
           'subImg': 'ametrine.jpg',
-          'subDesc': '+12 Spell Power and +10 Hit Rating'
+          'subDesc': 'Jeśli brakuje hita'
         },
         {
           'subName': 'Reckless Ametrine',
           'subImg': 'ametrine.jpg',
-          'subDesc': '+12 Spell Power and +10 Haste Rating'
+          'subDesc': ''
         },
       ],
     },
     {
       'name': 'Niebieski Socket',
       'img': 'dreadstone.jpg',
-      'desc': [
+      'descList': [
         {
           'subName': 'Purified Dreadstone',
           'subImg': 'dreadstone.jpg',
-          'subDesc': '+12 Spell Power and +10 Spirit'
+          'subDesc': 'Jeśli socket bonus większy niż 5 Spell Powera'
         },
         {
           'subName': 'Runed Cardinal Ruby',
           'subImg': 'ruby.jpg',
-          'subDesc': '+23 Spell Power'
+          'subDesc': 'Jeśli socket bonus mniejszy niż 5 Spell Powera'
         },
       ],
     },
