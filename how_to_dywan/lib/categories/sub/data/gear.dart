@@ -90,9 +90,9 @@ class Gear {
       'desc': 'Icecrown Citadel - 25 Heroic - Rotface',
     },
     {
-      'descShort': 'Melee Weapon',
+      'descShort': 'Main-hand Weapon',
       'name': "Bloodsurge, Kel'Thuzad's Blade of Agony",
-      'img': 'melee_weapon.jpg',
+      'img': 'main-hand_weapon.jpg',
       'desc': 'Icecrown Citadel - 25 Heroic - The Lich King',
     },
     {

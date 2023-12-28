@@ -87,7 +87,7 @@ class TalentList extends StatelessWidget {
       },
     );
   }
-}
 //TODO add onClick description
 //TODO rewrite talents description
 //TODO add option to change talent count; when changing count, description should also change
+}

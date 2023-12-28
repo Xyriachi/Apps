@@ -3,7 +3,8 @@ class Gems {
     {
       'name': 'Meta Socket',
       'img': 'meta.jpg',
-      'descList': [
+      'desc': 'test',
+      'sub': [
         {
           'subName': 'Chaotic Skyflare Diamond',
           'subImg': 'meta.jpg',
@@ -14,14 +15,16 @@ class Gems {
     {
       'name': 'Czerwony Socket',
       'img': 'ruby.jpg',
-      'descList': [
+      'desc': 'test',
+      'sub': [
         {'subName': 'Runed Cardinal Ruby', 'subImg': 'ruby.jpg', 'subDesc': ''},
       ],
     },
     {
       'name': 'Żółty Socket',
       'img': 'ametrine.jpg',
-      'descList': [
+      'desc': 'test',
+      'sub': [
         {
           'subName': 'Veiled Ametrine',
           'subImg': 'ametrine.jpg',
@@ -37,7 +40,8 @@ class Gems {
     {
       'name': 'Niebieski Socket',
       'img': 'dreadstone.jpg',
-      'descList': [
+      'desc': 'test',
+      'sub': [
         {
           'subName': 'Purified Dreadstone',
           'subImg': 'dreadstone.jpg',
