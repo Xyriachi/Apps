@@ -21,34 +21,37 @@ class SubCategoriesTemplate extends StatelessWidget {
                     : state.selectedScreen.first == 'tactics'
                         ? TacticsList().getTacticsList()
                         : AddonsList().getAddonsList();
-        return ListView.builder(
-            itemCount: subCategoryList.length,
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: GestureDetector(
-                  onTap: () {
-                    context.read<SelectedScreenCubit>().selectSecond(
-                        subCategoryList[index]['title'] as String);
-                  },
-                  child: ListTile(
-                    minLeadingWidth: 32,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    // TODO different icons for different subcategories
-                    leading: const SizedBox(
-                        height: double.infinity,
-                        child: Icon(Icons.anchor_sharp)),
-                    title: Text(subCategoryList[index]['title'] as String),
-                    // TODO subtitles
-                    subtitle:
-                        Text(subCategoryList[index]['subtitle'] as String),
-                    tileColor: Theme.of(context).cardTheme.color,
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 6),
+          child: ListView.builder(
+              itemCount: subCategoryList.length,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      context.read<SelectedScreenCubit>().selectSecond(
+                          subCategoryList[index]['title'] as String);
+                    },
+                    child: ListTile(
+                      minLeadingWidth: 32,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      // TODO different icons for different subcategories
+                      leading: const SizedBox(
+                          height: double.infinity,
+                          child: Icon(Icons.anchor_sharp)),
+                      title: Text(subCategoryList[index]['title'] as String),
+                      // TODO subtitles
+                      subtitle:
+                          Text(subCategoryList[index]['subtitle'] as String),
+                      tileColor: Theme.of(context).cardTheme.color,
+                    ),
                   ),
-                ),
-              );
-            });
+                );
+              }),
+        );
       },
     );
   }

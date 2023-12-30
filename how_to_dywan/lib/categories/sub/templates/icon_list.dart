@@ -11,8 +11,7 @@ class IconList extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 6),
         child: ListView.builder(
           itemCount: data.length,
-          itemBuilder: (context, index) {
-            var mainIndex = index;
+          itemBuilder: (context, firstIndex) {
             return Padding(
               padding: const EdgeInsets.all(6.0),
               child: GestureDetector(
@@ -42,7 +41,7 @@ class IconList extends StatelessWidget {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(6),
                                       child: Image.asset(
-                                        'assets/images/$source/${data[index]['img']}',
+                                        'assets/images/$source/${data[firstIndex]['img']}',
                                         width: 48,
                                       ),
                                     ),
@@ -54,7 +53,7 @@ class IconList extends StatelessWidget {
                                     Align(
                                         alignment: Alignment.topLeft,
                                         child: Text(
-                                          data[index]['name'],
+                                          data[firstIndex]['name'],
                                           softWrap: true,
                                           style: Theme.of(context)
                                               .textTheme
@@ -65,61 +64,30 @@ class IconList extends StatelessWidget {
                                     ),
                                     Align(
                                       alignment: Alignment.topLeft,
-                                      child: data[index]['desc'] != null
+                                      child: data[firstIndex]['desc'] is String
                                           ? Text(
-                                              data[index]['desc'],
+                                              data[firstIndex]['desc'],
                                               softWrap: true,
                                             )
-                                          : ListView.separated(
-                                              shrinkWrap: true,
-                                              separatorBuilder: (context,
-                                                      index) =>
-                                                  const SizedBox(height: 10),
-                                              itemCount: data[mainIndex]
-                                                      ['descList']
-                                                  .length,
-                                              itemBuilder: (context, index) {
-                                                return Column(
-                                                  children: [
-                                                    Row(
-                                                      children: [
-                                                        Image.asset(
-                                                          'assets/images/$source/${data[mainIndex]['descList'][index]['subImg']}',
-                                                          width: 24,
-                                                        ),
-                                                        const SizedBox(
-                                                          width: 6,
-                                                        ),
-                                                        Text(data[mainIndex]
-                                                                ['descList']
-                                                            [index]['subName']),
-                                                      ],
-                                                    ),
-                                                    const SizedBox(
-                                                      height: 3,
-                                                    ),
-                                                    Align(
-                                                      alignment:
-                                                          Alignment.topLeft,
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .only(left: 6),
-                                                        child: data[mainIndex][
-                                                                            'descList']
-                                                                        [index][
-                                                                    'subDesc'] !=
-                                                                ''
-                                                            ? Text(data[mainIndex]
-                                                                    ['descList']
-                                                                [
-                                                                index]['subDesc'])
-                                                            : const SizedBox(),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                );
-                                              },
+                                          : Column(
+                                              children: [
+                                                ListView.separated(
+                                                  shrinkWrap: true,
+                                                  separatorBuilder:
+                                                      (context, index) {
+                                                    return const SizedBox(
+                                                        height: 10);
+                                                  },
+                                                  itemCount: data[firstIndex]
+                                                          ['desc']
+                                                      .length,
+                                                  itemBuilder:
+                                                      (context, secondIndex) {
+                                                    return Text(data[firstIndex]
+                                                        ['desc'][secondIndex]);
+                                                  },
+                                                )
+                                              ],
                                             ),
                                     ),
                                   ],
@@ -146,16 +114,16 @@ class IconList extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(6),
                         child: Image.asset(
-                            'assets/images/$source/${data[index]['img']}',
+                            'assets/images/$source/${data[firstIndex]['img']}',
                             width: 48),
                       ),
                     ),
                     title: Text(
-                      data[index]['name'],
+                      data[firstIndex]['name'],
                       overflow: TextOverflow.ellipsis,
                     ),
-                    subtitle: data[index]['shortDesc'] != null
-                        ? Text(data[index]['shortDesc'], softWrap: true)
+                    subtitle: data[firstIndex]['shortDesc'] != null
+                        ? Text(data[firstIndex]['shortDesc'], softWrap: true)
                         : const Text('')),
               ),
             );

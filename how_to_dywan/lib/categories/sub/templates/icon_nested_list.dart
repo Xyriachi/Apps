@@ -12,8 +12,7 @@ class IconNestedList extends StatelessWidget {
         child: ListView.builder(
           shrinkWrap: true,
           itemCount: data.length,
-          itemBuilder: (context, index) {
-            var mainIndex = index;
+          itemBuilder: (context, firstIndex) {
             return Column(
               children: [
                 Padding(
@@ -48,7 +47,7 @@ class IconNestedList extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(6),
                                           child: Image.asset(
-                                            'assets/images/$source/${data[index]['img']}',
+                                            'assets/images/$source/${data[firstIndex]['img']}',
                                             width: 48,
                                           ),
                                         ),
@@ -60,7 +59,7 @@ class IconNestedList extends StatelessWidget {
                                         Align(
                                             alignment: Alignment.topLeft,
                                             child: Text(
-                                              data[index]['name'],
+                                              data[firstIndex]['name'],
                                               softWrap: true,
                                               style: Theme.of(context)
                                                   .textTheme
@@ -72,7 +71,7 @@ class IconNestedList extends StatelessWidget {
                                         Align(
                                           alignment: Alignment.topLeft,
                                           child: Text(
-                                            data[index]['desc'],
+                                            data[firstIndex]['desc'],
                                             softWrap: true,
                                           ),
                                         ),
@@ -101,24 +100,25 @@ class IconNestedList extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(6),
                             child: Image.asset(
-                                'assets/images/$source/${data[index]['img']}',
+                                'assets/images/$source/${data[firstIndex]['img']}',
                                 width: 48),
                           ),
                         ),
                         title: Text(
-                          data[index]['name'],
+                          data[firstIndex]['name'],
                           overflow: TextOverflow.ellipsis,
                         ),
-                        subtitle: data[index]['shortDesc'] != null
-                            ? Text(data[index]['shortDesc'], softWrap: true)
+                        subtitle: data[firstIndex]['shortDesc'] != null
+                            ? Text(data[firstIndex]['shortDesc'],
+                                softWrap: true)
                             : const Text('')),
                   ),
                 ),
                 ListView.builder(
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-                  itemCount: data[mainIndex]['sub'].length,
-                  itemBuilder: (context, index) {
+                  itemCount: data[firstIndex]['sub'].length,
+                  itemBuilder: (context, secondIndex) {
                     return GestureDetector(
                       onTap: () {
                         showDialog(
@@ -151,7 +151,7 @@ class IconNestedList extends StatelessWidget {
                                             borderRadius:
                                                 BorderRadius.circular(6),
                                             child: Image.asset(
-                                              'assets/images/$source/${data[mainIndex]['sub'][index]['subImg']}',
+                                              'assets/images/$source/${data[firstIndex]['sub'][secondIndex]['subImg']}',
                                               width: 48,
                                             ),
                                           ),
@@ -163,8 +163,8 @@ class IconNestedList extends StatelessWidget {
                                           Align(
                                               alignment: Alignment.topLeft,
                                               child: Text(
-                                                data[mainIndex]['sub'][index]
-                                                    ['subName'],
+                                                data[firstIndex]['sub']
+                                                    [secondIndex]['subName'],
                                                 softWrap: true,
                                                 style: Theme.of(context)
                                                     .textTheme
@@ -175,11 +175,42 @@ class IconNestedList extends StatelessWidget {
                                           ),
                                           Align(
                                             alignment: Alignment.topLeft,
-                                            child: Text(
-                                              data[mainIndex]['sub'][index]
-                                                  ['subDesc'],
-                                              softWrap: true,
-                                            ),
+                                            child: data[firstIndex]['sub']
+                                                        [secondIndex]['subDesc']
+                                                    is String
+                                                ? Text(
+                                                    data[firstIndex]['sub']
+                                                            [secondIndex]
+                                                        ['subDesc'],
+                                                    softWrap: true,
+                                                  )
+                                                : Column(
+                                                    children: [
+                                                      ListView.separated(
+                                                        shrinkWrap: true,
+                                                        separatorBuilder:
+                                                            (context, index) {
+                                                          return const SizedBox(
+                                                              height: 10);
+                                                        },
+                                                        itemCount: data[firstIndex]
+                                                                        ['sub'][
+                                                                    secondIndex]
+                                                                ['subDesc']
+                                                            .length,
+                                                        itemBuilder: (context,
+                                                            thirdIndex) {
+                                                          return Text(data[firstIndex]
+                                                                          [
+                                                                          'sub']
+                                                                      [
+                                                                      secondIndex]
+                                                                  ['subDesc']
+                                                              [thirdIndex]);
+                                                        },
+                                                      )
+                                                    ],
+                                                  ),
                                           ),
                                         ],
                                       ),
@@ -202,11 +233,12 @@ class IconNestedList extends StatelessWidget {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(6),
                               child: Image.asset(
-                                  'assets/images/$source/${data[mainIndex]['sub'][index]['subImg']}',
+                                  'assets/images/$source/${data[firstIndex]['sub'][secondIndex]['subImg']}',
                                   width: 36),
                             ),
                           ),
-                          title: Text(data[mainIndex]['sub'][index]['subName']),
+                          title: Text(
+                              data[firstIndex]['sub'][secondIndex]['subName']),
                         ),
                       ),
                     );

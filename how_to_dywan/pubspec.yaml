@@ -30,6 +30,7 @@ flutter:
     - assets/images/consumables/
     - assets/images/opener/
     - assets/images/spells/
+    - assets/images/icc/
     - assets/images/talents/affi/
     - assets/images/talents/demo/
     - assets/images/talents/destro/
