@@ -17,7 +17,7 @@ class AdvancedSub extends StatelessWidget {
       {
         'source': 'spells',
         'data': Spells().getSpellList(),
-        'type': 'iconList',
+        'type': 'iconNestedList',
       },
       {
         'source': 'rotation',
@@ -27,7 +27,7 @@ class AdvancedSub extends StatelessWidget {
       {
         'source': 'opener',
         'data': Opener().getOpenerList(),
-        'type': 'iconList',
+        'type': 'iconNestedList',
       },
       {
         'source': 'consumables',

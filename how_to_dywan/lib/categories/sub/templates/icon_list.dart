@@ -154,8 +154,8 @@ class IconList extends StatelessWidget {
                       data[index]['name'],
                       overflow: TextOverflow.ellipsis,
                     ),
-                    subtitle: data[index]['descShort'] != null
-                        ? Text(data[index]['descShort'], softWrap: true)
+                    subtitle: data[index]['shortDesc'] != null
+                        ? Text(data[index]['shortDesc'], softWrap: true)
                         : const Text('')),
               ),
             );

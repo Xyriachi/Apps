@@ -27,6 +27,9 @@ flutter:
     - assets/images/enchants/
     - assets/images/races/
     - assets/images/rotation/
+    - assets/images/consumables/
+    - assets/images/opener/
+    - assets/images/spells/
     - assets/images/talents/affi/
     - assets/images/talents/demo/
     - assets/images/talents/destro/
