@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:how_to_dywan/bottom_nav_bar.dart';
 import 'package:how_to_dywan/navigation_logic.dart';
 import 'package:how_to_dywan/state/selected_screen_cubit.dart';
+import 'package:how_to_dywan/state/selected_difficulty_cubit.dart';
 import 'package:how_to_dywan/top_app_bar.dart';
 
 void main() {
@@ -18,6 +19,8 @@ class MainApp extends StatelessWidget {
       providers: [
         BlocProvider<SelectedScreenCubit>(
           create: (context) => SelectedScreenCubit(),
+        ),BlocProvider<SelectedDifficultyCubit>(
+          create: (context) => SelectedDifficultyCubit(),
         ),
       ],
       child: MaterialApp(

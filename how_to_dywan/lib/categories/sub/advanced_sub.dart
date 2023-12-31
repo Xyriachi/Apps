@@ -81,14 +81,24 @@ class AdvancedSub extends StatelessWidget {
     return BlocBuilder<SelectedScreenCubit, SelectedScreenState>(
       builder: (context, state) {
         return getSelectedType(state.selectedScreen.last) == 'iconList'
-            ? IconList(
-                data: getSelectedData(state.selectedScreen.last),
-                source: getSelectedName(state.selectedScreen.last),
-              )
-            : getSelectedType(state.selectedScreen.last) == 'iconNestedList'
-                ? IconNestedList(
+            ? ListView(
+                shrinkWrap: true,
+                children: [
+                  IconList(
                     data: getSelectedData(state.selectedScreen.last),
                     source: getSelectedName(state.selectedScreen.last),
+                  )
+                ],
+              )
+            : getSelectedType(state.selectedScreen.last) == 'iconNestedList'
+                ? ListView(
+                    shrinkWrap: true,
+                    children: [
+                      IconNestedList(
+                        data: getSelectedData(state.selectedScreen.last),
+                        source: getSelectedName(state.selectedScreen.last),
+                      )
+                    ],
                   )
                 : const Placeholder();
       },

@@ -14,7 +14,7 @@ class ICC {
                 'subName': 'Bone Spike Graveyard',
                 'subImg': 'bone_spike_graveyard.jpg',
                 'subDesc': [
-                  selectedType[0] == 25
+                  selectedType[0] == '25'
                       ? 'Boss wybiera 3 osoby i nabija je na kolce.'
                       : 'Boss wybiera 1 osobę i nabija ją na kolec.',
                   'Kolce zadają obrażenia wybranym osobom, póki nie zostaną zniszczone.',
@@ -54,7 +54,7 @@ class ICC {
             'name': 'Taktyki',
             'img': 'mechanics.jpg',
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
             'sub': [
               {
                 'type': 'header',
@@ -62,31 +62,40 @@ class ICC {
               },
               {
                 'type': 'image',
-                'src': 'below_zero.jpg',
+                'src': 'lord_marrowgar_phase_1.png',
               },
               {
                 'type': 'string',
                 'text':
-                    'Pomagaj z kolcami tylko jeśli są zbyt wolno zbijane, ale nie pozwól, aby Corruption spadło z bossa.',
+                    'Czerwony okrąg to ten sam, który pojawia się na ziemi po kliknięciu na bossa. Na środku tego okręgu jest strefa bezpieczna, gdzie nie pojawia się ogień.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Stój pod bossem, aby nie palić się w ogniu i żeby kolce były zestackowane.',
+              },
+              {
+                'type': 'string',
+                'text': 'Pomagaj z kolcami tylko jeśli zbyt wolno padają.',
               },
               {'type': 'header', 'text': 'Bonestorm:'},
               {
-                'type': 'string',
-                'text':
-                    'Ustaw się między tankami i Hunterem, mniej więcej w połowie drogi.',
+                'type': 'image',
+                'src': 'lord_marrowgar_bone_storm.png',
               },
               {
-                'type': 'image',
-                'src': 'below_zero.jpg',
+                'type': 'string',
+                'text':
+                    'Boss będzie się kręcił i latał między Tankiem i Hunterem. Pomiędzy tymi miejscami stoi rajd. Nie za blisko, aby nie otrzymywać zbyt dużych obrażeń i nie za daleko, aby boss nie poleciał do nas.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Ustaw się między Tankami i Hunterem, mniej więcej w połowie drogi.',
               },
               {
                 'type': 'header',
                 'text': 'Dodatkowe informacje:',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Jeśli boss zakręci się w rajdzie, użyj nitro buty lub teleport, aby szybko uciec spod bossa.',
               },
               {
                 'type': 'string',
@@ -133,9 +142,9 @@ class ICC {
                 'subName': 'Summon Vengeful Shade',
                 'subImg': 'summon_vengeful_shade.jpg',
                 'subDesc': [
-                  selectedType[0] == 10
-                      ? 'Boss przyzywa 1 ducha, który leci do jednej losowo wybranej osoby.'
-                      : 'Boss przyzywa 3 duchy, które lecą do jednej losowo wybranej osoby.',
+                  selectedType[0] == '10'
+                      ? 'Boss przyzywa 1 ducha, który leci do losowo wybranej osoby.'
+                      : 'Boss przyzywa 3 duchy, które lecą do losowo wybranych osób.',
                   selectedType[1] == 'hc'
                       ? 'Duchy wybuchają po złapaniu targetu, zadając obrażenia targetowi.'
                       : 'Duchy wybuchają po złapaniu targetu, zadając ogromne obrażenia wszystkim w pobliżu.',
@@ -148,15 +157,20 @@ class ICC {
             'name': 'Taktyki',
             'img': 'mechanics.jpg',
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
             'sub': [
-              {
-                'type': 'image',
-                'src': 'below_zero.jpg',
-              },
               {
                 'type': 'header',
                 'text': 'Faza 1:',
+              },
+              {
+                'type': 'image',
+                'src': 'lady_deathwhisper_phase_1.png',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Fioletowa strefa to miejsce dla Rdpsów. Czerwone strefy to miejsca, z których wychodzą Addy. Pojawia się też Add z tyłu.',
               },
               {
                 'type': 'string',
@@ -171,18 +185,17 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Jeśli zielona plama pojawi się pod twoimi nogami, wyjdź z niej, aby nie dostawać obrażeń. Jeśli ufasz Healerom, możesz w niej zostać.',
+                    'Jeśli zielona plama pojawi się pod twoimi nogami, a nie ufasz Healerom, wyjdź z niej, aby nie dostawać obrażeń.',
               },
-              if ((selectedType[0] == 10 && selectedType[1] == 'hc') ||
-                  selectedType[0] == 25)
-                {
-                  'type': 'string',
-                  'text':
-                      'Jeśli ktoś dostanie Dominate Mind i bije rajd, możesz użyć Fear, Death Coil lub Howl of Terror, aby ją zatrzymać.',
-                },
               {
                 'type': 'header',
                 'text': 'Faza 2:',
+              },
+              {
+                'type': 'image',
+                'src': selectedType[0] == '10'
+                    ? 'lady_deathwhisper_10_phase_2.png'
+                    : 'lady_deathwhisper_25_phase_2.png',
               },
               {
                 'type': 'string',
@@ -195,17 +208,10 @@ class ICC {
                   'text':
                       'Pamiętaj, że addy wychodzą przez całą walkę. Jeśli się pojawią, to utrzymaj Corruption na bossie i pomóż z addami.',
                 },
-              selectedType[1] == 'hc'
-                  ? {
-                      'type': 'string',
-                      'text':
-                          'Jeśli duch do ciebie leci, to uciekaj od niego. Jeśli cię złapie, wszyscy w range 20 yardów prawdopodobnie umrą.',
-                    }
-                  : {
-                      'type': 'string',
-                      'text':
-                          'Jeśli duch do ciebie leci, to uciekaj od niego. Jeśli cię złapie, to możesz umrzeć.',
-                    },
+              {
+                'type': 'string',
+                'text': 'Jeśli goni cię duch, uciekaj od niego.',
+              },
               {
                 'type': 'header',
                 'text': 'Dodatkowe informacje:',
@@ -215,6 +221,13 @@ class ICC {
                 'text':
                     'Empowered i Reanimated Adherent odbijają większość spelli, więc bijąc je, prawdopodobnie zginiesz.',
               },
+              if ((selectedType[0] == '10' && selectedType[1] == 'hc') ||
+                  selectedType[0] == '25')
+                {
+                  'type': 'string',
+                  'text':
+                      'Jeśli ktoś dostanie Dominate Mind i bije rajd, możesz użyć Fear, Death Coil lub Howl of Terror, aby ją zatrzymać.',
+                },
             ]
           },
         ]
@@ -250,7 +263,7 @@ class ICC {
             'name': 'Taktyki',
             'img': 'mechanics.jpg',
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {
@@ -311,7 +324,7 @@ class ICC {
                 'subName': 'Call Blood Beast',
                 'subImg': 'call_blood_beast.jpg',
                 'subDesc': [
-                  selectedType[0] == 10
+                  selectedType[0] == '10'
                       ? 'Boss przyzywa 2 bestie.'
                       : 'Boss przyzywa 5 bestii.',
                   'Bestie biegną do osoób z najwiekszym threatem.',
@@ -332,10 +345,21 @@ class ICC {
             'name': 'Taktyki',
             'img': 'mechanics.jpg',
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
-              selectedType[0] == 10
+              {
+                'type': 'image',
+                'src': selectedType[0] == '10'
+                    ? 'deathbringer_saurfang_10.png'
+                    : 'deathbringer_saurfang_25.png',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Kolorami zaznaczone są miejsca dla Rdpsów i bestie, które trzeba zabić. Kolory mówią, który Rdps ma zabić którą bestię.',
+              },
+              selectedType[0] == '10'
                   ? {
                       'type': 'string',
                       'text':
@@ -346,30 +370,21 @@ class ICC {
                       'text':
                           'Boss co jakiś czas będzie przyzywał 5 bestii. Rzuć corruption na 3-5 bestii i wróć do bicia bossa.',
                     },
-              {
-                'type': 'image',
-                'src': 'below_zero.jpg',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Jeśli musisz pomagać z bestiami, bij najdalszą. Na zdjęciu bestie i pozycje Rdpsów są oznaczone numerami. Interesuje cię bestia o tym samym numerze, co twoja pozycja.',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Jeśli jakaś bestia idzie do ciebie, użyj teleport lub nitro buty.',
-              },
+              {'type': 'header', 'text': 'Dodatkowe informacje:'},
               {
                 'type': 'string',
                 'text':
                     'Jeśli boss rzuci na ciebie Mark of the Fallen Champion, zmień buffa na Demon Armor, aby healerom było łatwiej utrzymać cię przy życiu.',
               },
-              {'type': 'header', 'text': 'Dodatkowe informacje:'},
               {
                 'type': 'string',
                 'text':
                     'Czasem użycie Soulshattera sprawi, że bestia zmieni target, ale na wszelki wypadek trzymaj teleport pod ręką.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Możesz dać teleport przy barierkach, aby uciekać, jeśli bestia cię goni.',
               },
             ]
           },
@@ -388,7 +403,7 @@ class ICC {
                 'subName': 'Gas Spore',
                 'subImg': 'gas_spore.jpg',
                 'subDesc': [
-                  selectedType[0] == 10
+                  selectedType[0] == '10'
                       ? 'Boss wybiera 2 osoby i nakłada na nich debuff.'
                       : 'Boss wybiera 3 osoby i nakłada na nich debuff.',
                   'Osoby z debuffem muszą się rozdzielić, aby każdy stacking point miał tylko 1 osobę z debuffem.',
@@ -406,7 +421,7 @@ class ICC {
                 'subName': 'Vile Gas',
                 'subImg': 'vile_gas.jpg',
                 'subDesc': [
-                  selectedType[0] == 10
+                  selectedType[0] == '10'
                       ? 'Boss wybiera 1 losową osobę i nakłada na nią debuff, który na chwilę wyłącza z walki tę osobę.'
                       : 'Boss wybiera 3 losowe osoby i nakłada na nich debuff, który na chwilę wyłącza z walki te osoby.',
                   'Debuff zadaje obrażenia wszystkim graczom w pobliżu.',
@@ -429,29 +444,36 @@ class ICC {
             'name': 'Taktyki',
             'img': 'mechanics.jpg',
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {
-                'type': 'string',
-                'text':
-                    'Jeśli dostaniesz debuff Vile Gas, przez chwilę nie możesz bić. Tym debuffem zarażasz wszystkich w range 8 yardów, więc pilnuj range.',
+                'type': 'image',
+                'src': selectedType[1] == 'nm'
+                    ? selectedType[0] == '10'
+                        ? 'festergut_10_nm.png'
+                        : 'festergut_25_nm.png'
+                    : selectedType[0] == '10'
+                        ? 'festergut_10_hc.png'
+                        : 'festergut_25_hc.png',
               },
               {
-                'type': 'image',
-                'src': 'below_zero.jpg',
+                'type': 'string',
+                'text': selectedType[0] == '25'
+                    ? 'Na pomarańczowo zaznaczone są Stacking Pointy, czyli wyznaczone wcześniej osoby. Na niebiesko pozostałe Rdpsy i Healerzy, którzy nie poszli pod bossa.'
+                    : 'Na pomarańczowo zaznaczony jest Stacking Point, czyli wyznaczona wcześniej osoba. Na niebiesko pozostałe Rdpsy i Healerzy, którzy nie poszli pod bossa.',
               },
-              selectedType[0] == 10
-                  ? {
-                      'type': 'string',
-                      'text':
-                          'Boss co jakiś czas rzuci Gas Spore na 2 losowe osoby. Wybrane osoby muszą rozstawić się tak, aby 1 osoba była wśród Mdpsów i 1 osoba na stacking poincie w Rdpsach.',
-                    }
-                  : {
-                      'type': 'string',
-                      'text':
-                          'Boss co jakiś czas rzuci Gas Spore na 3 losowe osoby. Wybrane osoby muszą rozstawić się tak, aby 1 osoba była wśród Mdpsów i po 1 osobie na stacking pointach w Rdpsach.',
-                    },
+              {
+                'type': 'string',
+                'text':
+                    'Trzymaj range 8 yardów, aby nie zarażać debuffem Vile Gas.',
+              },
+              {
+                'type': 'string',
+                'text': selectedType[0] == '10'
+                    ? 'Boss co jakiś czas rzuci Gas Spore na 2 losowe osoby. Wybrane osoby muszą rozstawić się tak, aby 1 osoba była wśród Mdpsów i 1 osoba na stacking poincie w Rdpsach.'
+                    : 'Boss co jakiś czas rzuci Gas Spore na 3 losowe osoby. Wybrane osoby muszą rozstawić się tak, aby 1 osoba była wśród Mdpsów i 2 osoby na różnych stacking pointach w Rdpsach.',
+              },
               {
                 'type': 'string',
                 'text':
@@ -518,7 +540,7 @@ class ICC {
                   'subName': 'Vile Gas',
                   'subImg': 'vile_gas.jpg',
                   'subDesc': [
-                    selectedType[0] == 10
+                    selectedType[0] == '10'
                         ? 'Boss wybiera 1 losową osobę i nakłada na nią debuff, który na chwilę wyłącza z walki tę osobę.'
                         : 'Boss wybiera 3 losowe osoby i nakłada na nich debuff, który na chwilę wyłącza z walki te osoby.',
                     'Debuff zadaje obrażenia wszystkim graczom w pobliżu.',
@@ -538,19 +560,25 @@ class ICC {
             'name': 'Taktyki',
             'img': 'mechanics.jpg',
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
-              if (selectedType[1] == 'hc')
-                {
-                  'type': 'image',
-                  'src': 'below_zero.jpg',
-                },
+              {
+                'type': 'image',
+                'src': selectedType[1] == 'nm'
+                    ? 'rotface_nm.png'
+                    : 'rotface_hc.png',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Na niebiesko są Rdpsy i Healerzy, jasnoniebieski kolor to osoba z debuffem Mutated Plague, a czerwone kropki to Tankowie, na środku Main Tank z bossem, a na zewnątrz Off Tank czeka na Ooza.',
+              },
               selectedType[1] == 'hc'
                   ? {
                       'type': 'string',
                       'text':
-                          'Ustaw się między zewnętrznym i wewnętrznym pierścieniem na range. Nie przekraczaj wewnętrznego pierścienia.',
+                          'Ustaw się między zewnętrznym i wewnętrznym pierścieniem i trzymaj range 8 yardów. Nie przekraczaj wewnętrznego pierścienia.',
                     }
                   : {
                       'type': 'string',
@@ -571,26 +599,29 @@ class ICC {
                 },
               {
                 'type': 'image',
-                'src': 'below_zero.jpg',
+                'src': selectedType[1] == 'nm'
+                    ? 'rotface_nm_mutated_plague.png'
+                    : 'rotface_hc_mutated_plague.png',
               },
               {
                 'type': 'string',
                 'text':
-                    'Jeśli dostaniesz Mutated Infection, biegnij do off tanka, krążącego po zewnętrznym pierścieniu. Po dispellu wyskoczy z ciebie mały Ooze, którego łączysz z dużym Oozem.',
+                    'Na niebiesko są Rdpsy i Healerzy, jasnoniebieski kolor to osoba z debuffem Mutated Plague, a czerwone kropki to Tankowie, na środku Main Tank z bossem, a na zewnątrz Off Tank z Oozem... lub bez.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Jeśli nie ma dużego Ooza, połącz go z małym. Jeśli małego Ooza też nie ma, zaczekaj na niego.',
+                    'Jeśli dostaniesz debuff Mutated Infection, biegnij do off tanka, krążącego po zewnętrznym pierścieniu. Nie przebiegaj przez środek. Po dispellu wyskoczy z ciebie mały Ooze, którego łączysz z dużym Oozem.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Jeśli nie ma dużego Ooza, połącz go z małym. Jeśli małego Ooza też nie ma, zaczekaj na niego i patrz się w ścianę.',
               },
               {
                 'type': 'string',
                 'text':
                     'Target Ooza zostawia przed sobą plamy zielonego szlamu, więc nie stój przodem do bossa, jeśli goni cię Ooze.',
-              },
-              {
-                'type': 'image',
-                'src': 'below_zero.jpg',
               },
               {
                 'type': 'string',
@@ -648,7 +679,7 @@ class ICC {
                 'subName': 'Malleable Goo',
                 'subImg': 'malleable_goo.jpg',
                 'subDesc': [
-                  selectedType[0] == 10
+                  selectedType[0] == '10'
                       ? 'Boss rzuca kule szlamu w 1 losową osobę.'
                       : 'Boss rzuca kule szlamu w 3 losowe osoby.',
                   'Kule odbijają się 2 razy od podłogi, a przy następnym upadku wybuchają.',
@@ -679,32 +710,17 @@ class ICC {
             'name': 'Taktyki',
             'img': 'mechanics.jpg',
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {
-                'type': 'string',
-                'text':
-                    'Staraj się stać w miejscu, w którym będziesz mieć range na Oozy i bossa jednocześnie i ruszaj się tylko wtedy, kiedy mechanika cię do tego zmusza.',
-              },
-              {
                 'type': 'image',
-                'src': 'below_zero.jpg',
+                'src': 'professor_putricide_green_ooze.png',
               },
               {
                 'type': 'string',
                 'text':
-                    'Co jakiś czas boss rzuci butelki w 2 losowe osoby. W miejscu upadku, butelki zostawiają zielone plamy szlamu. Plamy powiększają się, ale off tank może je wypić. Jeśli stoisz w plamie, wyjdź z niej.',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Co jakiś czas losowa osoba dostaje debuff Unbound Plague. Debuff przechodzi na osobę w range 3 yardy. Przekaż go dalej po 6-8 sekundach.',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Po oddaniu plagi, dostajesz 1 stack debuffa Plague Sickness, który zwiększa otrzymywane obrażenia od Unbound Plague. Z każdym stackiem skraca się czas, po którym musisz oddać plagę.',
+                    'Zielona kropka to miejsce spawnu Zielonego Ooza. Jeśli się stackujesz, ustawiaj się tak, aby lecieć na zmianę do stołu i na środek.',
               },
               {
                 'type': 'string',
@@ -712,61 +728,54 @@ class ICC {
                     'Jeśli boss castuje Unstable Experiment, po chwili pojawi się Ooze. Pierwszy Ooze jest zielony, drugi pomarańczowy i tak na zmianę.',
               },
               {
+                'type': 'string',
+                'text':
+                    'Co jakiś czas boss rzuci butelki w 2 losowe osoby, tworząc zielone plamy szlamu. Plamy powiększają się, ale Off Tank je zmniejsza.',
+              },
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'string',
+                  'text':
+                      'Co jakiś czas losowa osoba dostaje debuff Unbound Plague. Debuff przechodzi na osobę w range 3 yardów. Przekaż go dalej po 6-8 sekundach.',
+                },
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'string',
+                  'text':
+                      'Po oddaniu plagi, dostajesz 1 stack debuffa Plague Sickness, który zwiększa otrzymywane obrażenia od Unbound Plague. Z każdym stackiem skraca się czas, po którym musisz oddać plagę.',
+                },
+              {
                 'type': 'image',
-                'src': 'below_zero.jpg',
+                'src': 'professor_putricide_orange_ooze.png',
               },
               {
                 'type': 'string',
                 'text':
-                    'Jeśli zielony Ooze cię wybierze, użyj teleport, aby wydłużyć jego trasę i dać więcej czasu na zabicie go.',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Jeśli masz taką możliwość, nie stackuj się na zielonego Ooza, a jeśli wybrał target obok ciebie, odsuń się od niego. Jeśli musisz się zestackować, ustaw się obok targetu, po stronie, w którą chcesz zostać odrzucony. Najlepiej jeśli Ooze będzie cię odrzucać na zmianę do stołu i w stronę środka pomieszczenia.',
-              },
-              {
-                'type': 'image',
-                'src': 'below_zero.jpg',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Jeśli wybrał cię pomarańczowy Ooze, uciekaj od niego i nie daj się złapać. Staraj się go prowadzić wzdłuż ściany, przy której się pojawił i biegnij w stronę stołu. Przy stole skręć w prawo i biegnij wzdłuż ściany, ale przed środkiem pomieszczenia skręć w prawo i biegnij przez środek pomieszczenia. Jeśli Ooze żyje i dalej cię goni, powtórz trasę.',
-              },
-              {
-                'type': 'image',
-                'src': 'below_zero.jpg',
+                    'Jeśli wybrał cię pomarańczowy Ooze, uciekaj od niego tak, jak pokazuje strzałka na zdjęciu. Omijaj pomarańczowe plamy, jeśli są.',
               },
               {
                 'type': 'string',
                 'text':
                     'Po jakimś czasie oba Oozy zmieniają target, więc staraj się nie stać przy nich na zmianie targetu, bo możesz nie zdążyć zareagować. Zmianę targetu może też przyspieszyć Hand of Protection rzucone na aktualny target.',
               },
-              {
-                'type': 'string',
-                'text':
-                    'Jeśli pojawi się Ooze, ale wybrał kogoś innego na target, bij Ooza, ale pilnuj, aby Corruption nie spadło z bossa.',
-              },
               if (selectedType[1] == 'hc')
                 {'type': 'header', 'text': 'Faza 1.5:'},
-              if (selectedType[1] == 'hc' && selectedType[0] == 25)
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'image',
+                  'src': 'professor_putricide_hc_transition.png',
+                },
+              if (selectedType[1] == 'hc' && selectedType[0] == '25')
                 {
                   'type': 'string',
                   'text':
                       'Po zbiciu HP bossa do 80%, zostają przyzwane 2 dodatkowe Oozy: zielony i pomarańczowy. Połowa rajdu dostaje debuff z zielonym kolorem, a druga połowa z pomarańczowym. Można bić tylko tego Ooza, który ma taki sam kolor jak twój debuff.',
                 },
-              if (selectedType[1] == 'hc' && selectedType[0] == 10)
+              if (selectedType[1] == 'hc' && selectedType[0] == '10')
                 {
                   'type': 'string',
                   'text':
                       'Po zbiciu HP bossa do 80%, zostają przyzwane 2 dodatkowe Oozy: zielony i pomarańczowy.',
-                },
-              if (selectedType[1] == 'hc')
-                {
-                  'type': 'string',
-                  'text':
-                      'Jeśli Ooze nie wybrał cię na target, skup się na zabiciu go, ale pilnuj, aby Corruption nie spadło z bossa.',
                 },
               if (selectedType[1] == 'hc')
                 {
@@ -780,16 +789,16 @@ class ICC {
                 'text':
                     'W tej fazie jest wszystko co w fazie 1 oraz Malleable Goo i Chocking Gas Bomb.',
               },
-              selectedType[0] == 25
+              selectedType[0] == '25'
                   ? {
                       'type': 'string',
                       'text':
-                          'Co jakiś czas boss rzuci Malleable Goo na 3 losowych Rdpsów. Nie daj się trafić, bo twój cast time będzie o 300% dłuższy. Możesz też umrzeć od wybuchu.',
+                          'Co jakiś czas boss rzuci Malleable Goo na 3 losowych Rdpsów. Nie daj się trafić.',
                     }
                   : {
                       'type': 'string',
                       'text':
-                          'Co jakiś czas boss rzuci Malleable Goo na 1 losowego Rdpsa. Nie daj się trafić, bo twój cast time będzie o 300% dłuższy. Możesz też umrzeć od wybuchu.',
+                          'Co jakiś czas boss rzuci Malleable Goo na 1 losowego Rdpsa. Nie daj się trafić.',
                     },
               {
                 'type': 'string',
@@ -811,6 +820,10 @@ class ICC {
                 },
               {'type': 'header', 'text': 'Faza 3:'},
               {
+                'type': 'image',
+                'src': 'professor_putricide_phase_3.png',
+              },
+              {
                 'type': 'string',
                 'text':
                     'W tej fazie jest wszystko co w fazie 2, ale bez Oozów.',
@@ -818,17 +831,7 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Boss co jakiś czas nakłada stacki Mutated Plague na swój target.',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Ta faza jest wyścigiem w DPSie. Im dłużej boss żyje, tym większa szansa, że umrze ktoś ze stackiem Mutated Plague. Jeśli tak się stanie, boss się wyleczy i będzie ciężej go zabić przed berserkiem.',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Zestackuj się z Rdpsami, bo nikt nie może wypić plam szlamu i będą się powiększać do ogromnych rozmiarów. Stackowanie się pozwala na lepsze zarządzanie miejscem.',
+                    'Zestackuj się z Rdpsami i staraj się stać przy plamach szlamu. Stackowanie się pozwala na lepsze zarządzanie miejscem.',
               },
               {
                 'type': 'string',
@@ -911,40 +914,62 @@ class ICC {
             'name': 'Taktyki',
             'img': 'mechanics.jpg',
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {
-                'type': 'string',
-                'text':
-                    'Co jakiś czas będą pojawiać się Kinetic Bomby w losowych miejscach. Jeśli musisz je podbijać, puść peta, aby robił to za ciebie. Pamiętaj, aby nie użyć przypadkiem macro na /petattack, bo wtedy pet wróci do bicia bossa i Kinetic Bomba może spaść.',
+                'type': 'image',
+                'src': 'blood_prince_council_valanar.png',
               },
               {
                 'type': 'string',
                 'text':
-                    'Czasem na ziemi pojawiają się małe tornada. Uciekaj od nich, bo po chwili się aktywują i odrzucają wszystkich w pobliżu.',
+                    'Jeśli aktywny jest Valanar, co jakiś czas będzie castował Empowered Shock Vortex. Trzymaj range 12 yardów.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Jeśli aktywny jest Valanar, co jakiś czas będzie castował Empowered Shock Vortex. Użyj teleportu i pilnuj, aby nikt nie wszedł w range 12 yardów.',
+                    'Środek sali jest zarezerwowany dla Healerów, platforma dla Mdpsów, a boki dla Rdpsów.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Jeśli aktywny jest Taldaram, co jakiś czas będzie castował Conjure Empowered Flame. Target musi uciekać tak, aby kula, która go goni, zahaczyła o jak najwięcej osób. Jeśli kula się zmniejszy, złap ją conajmniej 10 yardów za rajdem.',
+                    'Co jakiś czas będą pojawiać się Kinetic Bomby w losowych miejscach. Jeśli jest ryzyko, że dotkną ziemi, użyj Searing Pain, aby je podbić.',
+              },
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'string',
+                  'text':
+                      'Za każdą 1 sekundę ruchu dostajesz 1 stack debuffa Shadow Prison. Jeśli masz zbyt dużo stacków, nie ruszaj się przez chwilę, aby debuff zniknął.',
+                },
+              {
+                'type': 'image',
+                'src': 'blood_prince_council_taldaram.png',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Jeśli aktywny jest Taldaram, co jakiś czas będzie castował Conjure Empowered Flame, dlatego Rdpsy i Healerzy stackują się lekko z prawej strony.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Target musi uciekać tak, aby kula, która go goni, zahaczyła o jak najwięcej osób. Jeśli kula się zmniejszy, należy złapać ją conajmniej 10 yardów za rajdem.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Czasem na ziemi pojawiają się małe tornada (Shock Vortex). Uciekaj od nich, bo po chwili się aktywują i odrzucają wszystkich w pobliżu.',
+              },
+              {
+                'type': 'image',
+                'src': 'blood_prince_council_keleseth.png',
               },
               {
                 'type': 'string',
                 'text':
                     'Jeśli aktywny jest Keleseth, po prostu nie używaj AoE.',
               },
-              if (selectedType[1] == 'hc')
-                {
-                  'type': 'string',
-                  'text':
-                      'Za każdą 1 sekundę ruchu dostajesz 1 stack debuffa Shadow Prison. Jest to DoTka, która przy ponad 10 stackach staje sie problematyczna dla Healerów. Jeśli masz zbyt dużo stacków, nie ruszaj się przez chwilę, aby debuff zniknął.',
-                },
               {'type': 'header', 'text': 'Dodatkowe informacje:'},
               {
                 'type': 'string',
@@ -985,7 +1010,7 @@ class ICC {
                 'subName': 'Pact of the Darkfallen',
                 'subImg': 'pact_of_the_darkfallen.jpg',
                 'subDesc': [
-                  selectedType[0] == 10
+                  selectedType[0] == '10'
                       ? 'Boss wybiera 2 losowe osoby, i łączy je czerwonymi liniami.'
                       : 'Boss wybiera 3 losowe osoby, i łączy je czerwonymi liniami.',
                   'Osoby te muszą się jak najszybciej spotkać, aby linie zniknęły.',
@@ -1006,9 +1031,18 @@ class ICC {
             'name': 'Taktyki',
             'img': 'mechanics.jpg',
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
+              {
+                'type': 'image',
+                'src': 'blood_queen_lanathel_phase_1.png',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Ustaw się tak, aby mieć bliżej do osoby, która ma cię ugryźć. Środek jest zarezerwowany dla Healerów, a platforma dla Mdpsów.',
+              },
               {
                 'type': 'string',
                 'text':
@@ -1017,33 +1051,39 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Około 5-10 sekund przed końcem debuffa u osoby, która ma ciebie ugryźć, podbiegnij do niej, stań przed nią i bij bossa. Jak zostaniesz ugryziony i dostaniesz debuffa, wróć na miejsce. Pamiętaj, aby rzucić Corruption, bo z debuffem staje się o wiele silniejsze.',
+                    'Około 5-10 sekund przed końcem debuffa u osoby, która ma ciebie ugryźć, podbiegnij do niej, stań przed nią i bij bossa. Jak zostaniesz ugryziony, wróć na miejsce.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Po zostaniu ugryzionym, bij bossa i pilnuj czasu do końca debuffa. Chwilę przed końcem debuffa, osoba, którą masz ugryźć, powinna podbiec do ciebie. Jeśli tego nie zrobi, a wiesz gdzie jest, szybko podbiegnij i ugryź. Jeśli nie wiesz gdzie stoi, ugryź Healera, aby nie namieszać w Bite Orderze.',
+                    'Chwilę przed końcem debuffa, osoba, którą masz ugryźć, powinna podbiec do ciebie. Jeśli tego nie zrobi, a wiesz gdzie jest, szybko podbiegnij i ugryź. W ostateczności, ugryź Healera.',
+              },
+              {
+                'type': 'image',
+                'src': selectedType[0] == '25'
+                    ? 'blood_queen_lanathel_25_mechanics.png'
+                    : 'blood_queen_lanathel_10_mechanics.png',
               },
               {
                 'type': 'string',
                 'text':
                     'Co jakiś czas boss używa Swarming Shadows na losowej osobie, która powinna biec do najbliższej ściany i wzdłuż ściany oddalać się od bossa.',
               },
-              selectedType[0] == 10
-                  ? {
-                      'type': 'string',
-                      'text':
-                          'Boss wybiera 2 losowe osoby i łączy je za pomocą czerwonej linii. Osoby te muszą się zestackować jak najszybciej, aby połączenie zniknęło.',
-                    }
-                  : {
-                      'type': 'string',
-                      'text':
-                          'Boss wybiera 3 losowe osoby i łączy je za pomocą czerwonej linii. Osoby te muszą się zestackować jak najszybciej, aby połączenie zniknęło. Najlepiej biec w stronę środka trójkąta, aby spotkać się w połowie drogi.',
-                    },
+              {
+                'type': 'string',
+                'text': selectedType[0] == '10'
+                    ? 'Boss wybiera 2 losowe osoby i łączy je za pomocą czerwonej linii. Osoby te muszą się zestackować jak najszybciej, aby połączenie zniknęło.'
+                    : 'Boss wybiera 3 losowe osoby i łączy je za pomocą czerwonej linii. Osoby te muszą się zestackować jak najszybciej, aby połączenie zniknęło. Najlepiej biec w stronę środka trójkąta, aby spotkać się w połowie drogi.',
+              },
               {
                 'type': 'string',
                 'text':
-                    '2 razy w trakcie walki boss używa Incite Terror. Biegnie wtedy na środek pomieszczenia, wzlatuje w powietrze i rzuca Fear na cały raid. Jak skończy się Fear, ustaw się na range 8 yardów, ale tak, aby mieć range na bossa. Mdpsy muszą się dostosować do Rdpsów.',
+                    '2 razy w trakcie walki boss używa Incite Terror. Biegnie wtedy na środek pomieszczenia, wzlatuje w powietrze i rzuca Fear na cały raid.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Jak skończy się Fear, ustaw się na range 8 yardów, ale tak, aby mieć range na bossa. Mdpsy muszą się dostosować do Rdpsów.',
               },
               {'type': 'header', 'text': 'Dodatkowe informacje:'},
               {
@@ -1091,13 +1131,19 @@ class ICC {
             'name': 'Taktyki',
             'img': 'mechanics.jpg',
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {
+                'type': 'image',
+                'src': selectedType[1] == '10'
+                    ? 'valithria_dreamwalker_10.png'
+                    : 'valithria_dreamwalker_25.png',
+              },
+              {
                 'type': 'string',
                 'text':
-                    'Co jakiś czas będą pojawiać się różne addy. Priorytet zabijania: Blazing Skeleton > Rise Archmage > Gluttonous Abomination > Suppresser.',
+                    'Co jakiś czas będą pojawiać się różne addy. Priorytet zabijania: Blazing Skeleton > Risen Archmage > Gluttonous Abomination > Suppresser.',
               },
               {
                 'type': 'string',
@@ -1107,7 +1153,18 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Co jakiś czas na ziemi pojawia się Biała plama. Jeśli w niej stoisz, po chwili zostaniesz wystrzelony w powietrze i otrzymasz spore obrażenia od upadku. Nie powinna cię zabić, ale lepiej nie ryzykować.',
+                    'Po zabiciu Gluttonous Abomination, wychodzi armia robaków. Pomagaj z nimi tylko wtedy, jeśli za wolno umierają.',
+              },
+              {
+                'type': 'image',
+                'src': selectedType[1] == '10'
+                    ? 'valithria_dreamwalker_10_mechanics.png'
+                    : 'valithria_dreamwalker_25_mechanics.png',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Co jakiś czas na ziemi pojawia się Biała plama. Jeśli w niej stoisz, po chwili zostaniesz wystrzelony w powietrze i otrzymasz obrażenia od upadku.',
               },
               {
                 'type': 'string',
@@ -1118,7 +1175,7 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Po zabiciu Gluttonous Abomination, wychodzi armia robaków. Pomagaj z nimi tylko wtedy, jeśli za wolno umierają.',
+                    'Często Addy rzucają się na Healerów, którzy wyszli z portali, bo generują ogromne ilości Threatu. Zabijaj takie Addy zanim zabiją Healerów.',
               },
             ]
           },
@@ -1137,7 +1194,7 @@ class ICC {
                 'subName': 'Frost Beacon',
                 'subImg': 'frost_beacon.jpg',
                 'subDesc': [
-                  selectedType[0] == 10
+                  selectedType[0] == '10'
                       ? 'Boss wybiera 2 targety w fazie 1 lub 1 target w fazie 2 i nakłada na nich debuff.'
                       : selectedType[1] == 'hc'
                           ? 'Boss wybiera 5 targetów w fazie 1 lub 1 target w fazie 2 i nakłada na nich debuff.'
@@ -1180,7 +1237,7 @@ class ICC {
             'name': 'Taktyki',
             'img': 'mechanics.jpg',
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {'type': 'header', 'text': 'Dodatkowe informacje:'},
@@ -1209,7 +1266,7 @@ class ICC {
                 'subName': 'Summon Val\'kyr',
                 'subImg': 'summon_valkyr.jpg',
                 'subDesc': [
-                  selectedType[0] == 10
+                  selectedType[0] == '10'
                       ? 'Boss przyzywa 1 Val\'kyrie, która łapie losową osobę i zabiera ja do krawędzi platformy, po czym zrzuca z niej.'
                       : 'Boss przyzywa 3 Val\'kyrie, które łapią 3 losowe osoby i zabierają je do krawędzi platformy, po czym zrzucają z niej.',
                   'Val\'kyrie lecą do najbliższej krawędzi paltformy.',
@@ -1266,7 +1323,7 @@ class ICC {
             'name': 'Taktyki',
             'img': 'mechanics.jpg',
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
             'sub': [
               {'type': 'header', 'text': 'Przygotowanie:'},
               {'type': 'header', 'text': 'Faza 1:'},

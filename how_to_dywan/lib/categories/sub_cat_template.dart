@@ -24,6 +24,7 @@ class SubCategoriesTemplate extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 6),
           child: ListView.builder(
+              shrinkWrap: true,
               itemCount: subCategoryList.length,
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {

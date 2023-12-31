@@ -14,16 +14,15 @@ class NavigationLogic extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SelectedScreenCubit, SelectedScreenState>(
       builder: (context, state) {
-        return SizedBox(
-            child: state.selectedScreen.last != 'none'
-                ? state.selectedScreen.first == 'basic'
-                    ? const BasicSub()
-                    : state.selectedScreen.first == 'advanced'
-                        ? const AdvancedSub()
-                        : state.selectedScreen.first == 'tactics'
-                            ? const TacticsSub()
-                            : const AddonsSub()
-                : const SubCategoriesTemplate());
+        return state.selectedScreen.last != 'none'
+            ? state.selectedScreen.first == 'basic'
+                ? const BasicSub()
+                : state.selectedScreen.first == 'advanced'
+                    ? const AdvancedSub()
+                    : state.selectedScreen.first == 'tactics'
+                        ? const TacticsSub()
+                        : const AddonsSub()
+            : const SubCategoriesTemplate();
       },
     );
   }

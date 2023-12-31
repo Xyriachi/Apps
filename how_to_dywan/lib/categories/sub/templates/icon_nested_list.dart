@@ -10,6 +10,7 @@ class IconNestedList extends StatelessWidget {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 6),
         child: ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: data.length,
           itemBuilder: (context, firstIndex) {
