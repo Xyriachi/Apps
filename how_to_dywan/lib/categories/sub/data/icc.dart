@@ -24,8 +24,8 @@ class ICC {
                 'subName': 'Coldflame',
                 'subImg': 'coldflame.jpg',
                 'subDesc': [
-                  'Boss tworzy lodowy ogień w linii prostej zaczynając od siebie.',
-                  'Ogień nie pojawia się pod samym bossem.',
+                  'Boss tworzy lodowy ogień w linii prostej, zaczynając od siebie.',
+                  'Ogień nie pojawia się pod samym Bossem.',
                   'Ogień zadaje spore obrażenia, więc lepiej w nim nie stać.',
                 ]
               },
@@ -33,8 +33,8 @@ class ICC {
                 'subName': 'Bone Storm',
                 'subImg': 'bone_storm.jpg',
                 'subDesc': [
-                  'Boss kręci się w kółko zadając obrażenia wszystkim wokół. Im bliżej bossa, tym większe obrażenia.',
-                  'Boss leci do osoby, znajdującej się najdalej od niego, po czym kręci się przez chwilę i leci do następnej osoby. Zwykle jest to Hunter lub tank.',
+                  'Boss kręci się w miejscu, zadając obrażenia wszystkim wokół. Im bliżej Bossa, tym większe obrażenia.',
+                  'Boss leci do osoby, znajdującej się najdalej od niego, ale nie za daleko, po czym kręci się przez chwilę i leci do następnej osoby.',
                   'Boss tworzy lodowy ogień w kształcie krzyża.',
                   if (selectedType[1] == 'hc')
                     'Podczas Bone Stormu pojawiają się też kolce.',
@@ -67,16 +67,22 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Czerwony okrąg to ten sam, który pojawia się na ziemi po kliknięciu na bossa. Na środku tego okręgu jest strefa bezpieczna, gdzie nie pojawia się ogień.',
+                    'Po kliknięciu na Bossa, pojawi się czerwony okrąg. Na środku tego okręgu nie pojawia się ogień.',
               },
               {
                 'type': 'string',
-                'text':
-                    'Stój pod bossem, aby nie palić się w ogniu i żeby kolce były zestackowane.',
+                'text': selectedType[0] == '10'
+                    ? 'Co jakiś czas Boss wybiera 1 osobę i nabija ją na kolec, ale jego zniszczenie, to robota Mdpsów.'
+                    : 'Co jakiś czas Boss wybiera 3 osoby i nabija je na kolec, ale ich zniszczenie, to robota Mdpsów.',
               },
               {
                 'type': 'string',
                 'text': 'Pomagaj z kolcami tylko jeśli zbyt wolno padają.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Stój pod Bossem, aby nie palić się w ogniu i żeby kolce były zestackowane.',
               },
               {'type': 'header', 'text': 'Bonestorm:'},
               {
@@ -86,22 +92,19 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Boss będzie się kręcił i latał między Tankiem i Hunterem. Pomiędzy tymi miejscami stoi rajd. Nie za blisko, aby nie otrzymywać zbyt dużych obrażeń i nie za daleko, aby boss nie poleciał do nas.',
+                    'Boss będzie się kręcił i latał między Tankiem i Hunterem. Pomiędzy tymi miejscami stoi rajd.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Ustaw się między Tankami i Hunterem, mniej więcej w połowie drogi.',
+                    'Nie za blisko, aby nie otrzymywać zbyt dużych obrażeń i nie za daleko, aby Boss nie poleciał do Nas.',
               },
-              {
-                'type': 'header',
-                'text': 'Dodatkowe informacje:',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Staraj się odnawiać manę podczas zajmowania pozycji na Bone Stormie i powrotu pod bossa.',
-              },
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'string',
+                  'text':
+                      'Pamiętaj, że podczas Bone Stormu nadal pojawiają się kolce. Lepiej nie stać zbyt daleko od rajdu.',
+                },
             ]
           },
         ]
@@ -119,23 +122,27 @@ class ICC {
                 'subName': 'Death and Decay',
                 'subImg': 'death_and_decay.jpg',
                 'subDesc': [
-                  'Boss tworzy zieloną plamę na ziemi, która zadaje obrażenia.',
+                  'Boss tworzy zieloną plamę na ziemi, która zadaje obrażenia graczom, stojącym w niej.',
                 ]
               },
-              {
-                'subName': 'Dominate Mind',
-                'subImg': 'dominate_mind.jpg',
-                'subDesc': [
-                  'Boss wybiera losową osobę, która po chwili zostaje opętana i zaczyna atakować swoich sojuszników.',
-                  'Efekt trwa 12 sekund',
-                ]
-              },
+              if (selectedType[0] == '25' ||
+                  (selectedType[0] == '10' && selectedType[1] == 'hc'))
+                {
+                  'subName': 'Dominate Mind',
+                  'subImg': 'dominate_mind.jpg',
+                  'subDesc': [
+                    selectedType[0] == '25' && selectedType[1] == 'hc'
+                        ? 'Boss wybiera 3 losowe osoby, które po chwili zostają opętane i zaczynają atakować swoich sojuszników.'
+                        : 'Boss wybiera 1 losową osobę, która po chwili zostaje opętana i zaczyna atakować swoich sojuszników.',
+                    'Efekt trwa 12 sekund.',
+                  ]
+                },
               {
                 'subName': 'Curse of Torpor',
                 'subImg': 'curse_of_torpor.jpg',
                 'subDesc': [
                   'Adherent rzuca debuff na losową osobę. Debuff ten zwiększa cooldown zaklęć o 15 sekund.',
-                  'Efekt trwa 15 sekund'
+                  'Efekt trwa 15 sekund.'
                 ]
               },
               {
@@ -148,7 +155,7 @@ class ICC {
                   selectedType[1] == 'hc'
                       ? 'Duchy wybuchają po złapaniu targetu, zadając obrażenia targetowi.'
                       : 'Duchy wybuchają po złapaniu targetu, zadając ogromne obrażenia wszystkim w pobliżu.',
-                  'Po śmierci targetu, duchy lecą do następnej osoby.',
+                  'Duchy zmieniają target, jeśli padnie, zanim go złapią.',
                 ]
               },
             ],
@@ -170,22 +177,22 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Fioletowa strefa to miejsce dla Rdpsów. Czerwone strefy to miejsca, z których wychodzą Addy. Pojawia się też Add z tyłu.',
+                    'Mdpsy stoją pod Bossem, a Rdpsy między schodami, a max range (fioletowa strefa na rysunku). Najlepiej stać lekko z lewej lub z prawej strony, aby mieć bliżej Addy.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Jak wyjdą addy z twojej strony, rzuć na nie Corruption i wróć do bicia bossa.',
+                    'Jak wyjdą addy z twojej strony, rzuć na nie Corruption i bij Bossa.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Jeśli jest problem z Fanaticami, pomóż z nimi. Nie bij ulepszonych Adherentów.',
+                    'Jeśli jest problem z Fanaticami, pomóż z nimi. Nie bij ulepszonych Adherentów, bo odbijają Spelle.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Jeśli zielona plama pojawi się pod twoimi nogami, a nie ufasz Healerom, wyjdź z niej, aby nie dostawać obrażeń.',
+                    'Jeśli zielona plama pojawi się pod Twoimi nogami, a nie ufasz Healerom, wyjdź z niej, aby nie dostawać obrażeń.',
               },
               {
                 'type': 'header',
@@ -200,34 +207,19 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Na początku fazy 2, tank może mieć problem z utrzymaniem aggro, więc trzymaj Soulshattera pod ręką.',
+                    'Na początku fazy 2, Tank może mieć problem z utrzymaniem aggro, więc trzymaj Soulshattera pod ręką.',
               },
               if (selectedType[1] == 'hc')
                 {
                   'type': 'string',
                   'text':
-                      'Pamiętaj, że addy wychodzą przez całą walkę. Jeśli się pojawią, to utrzymaj Corruption na bossie i pomóż z addami.',
+                      'Pamiętaj, że Addy wychodzą przez całą walkę. Jeśli się pojawią, to utrzymaj Corruption na Bossie i pomóż z Addami.',
                 },
-              {
-                'type': 'string',
-                'text': 'Jeśli goni cię duch, uciekaj od niego.',
-              },
-              {
-                'type': 'header',
-                'text': 'Dodatkowe informacje:',
-              },
               {
                 'type': 'string',
                 'text':
-                    'Empowered i Reanimated Adherent odbijają większość spelli, więc bijąc je, prawdopodobnie zginiesz.',
+                    'Jeśli goni Cię Duch, uciekaj od niego, bo wybuchnie, jak Cię złapie.',
               },
-              if ((selectedType[0] == '10' && selectedType[1] == 'hc') ||
-                  selectedType[0] == '25')
-                {
-                  'type': 'string',
-                  'text':
-                      'Jeśli ktoś dostanie Dominate Mind i bije rajd, możesz użyć Fear, Death Coil lub Howl of Terror, aby ją zatrzymać.',
-                },
             ]
           },
         ]
@@ -254,7 +246,7 @@ class ICC {
                 'subImg': 'rocket_artillery.jpg',
                 'subDesc': [
                   'Na ziemi pojawia się duży znak, w który po chwili trafi rakieta.',
-                  'Rakieta zadaje obrażenia i odrzuca graczy w powietrze.',
+                  'Rakieta zadaje obrażenia i odrzuca graczy. Może nawet zrzucić ze statku.',
                 ]
               },
             ],
@@ -274,29 +266,23 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Jeśli pod twoimi nogami pojawi się znak, wyjdź z niego. Spadająca rakieta zadaje obrażenia i odrzuca.',
+                    'Jeśli pod Twoimi nogami pojawi się znak, wyjdź z niego. Spadająca rakieta zadaje obrażenia i odrzuca.',
               },
               {'type': 'header', 'text': 'Below Zero:'},
               {
                 'type': 'string',
                 'text':
-                    'Działa sojuszników zostają zamrożone, a na wrogim statku pojawia się Mag. Użyj plecaka, aby przeskoczyc na drugi statek, ale nie skacz przed tankiem!',
+                    'Działa sojuszników zostają zamrożone, a na wrogim statku pojawia się Mag. Użyj plecaka, aby przeskoczyc na drugi statek, ale nie skacz przed Tankiem!',
               },
               {
                 'type': 'string',
                 'text':
-                    'Wróć na statek sojuszników, jak Magowi zostanie 10% hp. DoTki go dobiją.',
-              },
-              {'type': 'header', 'text': 'Dodatkowe informacje:'},
-              {
-                'type': 'string',
-                'text':
-                    'Jeśli spadasz ze statku, pamiętaj, że możesz użyć plecaka w powietrzu, aby wrócić na statek.',
+                    'Nie skacz obok Muradina, bo plecak zadaje obrażenia AoE i możesz przebić Aggro.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Nie skacz obok Muradina, bo plecak zadaje obrażenia AoE i możesz przebić aggro.',
+                    'Wróć na statek sojuszników, jak Magowi zostanie 20% hp. DoTki go dobiją.',
               },
             ]
           },
@@ -317,7 +303,7 @@ class ICC {
                 'subDesc': [
                   'Boss rzuca debuff na losową osobę.',
                   'Debuff zadaje spore obrażenia.',
-                  'Jeśli osoba z debuffem umiera, boss leczy się o 5% HP.',
+                  'Jeśli osoba z debuffem umiera, boss leczy się.',
                 ]
               },
               {
@@ -327,8 +313,7 @@ class ICC {
                   selectedType[0] == '10'
                       ? 'Boss przyzywa 2 bestie.'
                       : 'Boss przyzywa 5 bestii.',
-                  'Bestie biegną do osoób z najwiekszym threatem.',
-                  'Bestie powinny zostać zabite zanim kogoś dotkną.',
+                  'Bestie powinny zostać zabite przez Rdpsy, zanim kogoś dotkną.',
                 ]
               },
               {
@@ -357,34 +342,33 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Kolorami zaznaczone są miejsca dla Rdpsów i bestie, które trzeba zabić. Kolory mówią, który Rdps ma zabić którą bestię.',
+                    'Kolorami zaznaczone są miejsca dla Rdpsów i miejsca spawnu Bestii. Kolory łączą w pary Rdpsów z Bestiami, które mają zabić.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Pilnuj range 12 yardów, aby Blood Nova nie zadawała innym obrażeń.',
               },
               selectedType[0] == '10'
                   ? {
                       'type': 'string',
                       'text':
-                          'Boss co jakiś czas będzie przyzywał 2 bestie. Rzuć corruption na obie bestie i wróć do bicia bossa.',
+                          'Boss co jakiś czas będzie przyzywał 2 Bestie. Rzuć Corruption na obie Bestie i wróć do bicia Bossa.',
                     }
                   : {
                       'type': 'string',
                       'text':
-                          'Boss co jakiś czas będzie przyzywał 5 bestii. Rzuć corruption na 3-5 bestii i wróć do bicia bossa.',
+                          'Boss co jakiś czas będzie przyzywał 5 Bestii. Rzuć Corruption na 3-5 Bestii i wróć do bicia Bossa.',
                     },
-              {'type': 'header', 'text': 'Dodatkowe informacje:'},
               {
                 'type': 'string',
                 'text':
-                    'Jeśli boss rzuci na ciebie Mark of the Fallen Champion, zmień buffa na Demon Armor, aby healerom było łatwiej utrzymać cię przy życiu.',
+                    'Jeśli Boss rzuci na Ciebie Mark of the Fallen Champion, zmień buffa na Demon Armor, aby Healerom było łatwiej utrzymać Cię przy życiu.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Czasem użycie Soulshattera sprawi, że bestia zmieni target, ale na wszelki wypadek trzymaj teleport pod ręką.',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Możesz dać teleport przy barierkach, aby uciekać, jeśli bestia cię goni.',
+                    'Możesz dać teleport przy barierkach, aby uciekać, jeśli Bestia cię goni.',
               },
             ]
           },
@@ -414,7 +398,7 @@ class ICC {
                 'subImg': 'pungent_blight.jpg',
                 'subDesc': [
                   'Boss wybucha, zadając ogromne obrażenia wszystkim na sali.',
-                  'Obrażenia z wybuchu mogą zostać zmniejszone przez stacki Gas Spore.',
+                  'Obrażenia z wybuchu mogą zostać zmniejszone przez stacki debuffa Gas Spore.',
                 ]
               },
               {
@@ -433,9 +417,9 @@ class ICC {
                   'subName': 'Malleable Goo',
                   'subImg': 'malleable_goo.jpg',
                   'subDesc': [
-                    'Boss rzuca kule szlamu w losową osobę.',
-                    'Pod targetem pojawia się zielona plama, która oznacza miejsce',
-                    'Wybuch zadaje obrażenia i wydłuża cast speed o 200% wszystkim w range 5 yardów od miejsca wybuchu.',
+                    'Boss rzuca kulę szlamu w losową osobę.',
+                    'Pod targetem pojawia się zielona plama, w którą za chwilę trafi kula szlamu i wybuchnie.',
+                    'Wybuch zadaje obrażenia i wydłuża Cast Speed o 200% wszystkim w range 5 yardów od miejsca wybuchu.',
                   ]
                 },
             ],
@@ -459,14 +443,8 @@ class ICC {
               },
               {
                 'type': 'string',
-                'text': selectedType[0] == '25'
-                    ? 'Na pomarańczowo zaznaczone są Stacking Pointy, czyli wyznaczone wcześniej osoby. Na niebiesko pozostałe Rdpsy i Healerzy, którzy nie poszli pod bossa.'
-                    : 'Na pomarańczowo zaznaczony jest Stacking Point, czyli wyznaczona wcześniej osoba. Na niebiesko pozostałe Rdpsy i Healerzy, którzy nie poszli pod bossa.',
-              },
-              {
-                'type': 'string',
                 'text':
-                    'Trzymaj range 8 yardów, aby nie zarażać debuffem Vile Gas.',
+                    'Mdpsy i część Healerów idą pod Bossa, a reszta rozbiega się po sali, utrzymując range 8 yardów, aby nie zarażać debuffem Vile Gas.',
               },
               {
                 'type': 'string',
@@ -476,8 +454,12 @@ class ICC {
               },
               {
                 'type': 'string',
+                'text': 'Nie pozwól, aby 2 osoby z Gas Spore były obok siebie.',
+              },
+              {
+                'type': 'string',
                 'text':
-                    'Po 3 falach Gas Sporów, boss castuje Pungent Blight. Chwilę przed końcem castu, użyj Shadow Ward, aby zaabsorbować część obrażeń.',
+                    'Po 3 falach Gas Sporów, Boss castuje Pungent Blight. Chwilę przed końcem, użyj Shadow Ward, aby zaabsorbować część obrażeń.',
               },
               if (selectedType[1] == 'hc')
                 {
@@ -485,16 +467,6 @@ class ICC {
                   'text':
                       'Jeśli pojawi się mała, zielona plama, za chwile trafi tam Malleable Goo. Jeśli jesteś w range 5 yardów od tej plamy, odsuń się i zaczekaj aż wybuchnie.',
                 },
-              {'type': 'header', 'text': 'Dodatkowe informacje:'},
-              {
-                'type': 'string',
-                'text': 'Nie pozwól, aby 2 osoby z Gas Spore były obok siebie.',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Czasem zdarza się, że nie zauważysz zielonej plamy, bo zasłoni ci ją teleport. Dlatego staraj się nie stać na teleporcie.',
-              },
             ]
           },
         ]
@@ -512,7 +484,7 @@ class ICC {
                 'subName': 'Ooze Flood',
                 'subImg': 'ooze_flood.jpg',
                 'subDesc': [
-                  'Co jakiś czas, ćwierć sali zostaje zalane szlamem, który zadaje obrażenia i nakłada stacki debuffa, który spowalnia gracza.',
+                  'Co jakiś czas, ćwierć sali zostaje zalana szlamem, który zadaje obrażenia i nakłada stacki debuffa, spowalniającego gracza.',
                   'Zalana zostaje tylko zewnętrzna część sali.',
                 ]
               },
@@ -521,10 +493,10 @@ class ICC {
                 'subImg': 'mutated_infection.jpg',
                 'subDesc': [
                   'Boss rzuca debuff na losową osobę.',
-                  'Osoba z debuffem dostaje obrażenia, a po otrzymaniu dispella tworzy się mały Ooze.',
-                  'Mały Ooze powinien być połączony z dużym Ooze.',
-                  'Jeśli nie ma dużego Ooze, to trzeba zaczekać, aż będą 2 małe Oozy i połączyć je ze sobą.',
-                  'Osoba targetowana przez Ooze powinna stać bokiem lub tyłem do rajdu, aby nie stworzyć zielonej plamy pod nogami innych graczy.',
+                  'Osoba z debuffem dostaje obrażenia, a po otrzymaniu dispella wyskakuje z niej mały Ooze.',
+                  'Mały Ooze powinien być połączony z dużym Oozem.',
+                  'Jeśli nie ma dużego Ooza, zaczekaj, aż będą 2 małe Oozy i połącz je ze sobą.',
+                  'Osoba targetowana przez Ooza, powinna stać bokiem lub tyłem do rajdu, aby nie zostawić zielonej plamy pod nogami innych graczy.',
                 ]
               },
               {
@@ -542,7 +514,7 @@ class ICC {
                   'subDesc': [
                     selectedType[0] == '10'
                         ? 'Boss wybiera 1 losową osobę i nakłada na nią debuff, który na chwilę wyłącza z walki tę osobę.'
-                        : 'Boss wybiera 3 losowe osoby i nakłada na nich debuff, który na chwilę wyłącza z walki te osoby.',
+                        : 'Boss wybiera 3 losowe osoby i nakłada na nie debuff, który na chwilę wyłącza z walki te osoby.',
                     'Debuff zadaje obrażenia wszystkim graczom w pobliżu.',
                     'Osoba z debuffem może zarazić innych w range 8 yardów.',
                   ]
@@ -551,7 +523,7 @@ class ICC {
                 'subName': 'Slime Spray',
                 'subImg': 'slime_spray.jpg',
                 'subDesc': [
-                  'Boss pluje szlamem w losowym kierunku, zadając obrażenia wszystkim na swojej drodze.',
+                  'Boss pluje szlamem w losowym kierunku, zadając obrażenia wszystkim przed sobą.',
                 ]
               },
             ],
@@ -563,33 +535,22 @@ class ICC {
             'shortDesc': 'Czyli jak udawać, że coś wiesz.',
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
-              {
-                'type': 'image',
-                'src': selectedType[1] == 'nm'
-                    ? 'rotface_nm.png'
-                    : 'rotface_hc.png',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Na niebiesko są Rdpsy i Healerzy, jasnoniebieski kolor to osoba z debuffem Mutated Plague, a czerwone kropki to Tankowie, na środku Main Tank z bossem, a na zewnątrz Off Tank czeka na Ooza.',
-              },
-              selectedType[1] == 'hc'
-                  ? {
-                      'type': 'string',
-                      'text':
-                          'Ustaw się między zewnętrznym i wewnętrznym pierścieniem i trzymaj range 8 yardów. Nie przekraczaj wewnętrznego pierścienia.',
-                    }
-                  : {
-                      'type': 'string',
-                      'text':
-                          'Ustaw się za plecami bossa i chowaj się za jego plecami, jeśli się obróci.',
-                    },
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'image',
+                  'src': 'rotface_hc.png',
+                },
               if (selectedType[1] == 'hc')
                 {
                   'type': 'string',
                   'text':
-                      'Co jakiś czas jedna ćwiartka pomieszczenia zostaje zalana zielonym szlamem. Jeśli po twojej stronie z kranów na ścianie leci szlam, uciekaj na inną ćwiartkę.',
+                      'Ustaw się między zewnętrznym i wewnętrznym pierścieniem (tym z czaszek na podłodze) i trzymaj range 8 yardów. Nie przekraczaj wewnętrznego pierścienia.',
+                },
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'string',
+                  'text':
+                      'Co jakiś czas jedna ćwiartka pomieszczenia zostaje zalana zielonym szlamem. Jeśli po Twojej stronie z kranów na ścianie leci szlam, uciekaj na inną ćwiartkę.',
                 },
               if (selectedType[1] == 'hc')
                 {
@@ -603,46 +564,33 @@ class ICC {
                     ? 'rotface_nm_mutated_plague.png'
                     : 'rotface_hc_mutated_plague.png',
               },
+              if (selectedType[1] == 'nm')
+                {
+                  'type': 'string',
+                  'text':
+                      'Ustaw się za plecami Bossa i chowaj się za jego plecami, jeśli obróci się w inną stronę.',
+                },
               {
                 'type': 'string',
-                'text':
-                    'Na niebiesko są Rdpsy i Healerzy, jasnoniebieski kolor to osoba z debuffem Mutated Plague, a czerwone kropki to Tankowie, na środku Main Tank z bossem, a na zewnątrz Off Tank z Oozem... lub bez.',
+                'text': selectedType[1] == 'hc'
+                    ? 'Jeśli dostaniesz debuff Mutated Infection, biegnij do Off Tanka, krążącego dookoła Rdpsów. Nie przebiegaj przez środek. Po dispellu wyskoczy z Ciebie mały Ooze, którego łączysz z dużym Oozem.'
+                    : 'Jeśli dostaniesz debuff Mutated Infection, biegnij do Off Tanka, krążącego dookoła Rdpsów. Po dispellu wyskoczy z Ciebie mały Ooze, którego łączysz z dużym Oozem.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Jeśli dostaniesz debuff Mutated Infection, biegnij do off tanka, krążącego po zewnętrznym pierścieniu. Nie przebiegaj przez środek. Po dispellu wyskoczy z ciebie mały Ooze, którego łączysz z dużym Oozem.',
+                    'Jeśli nie ma dużego Ooza, połącz 2 małe Oozy. Jeśli małego Ooza też nie ma, zaczekaj na niego i patrz się w ścianę.',
               },
-              {
-                'type': 'string',
-                'text':
-                    'Jeśli nie ma dużego Ooza, połącz go z małym. Jeśli małego Ooza też nie ma, zaczekaj na niego i patrz się w ścianę.',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Target Ooza zostawia przed sobą plamy zielonego szlamu, więc nie stój przodem do bossa, jeśli goni cię Ooze.',
-              },
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'string',
+                  'text':
+                      'Target Ooza zostawia przed sobą plamy zielonego szlamu, więc nie patrz w stronę Bossa, jeśli goni Cię Ooze.',
+                },
               {
                 'type': 'string',
                 'text':
                     'Po 5 połączeniach, duży Ooze wybucha. Po wybuchu małe kulki szlamu lecą w miejsca, w których stali gracze, więc przesuń się tam, gdzie nikt nie stał.',
-              },
-              {'type': 'header', 'text': 'Dodatkowe informacje:'},
-              {
-                'type': 'string',
-                'text':
-                    'Możesz używać Shadow Ward, aby zaabsorbować część obrażeń od Mutated Infection, jeśli dispelle są opóźnione.',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Jeśli dostałeś za dużo stacków z plamy i nie możesz z niej wyjść, poproś paladyna o Hand of Freedom.',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Duży Ooze zadaje obrażeń AoE, więc nie stój na jego drodze.',
               },
             ]
           },
