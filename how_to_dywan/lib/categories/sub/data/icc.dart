@@ -182,7 +182,7 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Jak wyjdą addy z twojej strony, rzuć na nie Corruption i bij Bossa.',
+                    'Jak wyjdą Addy z Twojej strony, rzuć na nie Corruption i bij Bossa.',
               },
               {
                 'type': 'string',
@@ -259,6 +259,15 @@ class ICC {
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {
+                'type': 'image',
+                'src': 'gunship.png',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Mdpsy zajmują wszystkie działa, a Rdpsy stoją przy krawędzi statku, aby mieć w zasięgu Addy na wrogim statku.',
+              },
+              {
                 'type': 'string',
                 'text':
                     'Zabijaj Riflemanów / Axethrowerów na wrogim statku, aby nie zdobyli zbyt dużo doświadczenia. Jeśli ich zostawisz, będą zadawać coraz większe obrażenia.',
@@ -266,9 +275,18 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Jeśli pod Twoimi nogami pojawi się znak, wyjdź z niego. Spadająca rakieta zadaje obrażenia i odrzuca.',
+                    'Jeśli Mdpsy nie radzą sobie z Addami, możesz im pomóc.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Jeśli pod Twoimi nogami pojawi się znak, wyjdź z niego. Za chwilę spadnie tam rakieta, zada obrażenia wszystkim w pobliżu i odrzuci ich.',
               },
               {'type': 'header', 'text': 'Below Zero:'},
+              {
+                'type': 'image',
+                'src': 'gunship_below_zero.png',
+              },
               {
                 'type': 'string',
                 'text':
@@ -277,12 +295,12 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Nie skacz obok Muradina, bo plecak zadaje obrażenia AoE i możesz przebić Aggro.',
+                    'Nie skacz obok Muradina (z prawej strony), bo plecak zadaje obrażenia AoE i możesz przebić Aggro.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Wróć na statek sojuszników, jak Magowi zostanie 20% hp. DoTki go dobiją.',
+                    'Wróć na statek sojuszników, jak Magowi zostanie 20% HP. DoTki go dobiją.',
               },
             ]
           },
@@ -303,7 +321,7 @@ class ICC {
                 'subDesc': [
                   'Boss rzuca debuff na losową osobę.',
                   'Debuff zadaje spore obrażenia.',
-                  'Jeśli osoba z debuffem umiera, boss leczy się.',
+                  'Jeśli osoba z debuffem umiera, Boss leczy się.',
                 ]
               },
               {
@@ -368,7 +386,7 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Możesz dać teleport przy barierkach, aby uciekać, jeśli Bestia cię goni.',
+                    'Możesz dać teleport przy barierkach, aby uciekać, jeśli Bestia Cię goni.',
               },
             ]
           },
@@ -709,7 +727,7 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Jeśli wybrał cię pomarańczowy Ooze, uciekaj od niego tak, jak pokazuje strzałka na zdjęciu. Omijaj plamy, jeśli są na twojej drodze.',
+                    'Jeśli wybrał Cię pomarańczowy Ooze, uciekaj od niego tak, jak pokazuje strzałka na zdjęciu. Omijaj plamy, jeśli są na Twojej drodze.',
               },
               {
                 'type': 'string',
@@ -739,7 +757,7 @@ class ICC {
                 {
                   'type': 'string',
                   'text':
-                      'Nie prowadź pomarańczowego Ooza przez target zielonego Ooza, bo możesz zostać odrzucony i pomarańczowy Ooze cię złapie.',
+                      'Nie prowadź pomarańczowego Ooza przez target zielonego Ooza, bo możesz zostać odrzucony i pomarańczowy Ooze Cię złapie.',
                 },
               {'type': 'header', 'text': 'Faza 2:'},
               {
@@ -964,7 +982,7 @@ class ICC {
                 'subImg': 'incite_terror.jpg',
                 'subDesc': [
                   'Boss biegnie na środek sali, wzlatuje w powietrze i nakłada Fear na wszystkich graczy.',
-                  'Po zniknięciu Feara trzeba utrzymać range 8 yardów, a boss zadaje wszystkim obrażenia. Im więcej graczy w pobliżu, tym większe obrażenia.',
+                  'Po zniknięciu Feara trzeba utrzymać range 8 yardów, a Boss zadaje wszystkim obrażenia. Im więcej graczy w pobliżu, tym większe obrażenia.',
                 ]
               },
             ],
@@ -993,7 +1011,7 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Około 5-10 sekund przed końcem debuffa u osoby, która ma Ciebie ugryźć, podbiegnij do niej, stań przed nią i bij bossa. Jak zostaniesz ugryziony, wróć na miejsce.',
+                    'Około 5-10 sekund przed końcem debuffa u osoby, która ma Ciebie ugryźć, podbiegnij do niej, stań przed nią i bij Bossa. Jak zostaniesz ugryziony, wróć na miejsce.',
               },
               {
                 'type': 'string',
@@ -1009,7 +1027,7 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Co jakiś czas boss rzuca Swarming Shadows na losową osobę, która powinna biec do najbliższej ściany i wzdłuż ściany oddalać się od bossa.',
+                    'Co jakiś czas Boss rzuca Swarming Shadows na losową osobę, która powinna biec do najbliższej ściany i wzdłuż ściany oddalać się od Bossa.',
               },
               {
                 'type': 'string',
@@ -1020,12 +1038,12 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    '2 razy w trakcie walki boss używa Incite Terror. Biegnie wtedy na środek pomieszczenia, wzlatuje w powietrze i rzuca Fear na cały raid.',
+                    '2 razy w trakcie walki Boss używa Incite Terror. Biegnie wtedy na środek pomieszczenia, wzlatuje w powietrze i rzuca Fear na cały raid.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Jak skończy się Fear, ustaw się na range 8 yardów, ale tak, aby mieć range na bossa. Mdpsy muszą się dostosować do Rdpsów.',
+                    'Jak skończy się Fear, ustaw się na range 8 yardów, ale tak, aby mieć range na Bossa. Mdpsy muszą się dostosować do Rdpsów.',
               },
             ]
           },
@@ -1079,7 +1097,7 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Co jakiś czas będą pojawiać się różne addy. Priorytet zabijania: Blazing Skeleton > Risen Archmage > Gluttonous Abomination > Suppresser.',
+                    'Co jakiś czas będą pojawiać się różne Addy. Priorytet zabijania: Blazing Skeleton > Risen Archmage > Gluttonous Abomination > Suppresser.',
               },
               {
                 'type': 'string',
@@ -1192,8 +1210,8 @@ class ICC {
               {
                 'type': 'string',
                 'text': selectedType[0] == '10'
-                    ? 'Co jakiś czas Boss wybiera 3 osoby, które dostają debuff Unchained Magic. Osoby te dostają stacki Instability za każdy Cast.'
-                    : 'Co jakiś czas Boss wybiera 6 osób, które dostają debuff Unchained Magic. Osoby te dostają stacki Instability za każdy Cast.',
+                    ? 'Co jakiś czas Boss wybiera 3 osoby, które dostają debuff Unchained Magic. Osoby te dostają stacki Instability za każdy cast.'
+                    : 'Co jakiś czas Boss wybiera 6 osób, które dostają debuff Unchained Magic. Osoby te dostają stacki Instability za każdy cast.',
               },
               if (selectedType[1] == 'hc')
                 {
@@ -1204,8 +1222,8 @@ class ICC {
               {
                 'type': 'string',
                 'text': selectedType[1] == 'nm'
-                    ? 'Po 5 sekundach od ostatniego Casta, lub od końca Unchained Magic, stacki wybuchają, zadając obrażenia graczowi. Im więcej stacków, tym większe obrażenia.'
-                    : 'Po 5 sekundach od ostatniego Casta, lub od końca Unchained Magic, stacki wybuchają, zadając obrażenia graczowi i wszystkim w range 20 yardów. Im więcej stacków, tym większe obrażenia.',
+                    ? 'Po 5 sekundach od ostatniego casta, lub od końca Unchained Magic, stacki wybuchają, zadając obrażenia graczowi. Im więcej stacków, tym większe obrażenia.'
+                    : 'Po 5 sekundach od ostatniego casta, lub od końca Unchained Magic, stacki wybuchają, zadając obrażenia graczowi i wszystkim w range 20 yardów. Im więcej stacków, tym większe obrażenia.',
               },
               {
                 'type': 'string',
@@ -1273,7 +1291,7 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Po zbiciu HP bossa do 35%, zaczyna się faza 2. Boss już nie odlatuje, ale co jakiś czas rzuca Frost Beacon na 1 losową osobę.',
+                    'Po zbiciu HP Bossa do 35%, zaczyna się faza 2. Boss już nie odlatuje, ale co jakiś czas rzuca Frost Beacon na 1 losową osobę.',
               },
               if (selectedType[1] == 'hc')
                 {
@@ -1357,7 +1375,7 @@ class ICC {
                       ? 'Osoba w środku musi zabić demona, jednocześnie przerywając jego casty i pilnując, aby NPC przeżył.'
                       : 'Wszyscy biegną za wyznaczoną osobą do ściany, a później wzdłuż ściany, dookoła pomieszczenia.',
                   selectedType[1] == 'nm'
-                      ? 'Jeśli osoba lub NPC w środku umrze, albo demon skończy Casta, to Boss dostaje enrage i zaczyna wszystkich zabijać.'
+                      ? 'Jeśli osoba lub NPC w środku umrze, albo demon skończy casta, to Boss dostaje enrage i zaczyna wszystkich zabijać.'
                       : 'Wszyscy muszą uważać, aby nie złapał ich żaden duch (Wicked Spirit).',
                 ]
               },
@@ -1457,14 +1475,41 @@ class ICC {
                 'text':
                     'Tanki trzymają Bossa na środku, a reszta rajdu stackuje się za plecami Bossa, aby Val\'kyrie leciały w jedną stronę.',
               },
-              //TODO Lich King tactics
+              {
+                'type': 'string',
+                'text':
+                    'Zostawiamy teleport na max range po tej samej stronie, po której stoi rajd. Dzięki temu trzeba biegać do Val\'kyrii.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Jeśli dostaniemy debuff Defile, odbiegamy na bok. Po chwili pojawi się pod nami plama, która powiększa się za każdym razem, jak zada komuś obrażenia.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Nie zostawiamy Defile po tej stronie, po której stoi rajd, bo później Val\'kyrie wlecą w to Defile i będzie problem.',
+              },
               {
                 'type': 'image',
                 'src': 'lich_king_phase_2_valkyr.png',
               },
               {
                 'type': 'string',
-                'text': 'a',
+                'text': selectedType[0] == '10'
+                    ? 'Co jakiś czas Boss przyzywa 1 Val\'kyrie, która łapie 1 losową osobę, leci z nią w stronę najbliższej krawędzi i zrzuca ją z platformy.'
+                    : 'Co jakiś czas Boss przyzywa 3 Val\'kyrie, które łapią 3 losowe osoby, lecą z nimi w stronę najbliższej krawędzi i zrzucają je z platformy.',
+              },
+              {
+                'type': 'string',
+                'text': selectedType[1] == 'nm'
+                    ? 'Val\'kyrie trzeba zabić, zanim dolecą do krawędzi, aby uratować sojuszników.'
+                    : 'Val\'kyrie puszczają graczy po zbiciu HP do 50%, lecą w górę i castują Siphon Life, aby się uleczyć.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Jeśli złapie Cię Val\'kyria, nikt nie będzie jej bił. Przy krawędzi zacznij spamować teleport, aby wrócić na platformę. Teleport działa dopiero po zrzuceniu.',
               },
               {'type': 'header', 'text': 'Faza 2.5:'},
               {
@@ -1473,7 +1518,18 @@ class ICC {
               },
               {
                 'type': 'string',
-                'text': 'a',
+                'text':
+                    'Po zbiciu HP Bossa do 40%, zaczyna się faza 2.5. Rajd biegnie za Tankami do krawędzi platformy. Nie ma Shambling Horrorów, więc obaj Tankowie są wolni.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'W tej fazie pojawiają się pojedynczo 4 Raging Spirity, które są łapane przez obu Tanków. Zabijamy je jak najszybciej.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Rozbiegamy się, żeby nie stać w zbyt dużej grupie i nie wchodzimy przed Raging Spirity. Jak wyjdzie następny Raging Spirit, to zaczynamy go bić, a poprzedniego zostawiamy.',
               },
               {'type': 'header', 'text': 'Faza 3:'},
               {
@@ -1482,12 +1538,55 @@ class ICC {
               },
               {
                 'type': 'string',
-                'text': 'a',
+                'text':
+                    'Po pojawieniu się 4 Raging Spiritu, zewnętrzna część platformy znowu się rozpada, a cały rajd biegnie na wewnętrzną platformę.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Tank trzyma Bossa przy krawędzi, a reszta rajdu stackuje się między Bossem, a krawędzią platformy. Jeśli dostaniemy debuff Defile, odbiegamy na bok i zostawiamy plamę.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Co jakiś czas Boss przyzywa grupę duchów (Vile Spirit), które po chwili lecą w stronę graczy. Po złapaniu gracza, duchy wybuchają, zadając obrażenia wszystkim w pobliżu.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Jeśli duchy lecą w naszą stronę, przed Tanka wychodzi tzw. Soaker, czyli osoba, która jest w stanie złapać wszystkie duchy i przeżyć. Zwykle jest to Shadow Priest.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Po zniknięciu duchów pojawiają się następne, a cały rajd przebiega na drugą stronę, ustawiając się w taki sam sposób.',
+              },
+              {
+                'type': 'image',
+                'src': 'lich_king_hc_frostmourne_room.png',
+              },
+              {
+                'type': 'string',
+                'text': selectedType[1] == 'nm'
+                    ? 'Co jakiś czas Boss castuje Harvest Soul, który losową osobę do osobnego pomieszczenia. W środku jest NPC i demon. Wybrana osoba musi zabić demona zanim on zabije NPC i jednocześnie przerywać casty demona.'
+                    : 'Co jakiś czas Boss castuje Harvest Soul, który przenosi cały rajd do osobnego pomieszczenia. Wszyscy biegną za wyznaczoną osobą do ściany, a później wzdłuż ściany, dookoła pomieszczenia. Rdpsy zabijają zbliżające się duchy.',
+              },
+              {
+                'type': 'string',
+                'text': selectedType[1] == 'hc'
+                    ? 'Jeśli ktoś umrze w pomieszczeniu, to Boss dostaje enrage i zaczyna wszystkich zabijać.'
+                    : 'Jeśli gracz umrze w pomieszczeniu, demon skończy casta lub zabije NPC, to Boss dostaje enrage i zaczyna wszystkich zabijać.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Faza trwa do 10% HP Bossa. Wtedy Boss zabija cały rajd, trwa nudna cutscenka, NPC łapie Lich Kinga i wskrzesza nas, abyśmy mogli zabić Bossa.',
               },
               {'type': 'header', 'text': 'Faza 4:'},
               {
                 'type': 'string',
-                'text': 'a',
+                'text':
+                    'W tej fazie nie ma żadnych mechanik. Wystarczy bić Bossa i nie trzeba na nic uważać.',
               },
             ]
           },
@@ -1496,5 +1595,4 @@ class ICC {
     ];
     return iccList;
   }
-//TODO ICC tactics
 }
