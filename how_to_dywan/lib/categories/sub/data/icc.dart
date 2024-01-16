@@ -610,16 +610,16 @@ class ICC {
                 'subImg': 'slime_puddle.jpg',
                 'subDesc': [
                   'Boss rzuca 2 butelki z zielonym szlamem w losowe osoby.',
-                  'Butelki tworzą zielone plamy, które zadają obrażenia i stale się powiększają.',
+                  'Butelki tworzą zielone plamy, które się powiększają z czasem.',
                 ]
               },
               {
                 'subName': 'Unstable Experiment',
                 'subImg': 'unstable_experiment.jpg',
                 'subDesc': [
-                  'Boss tworzy małego Ooze, który biegnie do losowej osoby.',
-                  'Target zielonego Ooza nie może się ruszać, a Ooze goni go. Jeśli Ooze dotknie target, to wybucha, zadając spore obrażenia i odrzucając wszystkich, stojących w pobliżu. Otrzymane obrażenia dzielą się na wszystkich graczy w pobliżu.',
-                  'Target pomarańczowego Ooza musi uciekać, aby Ooze go nie dotknął. Jeśli Ooze dotknie target, to wybucha, zwykle zabijając cały rajd.',
+                  'Boss tworzy małego Ooza, który biegnie do losowej osoby.',
+                  'Target zielonego Ooza nie może się ruszać. Jeśli Ooze dotknie target, to wybucha, zadając spore obrażenia i odrzucając wszystkich, stojących w pobliżu. Otrzymane obrażenia dzielą się na wszystkich graczy w pobliżu.',
+                  'Target pomarańczowego Ooza musi uciekać, aby Ooze go nie dotknął. Jeśli Ooze dotknie target, to wybucha, zabijając cały rajd.',
                   'Oba Oozy po 20 sekundach zmieniają targety.',
                 ]
               },
@@ -630,8 +630,8 @@ class ICC {
                   selectedType[0] == '10'
                       ? 'Boss rzuca kule szlamu w 1 losową osobę.'
                       : 'Boss rzuca kule szlamu w 3 losowe osoby.',
-                  'Kule odbijają się 2 razy od podłogi, a przy następnym upadku wybuchają.',
-                  'Wybuch zadaje obrażenia i wydłuża cast speed o 200% wszystkim w range 5 yardów od miejsca wybuchu.',
+                  'Kule odbijają się 2 razy od podłogi, a za 3 razem wybuchają.',
+                  'Wybuch zadaje obrażenia i wydłuża Cast Speed o 200% wszystkim w range 5 yardów od miejsca wybuchu.',
                 ]
               },
               {
@@ -642,16 +642,17 @@ class ICC {
                   'Plamy zadają spore obrażenia i wybuchają po 20 sekundach.',
                 ]
               },
-              {
-                'subName': 'Unbound Plague',
-                'subImg': 'unbound_plague.jpg',
-                'subDesc': [
-                  'Boss nakłada debuff na losową osobę.',
-                  'Osoba z debuffem otrzymuje obrażenia co 1 sekundę i zabija gracza, jeśli nie przekaże debuffa dalej.',
-                  'Po przekazaniu plagi na inną osobę, gracz otrzymuje 1 stack debuffa, zwiększającego otrzymywane obrażenia z plagi i skraca czas, po którym trzeba oddać plagę, żeby nie umrzeć. Ten debuff trwa 1 minutę',
-                  'Pierwszą plagę powinno się oddać po około 6-8 sekundach, a każdy stack debuffa skraca ten czas.',
-                ]
-              },
+              if (selectedType[1] == 'hc')
+                {
+                  'subName': 'Unbound Plague',
+                  'subImg': 'unbound_plague.jpg',
+                  'subDesc': [
+                    'Boss nakłada debuff na losową osobę.',
+                    'Osoba z debuffem otrzymuje obrażenia co 1 sekundę i zabija gracza, jeśli nie przekaże debuffa dalej.',
+                    'Po przekazaniu plagi na inną osobę, gracz otrzymuje 1 stack debuffa, zwiększającego otrzymywane obrażenia z plagi i skraca czas, po którym trzeba oddać plagę, żeby nie umrzeć. Ten debuff trwa 1 minutę',
+                    'Pplagę powinno się oddać po około 6-8 sekundach, a każdy stack debuffa skraca ten czas.',
+                  ]
+                },
             ],
           },
           {
@@ -663,22 +664,17 @@ class ICC {
               {'type': 'header', 'text': 'Faza 1:'},
               {
                 'type': 'image',
-                'src': 'professor_putricide_green_ooze.png',
+                'src': 'professor_putricide_fight_start.png',
               },
               {
                 'type': 'string',
                 'text':
-                    'Zielona kropka to miejsce spawnu Zielonego Ooza. Jeśli się stackujesz, ustawiaj się tak, aby lecieć na zmianę do stołu i na środek.',
+                    'Jeśli Boss castuje Unstable Experiment, po chwili pojawi się Ooze. Pierwszy Ooze jest zielony, drugi pomarańczowy i tak na zmianę.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Jeśli boss castuje Unstable Experiment, po chwili pojawi się Ooze. Pierwszy Ooze jest zielony, drugi pomarańczowy i tak na zmianę.',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Co jakiś czas boss rzuci butelki w 2 losowe osoby, tworząc zielone plamy szlamu. Plamy powiększają się, ale Off Tank je zmniejsza.',
+                    'Co jakiś czas Boss rzuci butelki w 2 losowe osoby, tworząc zielone plamy szlamu. Plamy powiększają się, ale Off Tank może je zmniejszyć.',
               },
               if (selectedType[1] == 'hc')
                 {
@@ -694,17 +690,31 @@ class ICC {
                 },
               {
                 'type': 'image',
+                'src': 'professor_putricide_green_ooze.png',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Target zielonego Ooza nie może się ruszać, ale Warlock może użyć teleport. Target nadal może castować.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Stackujemy się przy Targecie na zmianę od strony stołu (przy Targecie) i od strony środka (5 yardów od Targetu). W ten sposób lecimy do stołu lub na środek.',
+              },
+              {
+                'type': 'image',
                 'src': 'professor_putricide_orange_ooze.png',
               },
               {
                 'type': 'string',
                 'text':
-                    'Jeśli wybrał cię pomarańczowy Ooze, uciekaj od niego tak, jak pokazuje strzałka na zdjęciu. Omijaj pomarańczowe plamy, jeśli są.',
+                    'Jeśli wybrał cię pomarańczowy Ooze, uciekaj od niego tak, jak pokazuje strzałka na zdjęciu. Omijaj plamy, jeśli są na twojej drodze.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Po jakimś czasie oba Oozy zmieniają target, więc staraj się nie stać przy nich na zmianie targetu, bo możesz nie zdążyć zareagować. Zmianę targetu może też przyspieszyć Hand of Protection rzucone na aktualny target.',
+                    'Po jakimś czasie oba Oozy zmieniają Target, więc staraj się nie stać przy nich, bo możesz nie zdążyć zareagować. Zmianę Targetu może też przyspieszyć Hand of Protection rzucone na aktualny Target.',
               },
               if (selectedType[1] == 'hc')
                 {'type': 'header', 'text': 'Faza 1.5:'},
@@ -717,13 +727,13 @@ class ICC {
                 {
                   'type': 'string',
                   'text':
-                      'Po zbiciu HP bossa do 80%, zostają przyzwane 2 dodatkowe Oozy: zielony i pomarańczowy. Połowa rajdu dostaje debuff z zielonym kolorem, a druga połowa z pomarańczowym. Można bić tylko tego Ooza, który ma taki sam kolor jak twój debuff.',
+                      'Po zbiciu HP Bossa do 80%, zostają przyzwane 2 dodatkowe Oozy: zielony i pomarańczowy. Połowa rajdu dostaje debuff z zielonym kolorem, a druga połowa z pomarańczowym. Można bić tylko Ooza w swoim kolorze.',
                 },
               if (selectedType[1] == 'hc' && selectedType[0] == '10')
                 {
                   'type': 'string',
                   'text':
-                      'Po zbiciu HP bossa do 80%, zostają przyzwane 2 dodatkowe Oozy: zielony i pomarańczowy.',
+                      'Po zbiciu HP Bossa do 80%, zostają przyzwane 2 dodatkowe Oozy: zielony i pomarańczowy.',
                 },
               if (selectedType[1] == 'hc')
                 {
@@ -741,24 +751,25 @@ class ICC {
                   ? {
                       'type': 'string',
                       'text':
-                          'Co jakiś czas boss rzuci Malleable Goo na 3 losowych Rdpsów. Nie daj się trafić.',
+                          'Co jakiś czas Boss rzuci Malleable Goo na 3 losowych Rdpsów. Jeśli Cię trafi, zada Ci spore obrażenia i wydłuży Cast Time o 200%.',
                     }
                   : {
                       'type': 'string',
                       'text':
-                          'Co jakiś czas boss rzuci Malleable Goo na 1 losowego Rdpsa. Nie daj się trafić.',
+                          'Co jakiś czas Boss rzuci Malleable Goo na 1 losowego Rdpsa. Jeśli Cię trafi, zada Ci spore obrażenia i wydłuży Cast Time o 200%.',
                     },
               {
                 'type': 'string',
                 'text':
-                    'Main tank prowadzi bossa tak, aby na timerze Chocking Gas Bomb, boss był przy ścianie. Na ziemi pojawiają się 2 małe, pomarańczowe plamy z butelkami na środku. Uciekaj od nich.',
+                    'Main tank prowadzi Bossa tak, aby na timerze Chocking Gas Bomb, Boss był przy ścianie. Na ziemi pojawiają się 2 małe, pomarańczowe plamy z butelkami na środku. Uciekaj od nich.',
               },
               if (selectedType[1] == 'hc')
                 {'type': 'header', 'text': 'Faza 2.5:'},
               if (selectedType[1] == 'hc')
                 {
                   'type': 'string',
-                  'text': 'To samo co w fazie 1.5.',
+                  'text':
+                      'To samo co w fazie 1.5. Ta faza zaczyna się po zbiciu HP Bossa do 35%.',
                 },
               if (selectedType[1] == 'hc')
                 {
@@ -774,7 +785,7 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'W tej fazie jest wszystko co w fazie 2, ale bez Oozów.',
+                    'W tej fazie jest wszystko co w fazie 2, ale nie pojawiają się nowe Oozy.',
               },
               {
                 'type': 'string',
@@ -785,22 +796,6 @@ class ICC {
                 'type': 'string',
                 'text':
                     'Jeśli Malleable Goo leci w stronę zestackowanych Rdpsów, zwykle ucieka się w lewo lub w prawo. Po wybuchu, wróć na miejsce.',
-              },
-              {'type': 'header', 'text': 'Dodatkowe informacje:'},
-              {
-                'type': 'string',
-                'text':
-                    'Jeśli goni cię Ooze, nie prowadź go przez Chocking Gas Bomb.',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Unbound Plague zwykle oddaje się w jednym kierunku. Jeśli dostałeś od kogoś z lewej, oddaj w prawo.',
-              },
-              {
-                'type': 'string',
-                'text':
-                    'Curse of Tongues wydłuża zmianę targetu na Oozach, dzięki czemu jest nieco więcej czasu na reakcję.',
               },
             ]
           },
@@ -819,8 +814,8 @@ class ICC {
                 'subName': 'Kinetic Bomb',
                 'subImg': 'kinetic_bomb.jpg',
                 'subDesc': [
-                  'Kula, która powoli spada na ziemię, a po dotknięciu podłogi odrzuca wszystkich graczy.',
-                  'Kule powinny być podbijane przez zadanie obrażeń zanim spadną na ziemię. Zwykle podbija je Hunter.',
+                  'Kula, która powoli spada na ziemię, a po dotknięciu podłogi, odrzuca wszystkich graczy.',
+                  'Kule można podbić, zadając im obrażenia, zanim spadną na ziemię. Zwykle podbija je Hunter.',
                   'Kule nie mogą być podbijane za pomocą DoTek.',
                 ]
               },
@@ -845,7 +840,7 @@ class ICC {
                 'subDesc': [
                   'Taldaram tworzy ulepszoną kulę ognia, która leci do losowej osoby.',
                   'Kula zmniejsza się po przeleceniu obok innego gracza.',
-                  'Im mniejsza kula, tym mniejsze obrażenia zadaje po zderzeniu z targetem.',
+                  'Im mniejsza kula, tym mniejsze obrażenia zadaje po trafieniu w Target.',
                 ]
               },
               if (selectedType[1] == 'hc')
@@ -853,7 +848,7 @@ class ICC {
                   'subName': 'Shadow Prison',
                   'subImg': 'shadow_prison.jpg',
                   'subDesc': [
-                    'Każda sekunda ruchu nakłada 1 stack debuffa, który zadaje obrażenia co 1 sekundę.',
+                    'Każda sekunda ruchu nakłada 1 stack DoTki, która zadaje obrażenia co 1 sekundę.',
                   ]
                 },
             ],
@@ -882,7 +877,7 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Co jakiś czas będą pojawiać się Kinetic Bomby w losowych miejscach. Jeśli jest ryzyko, że dotkną ziemi, użyj Searing Pain, aby je podbić.',
+                    'Co jakiś czas będą pojawiać się Kinetic Bomby w losowych miejscach. Jeśli jest ryzyko, że dotkną ziemi, użyj Searing Pain, aby je podbić. Kinetic Bomby pojawiają się przez całą walkę.',
               },
               if (selectedType[1] == 'hc')
                 {
@@ -916,13 +911,12 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Jeśli aktywny jest Keleseth, po prostu nie używaj AoE.',
+                    'Jeśli aktywny jest Keleseth, po prostu nie używaj AoE i patrz pod nogi, aby nie wejść w Shock Vortex.',
               },
-              {'type': 'header', 'text': 'Dodatkowe informacje:'},
               {
                 'type': 'string',
                 'text':
-                    'Pierwszy aktywny boss to Valanar. Następnie Taldaram albo Keleseth. Jako trzeci jest ten, który jeszcze nie był aktywny.',
+                    'Jeśli fioletowa kulka przyleci do Ciebie, podbiegnij do Kelesetha, aby Tank mógł zabrać Ci kulkę.',
               },
             ]
           },
@@ -941,8 +935,8 @@ class ICC {
                 'subName': 'Vampiric Bite',
                 'subImg': 'vampiric_bite.jpg',
                 'subDesc': [
-                  'Boss gryzie osobę, która jest 3 pod względem threatu.',
-                  'Ugryziona osoba dostaje debuff, który zwiększa zadawane obrażenia o 100% i sprawia, że gracz nie generuje threatu.',
+                  'Boss gryzie osobę, która jest na 3 miejscu pod względem Threatu.',
+                  'Ugryziona osoba dostaje debuff, który zwiększa zadawane obrażenia o 100% i sprawia, że gracz nie generuje Threatu.',
                   'Co 1 minutę osoba z debuffem musi ugryźć inną osobę, a jeśli tego nie zrobi, zostaje opętana i zaczyna zabijać sojuszników.',
                 ]
               },
@@ -959,17 +953,17 @@ class ICC {
                 'subImg': 'pact_of_the_darkfallen.jpg',
                 'subDesc': [
                   selectedType[0] == '10'
-                      ? 'Boss wybiera 2 losowe osoby, i łączy je czerwonymi liniami.'
-                      : 'Boss wybiera 3 losowe osoby, i łączy je czerwonymi liniami.',
-                  'Osoby te muszą się jak najszybciej spotkać, aby linie zniknęły.',
-                  'Linie zadają obrażenia osobom w pobliżu.',
+                      ? 'Boss wybiera 2 losowe osoby, i łączy je czerwonymi linkami.'
+                      : 'Boss wybiera 3 losowe osoby, i łączy je czerwonymi linkami.',
+                  'Osoby te muszą się jak najszybciej spotkać, aby linki zniknęły.',
+                  'Linki zadają obrażenia osobom w pobliżu.',
                 ]
               },
               {
                 'subName': 'Incite Terror',
                 'subImg': 'incite_terror.jpg',
                 'subDesc': [
-                  'Boss biegnie na środek sali, wzlatuje w powietrze i nakłada Fear na wszystkich.',
+                  'Boss biegnie na środek sali, wzlatuje w powietrze i nakłada Fear na wszystkich graczy.',
                   'Po zniknięciu Feara trzeba utrzymać range 8 yardów, a boss zadaje wszystkim obrażenia. Im więcej graczy w pobliżu, tym większe obrażenia.',
                 ]
               },
@@ -989,22 +983,22 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Ustaw się tak, aby mieć bliżej do osoby, która ma cię ugryźć. Środek jest zarezerwowany dla Healerów, a platforma dla Mdpsów.',
+                    'Ustaw się tak, aby mieć bliżej do osoby, która ma Cię ugryźć. Środek jest zarezerwowany dla Healerów, a platforma dla Mdpsów.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Sprawdzaj, kiedy kończy się debuff na ugryzionych osobach, aby wiedzieć, kiedy twoja kolej. (DBM wyświetla tabelkę z ugryzionymi osobami i czasem do końca debuffa).',
+                    'Sprawdzaj, kiedy kończy się debuff na ugryzionych osobach, aby wiedzieć, kiedy Twoja kolej. (DBM wyświetla tabelkę z ugryzionymi osobami i czasem do końca debuffa).',
               },
               {
                 'type': 'string',
                 'text':
-                    'Około 5-10 sekund przed końcem debuffa u osoby, która ma ciebie ugryźć, podbiegnij do niej, stań przed nią i bij bossa. Jak zostaniesz ugryziony, wróć na miejsce.',
+                    'Około 5-10 sekund przed końcem debuffa u osoby, która ma Ciebie ugryźć, podbiegnij do niej, stań przed nią i bij bossa. Jak zostaniesz ugryziony, wróć na miejsce.',
               },
               {
                 'type': 'string',
                 'text':
-                    'Chwilę przed końcem debuffa, osoba, którą masz ugryźć, powinna podbiec do ciebie. Jeśli tego nie zrobi, a wiesz gdzie jest, szybko podbiegnij i ugryź. W ostateczności, ugryź Healera.',
+                    'Chwilę przed końcem debuffa, osoba, którą masz ugryźć, powinna podbiec do Ciebie. Jeśli tego nie zrobi, a wiesz gdzie jest, szybko podbiegnij i ugryź. W ostateczności, ugryź Healera.',
               },
               {
                 'type': 'image',
@@ -1015,13 +1009,13 @@ class ICC {
               {
                 'type': 'string',
                 'text':
-                    'Co jakiś czas boss używa Swarming Shadows na losowej osobie, która powinna biec do najbliższej ściany i wzdłuż ściany oddalać się od bossa.',
+                    'Co jakiś czas boss rzuca Swarming Shadows na losową osobę, która powinna biec do najbliższej ściany i wzdłuż ściany oddalać się od bossa.',
               },
               {
                 'type': 'string',
                 'text': selectedType[0] == '10'
-                    ? 'Boss wybiera 2 losowe osoby i łączy je za pomocą czerwonej linii. Osoby te muszą się zestackować jak najszybciej, aby połączenie zniknęło.'
-                    : 'Boss wybiera 3 losowe osoby i łączy je za pomocą czerwonej linii. Osoby te muszą się zestackować jak najszybciej, aby połączenie zniknęło. Najlepiej biec w stronę środka trójkąta, aby spotkać się w połowie drogi.',
+                    ? 'Boss wybiera 2 losowe osoby i łączy je za pomocą czerwonej linki. Osoby te muszą się zestackować jak najszybciej, aby połączenie zniknęło.'
+                    : 'Boss wybiera 3 losowe osoby i łączy je za pomocą czerwonej linki. Osoby te muszą się zestackować jak najszybciej, aby połączenie zniknęło. Najlepiej biec w stronę środka trójkąta, aby spotkać się w połowie drogi.',
               },
               {
                 'type': 'string',
@@ -1032,12 +1026,6 @@ class ICC {
                 'type': 'string',
                 'text':
                     'Jak skończy się Fear, ustaw się na range 8 yardów, ale tak, aby mieć range na bossa. Mdpsy muszą się dostosować do Rdpsów.',
-              },
-              {'type': 'header', 'text': 'Dodatkowe informacje:'},
-              {
-                'type': 'string',
-                'text':
-                    'Jeśli nikogo nie ugryziesz, po chwili zamienisz się w wampira i stracisz kontrolę nad postacią, która zacznie zabijać innych graczy.',
               },
             ]
           },
@@ -1070,7 +1058,7 @@ class ICC {
                 'subName': 'Lay Waste',
                 'subImg': 'lay_waste.jpg',
                 'subDesc': [
-                  'Blazing Skeleton zaczyna czar AoE, który zadaje obrażenia wszystkim graczom i bossowi.',
+                  'Blazing Skeleton zaczyna czar AoE, który zadaje obrażenia wszystkim graczom i Bossowi.',
                 ]
               },
             ],
@@ -1119,11 +1107,10 @@ class ICC {
                 'text':
                     'Jeśli zobaczysz Fioletową kulę, możesz ją zignorować. Kula kradnie manę, ale masz Lite Tap, więc na brak many nie powinieneś narzekać.',
               },
-              {'type': 'header', 'text': 'Dodatkowe informacje:'},
               {
                 'type': 'string',
                 'text':
-                    'Często Addy rzucają się na Healerów, którzy wyszli z portali, bo generują ogromne ilości Threatu. Zabijaj takie Addy zanim zabiją Healerów.',
+                    'Czasem Addy rzucają się na Healerów, którzy wyszli z portali, bo generują ogromne ilości Threatu. Zabijaj takie Addy zanim zabiją Healerów.',
               },
             ]
           },
@@ -1143,10 +1130,10 @@ class ICC {
                 'subImg': 'frost_beacon.jpg',
                 'subDesc': [
                   selectedType[0] == '10'
-                      ? 'Boss wybiera 2 targety w fazie 1 lub 1 target w fazie 2 i nakłada na nich debuff.'
+                      ? 'Boss wybiera 2 osoby w fazie 1 lub 1 osobę w fazie 2 i nakłada na nie debuff.'
                       : selectedType[1] == 'hc'
-                          ? 'Boss wybiera 5 targetów w fazie 1 lub 1 target w fazie 2 i nakłada na nich debuff.'
-                          : 'Boss wybiera 6 targetów w fazie 1 lub 1 target w fazie 2 i nakłada na nich debuff.',
+                          ? 'Boss wybiera 5 osób w fazie 1 lub 1 osobę w fazie 2 i nakłada na nie debuff.'
+                          : 'Boss wybiera 6 osób w fazie 1 lub 1 osobę w fazie 2 i nakłada na nie debuff.',
                   'Osoba z debuffem musi uciekać od rajdu na wyznaczone miejsce i po chwili zamienia się w lód.',
                 ]
               },
@@ -1161,11 +1148,12 @@ class ICC {
                 'subName': 'Unchained Magic',
                 'subImg': 'unchained_magic.jpg',
                 'subDesc': [
-                  'Boss nakłada debuff na 5 losowych osób.',
+                  selectedType[0] == '25'
+                      ? 'Boss nakłada debuff na 6 losowych osób.'
+                      : 'Boss nakłada debuff na 3 losowe osoby.',
                   'Osoba z debuffem otrzymuje 1 stack Instability po użyciu czarów.',
-                  'Można użyć czar instant po zakończeniu casta, aby otrzymać 1 stack Instability zamiast dwóch.',
                   'Po 5 sekundach od otrzymania ostatniego stacka Instability, osoba z debuffem wybucha, resetując stacki.',
-                  selectedType[1] == 'hc'
+                  selectedType[1] == 'nm'
                       ? 'Wybuch Instability zadaje obrażenia graczowi. Im więcej stacków, tym większe obrażenia.'
                       : 'Wybuch Instability zadaje ogromne obrażenia wszystkim w range 20 yardów. Im więcej stacków, tym większe obrażenia.',
                 ]
@@ -1188,7 +1176,126 @@ class ICC {
             'shortDesc': 'Czyli jak udawać, że coś wiesz.',
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
-              {'type': 'header', 'text': 'Dodatkowe informacje:'},
+              {'type': 'image', 'src': 'sindragosa_phase_1.png'},
+              {
+                'type': 'string',
+                'text':
+                    'Mdpsy stoją przy brzuchu Bossa, a Rdpsy nieco dalej. Walka zaczyna się około 2-3 sekundy po tym, jak Boss dotknie ziemi.',
+              },
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'image',
+                  'src': selectedType[0] == '10'
+                      ? 'sindragosa_10_hc_unchained_magic.png'
+                      : 'sindragosa_25_hc_unchained_magic.png'
+                },
+              {
+                'type': 'string',
+                'text': selectedType[0] == '10'
+                    ? 'Co jakiś czas Boss wybiera 3 osoby, które dostają debuff Unchained Magic. Osoby te dostają stacki Instability za każdy Cast.'
+                    : 'Co jakiś czas Boss wybiera 6 osób, które dostają debuff Unchained Magic. Osoby te dostają stacki Instability za każdy Cast.',
+              },
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'string',
+                  'text':
+                      'Osoby z debuffem rozbiegają się na wyznaczone miejsca (rysunek). Miejsce dla Warlocka jest po lewej stronie, lekko z przodu (na rysunku z prawej strony, kolor jasnoniebieski).',
+                },
+              {
+                'type': 'string',
+                'text': selectedType[1] == 'nm'
+                    ? 'Po 5 sekundach od ostatniego Casta, lub od końca Unchained Magic, stacki wybuchają, zadając obrażenia graczowi. Im więcej stacków, tym większe obrażenia.'
+                    : 'Po 5 sekundach od ostatniego Casta, lub od końca Unchained Magic, stacki wybuchają, zadając obrażenia graczowi i wszystkim w range 20 yardów. Im więcej stacków, tym większe obrażenia.',
+              },
+              {
+                'type': 'string',
+                'text': selectedType[1] == 'nm'
+                    ? 'Najpóźniej 5 sekund przed końcem timera Blistering Cold należy się zdestackować (destack trwa 5 sekund, więc trzeba zacząć 10 sekund przed timerem).'
+                    : 'Najpóźniej 5 sekund przed końcem timera Blistering Cold należy się zdestackować (destack trwa 5 sekund, więc trzeba zacząć 10 sekund przed timerem). Po destacku biegniemy do Mdpsów.',
+              },
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'string',
+                  'text':
+                      'Jeśli Boss Cię przyciągnie, a masz debuff Unchained Magic, nie używaj teleportu, ani nitro butów, bo dostaniesz kolejny stack Instability. Po prostu biegnij na miejsce Rdpsów.',
+                },
+              {'type': 'header', 'text': 'Faza lotna:'},
+              {
+                'type': 'image',
+                'src': selectedType[0] == '10'
+                    ? 'sindragosa_10_ice_tomb.png'
+                    : 'sindragosa_25_ice_tomb.png'
+              },
+              {
+                'type': 'string',
+                'text': selectedType[0] == '10'
+                    ? 'Co jakiś czas Boss odlatuje i wybiera 2 osoby, które po chwili zamienią się w Ice Tomby.'
+                    : selectedType[1] == 'nm'
+                        ? 'Co jakiś czas Boss odlatuje i wybiera 5 osób, które po chwili zamienią się w Ice Tomby.'
+                        : 'Co jakiś czas Boss odlatuje i wybiera 6 osób, które po chwili zamienią się w Ice Tomby.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Wybrane osoby ustawiają się na wyznaczonych miejscach (rysunek).',
+              },
+              {
+                'type': 'string',
+                'text': selectedType[0] == '10'
+                    ? 'Starszy DBM nie mówi, w którym miejscu masz stać. Zamiast tego pokazuje 2 nicki, według których ustala się kolejność: lewo, prawo.'
+                    : selectedType[1] == 'nm'
+                        ? 'Starszy DBM nie mówi, w którym miejscu masz stać. Zamiast tego pokazuje 5 nicków, według których ustala się kolejność: lewo, lewo, środek, prawo, prawo.'
+                        : 'Starszy DBM nie mówi, w którym miejscu masz stać. Zamiast tego pokazuje 6 nicków, według których ustala się kolejność: lewo, lewo, środek, środek, prawo, prawo.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Jak tylko wybrani gracze zamienią się w Ice Tomby, wszyscy chowają się za nimi, ale nie za szybko, bo też zamienisz się w Ice Tomba.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'W losowych miejscach spadają pojedynczo 4 bomby. Wszyscy muszą ustawić się tak, aby między nimi, a bombami był Ice Tomb. Po 4 bombie Boss wraca na ziemię.',
+              },
+              {'type': 'header', 'text': 'Faza 2:'},
+              {
+                'type': 'image',
+                'src': selectedType[1] == 'nm'
+                    ? 'sindragosa_nm_phase_2.png'
+                    : 'sindragosa_hc_phase_2.png'
+              },
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'string',
+                  'text':
+                      'Raid Leader decyduje, w którym momencie przebiegamy na drugą stronę Bossa (ustawienie na rysunku). Zwykle przebiegamy po fazie lotnej albo po Blisteringu.',
+                },
+              {
+                'type': 'string',
+                'text':
+                    'Po zbiciu HP bossa do 35%, zaczyna się faza 2. Boss już nie odlatuje, ale co jakiś czas rzuca Frost Beacon na 1 losową osobę.',
+              },
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'string',
+                  'text':
+                      'Jeśli dostaniesz Unchained Magic, nic nie rób. Do berserka daleko, a możesz zabić rajd. Jeśli przypadkiem dostaniesz stack Instability, biegnij w prawo.',
+                },
+              {
+                'type': 'string',
+                'text':
+                    'Wybrana osoba biegnie na wyznaczone miejsce (na rysunku jedno z jasnoniebieskich kółek). Kolejność jest zawsze taka sama: Melee, Melee, Neck, Melee, Melee, Melee, Neck... (patrz na rysunek).',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Dalsza kolejność jest zależna od Raid Leadera, DPSu na Bossie i stacków Mystic Buffet. Zwykle, po 7 Ice Tombach, każdy kolejny idzie do tzw. Afryki, czyli daleko od rajdu.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Wszystkie Ice Tomby poza 2 i 6 powinny być szybko zniszczone. 2 i 6 Ice Tomb zostają, aby zablokować Blistering Cold (Boss nie przyciągnie jeśli zasłania Cię Ice Tomb).',
+              },
             ]
           },
         ]
@@ -1207,7 +1314,7 @@ class ICC {
                 'subImg': 'defile.jpg',
                 'subDesc': [
                   'Boss rzuca debuff na losową osobę, pod którą po chwili pojawia się plama.',
-                  'Plama zadaje obrażenia i rośnie jeśli ktoś w niej stoi.',
+                  'Plama zadaje obrażenia i rośnie, jeśli ktoś w niej stoi.',
                 ]
               },
               {
@@ -1215,37 +1322,43 @@ class ICC {
                 'subImg': 'summon_valkyr.jpg',
                 'subDesc': [
                   selectedType[0] == '10'
-                      ? 'Boss przyzywa 1 Val\'kyrie, która łapie losową osobę i zabiera ja do krawędzi platformy, po czym zrzuca z niej.'
+                      ? 'Boss przyzywa 1 Val\'kyrię, która łapie losową osobę i zabiera ją do krawędzi platformy, po czym zrzuca z niej.'
                       : 'Boss przyzywa 3 Val\'kyrie, które łapią 3 losowe osoby i zabierają je do krawędzi platformy, po czym zrzucają z niej.',
                   'Val\'kyrie lecą do najbliższej krawędzi paltformy.',
-                  selectedType[1] == 'hc'
+                  selectedType[1] == 'nm'
                       ? 'Po śmierci, Val\'kyria puszcza gracza.'
-                      : 'Po zbiciu HP do 50%, Val\'kyria puszcza gracza, wzlatuje w powietrze i zaczyna castować Siphon Life na rajdzie.',
+                      : 'Po zbiciu HP do 50%, Val\'kyria puszcza gracza, wzlatuje w powietrze i zaczyna castować Siphon Life, aby okradać nas z HP.',
                 ]
               },
               {
                 'subName': 'Necrotic Plague',
                 'subImg': 'necrotic_plague.jpg',
                 'subDesc': [
-                  'Losowa osoba dostaje debuff, z którym jak najszybciej biegnie do off tanka, zatrzymując się za plecami Shambling Horroru (duży add) i po otrzymaniu dispella wraca na miejsce.',
-                  'Debuff po 5 sekundach zaczyna zadawać tak duże obrażenia, że 1 tick zabija gracza, a po śmierci lub dispellu przechodzi na innego gracza lub wroga, jeśli ktoś był w pobliżu.',
+                  'Losowa osoba dostaje debuff, z którym jak najszybciej biegnie do Off Tanka, zatrzymując się za plecami Shambling Horroru (duży Ddd) i po otrzymaniu dispella wraca na miejsce.',
+                  'Debuff po 5 sekundach zabija gracza, a po śmierci lub dispellu przechodzi na innego gracza lub wroga, jeśli ktoś był w pobliżu.',
                 ]
               },
               {
                 'subName': 'Raging Spirit',
                 'subImg': 'raging_spirit.jpg',
                 'subDesc': [
-                  'Boss wybiera losową osobę i tworzy jej wzmocnioną kopię, która może atakować tylko melee.',
-                  'Kopia używa skill Soul Shriek, który zadaje obrażenia wszystkim przed sobą do 15 yardów.',
+                  'Boss wybiera losową osobę i tworzy jej wzmocnioną kopię, która może atakować tylko Melee.',
+                  'Kopia używa Soul Shriek, który zadaje obrażenia wszystkim przed sobą do 15 yardów.',
                 ]
               },
               {
                 'subName': 'Harvest Soul',
                 'subImg': 'harvest_soul.jpg',
                 'subDesc': [
-                  'Boss przenosi losową osobę do specjalnego pomieszczenia.',
-                  'Osoba w środku musi zabić demona, jednocześnie przerywając jego casty i pilnując, aby npc przeżył.',
-                  'Jeśli osoba w środku umrze lub demon skończy casta, to boss dostaje enrage i zaczyna wszystkich zabijać.',
+                  selectedType[1] == 'nm'
+                      ? 'Boss przenosi losową osobę do specjalnego pomieszczenia.'
+                      : 'Boss przenosi cały rajd do specjalnego pomieszczenia.',
+                  selectedType[1] == 'nm'
+                      ? 'Osoba w środku musi zabić demona, jednocześnie przerywając jego casty i pilnując, aby NPC przeżył.'
+                      : 'Wszyscy biegną za wyznaczoną osobą do ściany, a później wzdłuż ściany, dookoła pomieszczenia.',
+                  selectedType[1] == 'nm'
+                      ? 'Jeśli osoba lub NPC w środku umrze, albo demon skończy Casta, to Boss dostaje enrage i zaczyna wszystkich zabijać.'
+                      : 'Wszyscy muszą uważać, aby nie złapał ich żaden duch (Wicked Spirit).',
                 ]
               },
               if (selectedType[1] == 'hc')
@@ -1253,16 +1366,16 @@ class ICC {
                   'subName': 'Summon Shadow Trap',
                   'subImg': 'summon_shadow_trap.jpg',
                   'subDesc': [
-                    'Pod losowym graczem pojawia się fioletowa plama.',
-                    'Po wejściu na plamę, wszyscy gracze w pobliżu zostają wystrzeleni z platformy.',
+                    'Boss rzuca pułapkę w losowego gracza. Pułapka po chwili aktywuje się, tworząc plamę.',
+                    'Po wejściu w plamę, wszyscy gracze w pobliżu zostają wystrzeleni z platformy.',
                   ]
                 },
               {
                 'subName': 'Summon Ice Sphere',
                 'subImg': 'summon_ice_sphere.jpg',
                 'subDesc': [
-                  'Boss przyzywa kulę lodu, która leci do losowej osoby.',
-                  'Po dotknięciu targetu, kula wybucha, odrzucając wszystkich w pobliżu.',
+                  'Boss przyzywa lodową kulę, która leci do losowej osoby.',
+                  'Po dotknięciu Targetu, kula wybucha, odrzucając wszystkich w pobliżu.',
                 ]
               },
             ],
@@ -1273,9 +1386,109 @@ class ICC {
             'desc': '',
             'shortDesc': 'Czyli jak udawać, że coś wiesz.',
             'sub': [
-              {'type': 'header', 'text': 'Przygotowanie:'},
               {'type': 'header', 'text': 'Faza 1:'},
-              {'type': 'header', 'text': 'Dodatkowe informacje:'},
+              {
+                'type': 'image',
+                'src': selectedType[1] == 'nm'
+                    ? 'lich_king_nm_phase_1.png'
+                    : 'lich_king_hc_phase_1.png',
+              },
+              {
+                'type': 'string',
+                'text': selectedType[1] == 'nm'
+                    ? 'Main Tank trzyma Bossa, a Off Tank czeka z boku, aż wyjdą Shambling Horrory. Mdpsy stoją za Bossem, Rdpsy nieco dalej.'
+                    : 'Main Tank prowadzi Bossa z lewej strony, Mdpsy idą za Bossem, a Rdpsy idą prawą stroną. Środkiem idzie Off Tank i ewentualnie Hunterzy.',
+              },
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'string',
+                  'text':
+                      'Boss rzuca w losową osobę pułapkę, która po chwili aktywuje się, tworząc plamę. Jeśli rzucił w kogoś obok Ciebie, przesuń się kawałek dalej (patrz na strzałki na rysunku).',
+                },
+              {
+                'type': 'string',
+                'text':
+                    'Co jakiś czas, losowa osoba dostanie debuff Necrotic Plague. Wybrana osoba biegnie do Off Tanka, zatrzymuje się za plecami Shambling Horroru i po otrzymaniu dispella wraca na miejsce.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Debuff ten przeskakuje na inny Target po śmierci lub dispellu. Jeśli w pobliżu nie było żadnego gracza, ani wroga, debuff znika.',
+              },
+              {'type': 'header', 'text': 'Faza 1.5:'},
+              {
+                'type': 'image',
+                'src': selectedType[1] == 'nm'
+                    ? 'lich_king_nm_transition_1.png'
+                    : 'lich_king_hc_transition_1.png',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Po zbiciu HP Bossa do 70%, zaczyna się faza 1.5, a cały rajd biegnie do krawędzi platformy. Nie biegniemy obok Shambling Horrorów, aby nie złapać Necrotic Plague od nich.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Boss stoi na środku platformy i przez chwilę zostawiamy go w spokoju. Naszym zadaniem jest zabicie Raging Spiritów.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Main Tank łapie Raging Spirity, Dpsy je zabijają, a Off Tank kończy bawić się z Shambling Horrorami. Jeśli zdąży, może złapać jakiegoś Raging Spiritu.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Rozbiegamy się, żeby nie stać w zbyt dużej grupie i nie wchodzimy przed Raging Spirity. Jak wyjdzie następny Raging Spirit, to zaczynamy go bić, a poprzedniego zostawiamy.',
+              },
+              {'type': 'header', 'text': 'Faza 2:'},
+              {
+                'type': 'image',
+                'src': 'lich_king_phase_2.png',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Chwilę po pojawieniu się 3 Raging Spiritu, zewnętrzna część platformy zaczyna się rozpadać, cały rajd biegnie na środek i zaczyna się faza 2.',
+              },
+              {
+                'type': 'string',
+                'text':
+                    'Tanki trzymają Bossa na środku, a reszta rajdu stackuje się za plecami Bossa, aby Val\'kyrie leciały w jedną stronę.',
+              },
+              //TODO Lich King tactics
+              {
+                'type': 'image',
+                'src': 'lich_king_phase_2_valkyr.png',
+              },
+              {
+                'type': 'string',
+                'text': 'a',
+              },
+              {'type': 'header', 'text': 'Faza 2.5:'},
+              {
+                'type': 'image',
+                'src': 'lich_king_transition_2.png',
+              },
+              {
+                'type': 'string',
+                'text': 'a',
+              },
+              {'type': 'header', 'text': 'Faza 3:'},
+              {
+                'type': 'image',
+                'src': 'lich_king_phase_3.png',
+              },
+              {
+                'type': 'string',
+                'text': 'a',
+              },
+              {'type': 'header', 'text': 'Faza 4:'},
+              {
+                'type': 'string',
+                'text': 'a',
+              },
             ]
           },
         ]
