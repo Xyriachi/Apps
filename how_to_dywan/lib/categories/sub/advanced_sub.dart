@@ -8,6 +8,8 @@ import 'package:how_to_dywan/categories/sub/templates/icon_nested_list.dart';
 import 'package:how_to_dywan/state/selected_screen_cubit.dart';
 import 'package:how_to_dywan/categories/sub/data/rotation.dart';
 
+import 'data/addons.dart';
+
 class AdvancedSub extends StatelessWidget {
   const AdvancedSub({super.key});
 
@@ -34,6 +36,11 @@ class AdvancedSub extends StatelessWidget {
         'data': Consumables().getConsumablesList(),
         'type': 'iconList',
       },
+      {
+        'source': 'addons',
+        'data': Addons().getAddonsList(),
+        'type': 'iconList',
+      },
     ];
 
     getSelectedData(state) {
@@ -45,7 +52,9 @@ class AdvancedSub extends StatelessWidget {
                   ? advancedData[2]['data']
                   : state == 'Jedzenie i Mikstury'
                       ? advancedData[3]['data']
-                      : advancedData[3]['data'];
+                      : state == 'Addony'
+                          ? advancedData[4]['data']
+                          : advancedData[4]['data'];
 
       return selectedData;
     }
@@ -59,7 +68,9 @@ class AdvancedSub extends StatelessWidget {
                   ? advancedData[2]['source']
                   : state == 'Jedzenie i Mikstury'
                       ? advancedData[3]['source']
-                      : advancedData[3]['source'];
+                      : state == 'Addony'
+                          ? advancedData[4]['source']
+                          : advancedData[4]['source'];
 
       return selectedName;
     }
@@ -73,7 +84,9 @@ class AdvancedSub extends StatelessWidget {
                   ? advancedData[2]['type']
                   : state == 'Jedzenie i Mikstury'
                       ? advancedData[3]['type']
-                      : advancedData[3]['type'];
+                      : state == 'Addony'
+                          ? advancedData[4]['type']
+                          : advancedData[4]['type'];
 
       return selectedType;
     }

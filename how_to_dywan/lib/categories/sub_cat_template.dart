@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:how_to_dywan/categories/cat_data/basic_list.dart';
 import 'package:how_to_dywan/categories/cat_data/advanced_list.dart';
 import 'package:how_to_dywan/categories/cat_data/tactics_list.dart';
-import 'package:how_to_dywan/categories/cat_data/addons_list.dart';
+import 'package:how_to_dywan/categories/cat_data/video_list.dart';
 import 'package:how_to_dywan/state/selected_screen_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,7 +20,7 @@ class SubCategoriesTemplate extends StatelessWidget {
                     ? AdvancedList().getAdvancedList()
                     : state.selectedScreen.first == 'tactics'
                         ? TacticsList().getTacticsList()
-                        : AddonsList().getAddonsList();
+                        : AddonsList().getVideoList();
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 6),
           child: ListView.builder(
@@ -44,7 +44,6 @@ class SubCategoriesTemplate extends StatelessWidget {
                           height: double.infinity,
                           child: Icon(Icons.anchor_sharp)),
                       title: Text(subCategoryList[index]['title'] as String),
-                      // TODO subtitles
                       subtitle:
                           Text(subCategoryList[index]['subtitle'] as String),
                       tileColor: Theme.of(context).cardTheme.color,

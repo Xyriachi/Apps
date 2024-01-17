@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Destinations {
-  //TODO subcategories
   List<Widget> home = const [
     NavigationDestination(
       icon: Icon(Icons.library_books_outlined),
@@ -18,12 +17,11 @@ class Destinations {
       label: 'Taktyki',
     ),
     NavigationDestination(
-      icon: Icon(Icons.extension_outlined),
-      selectedIcon: Icon(Icons.extension),
-      label: 'Addony',
+      icon: Icon(Icons.video_collection_outlined),
+      selectedIcon: Icon(Icons.video_collection_rounded),
+      label: 'Filmy',
     ),
   ];
-  //TODO home subcategories at launch and after returning to homepage
   getNavDestinations() {
     return home;
   }

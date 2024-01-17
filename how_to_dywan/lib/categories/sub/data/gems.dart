@@ -22,7 +22,7 @@ class Gems {
     },
     {
       'name': 'Żółty Socket',
-      'img': 'ametrine.jpg',
+      'img': 'kings_amber.jpg',
       'desc': 'test',
       'sub': [
         {
@@ -39,7 +39,7 @@ class Gems {
     },
     {
       'name': 'Niebieski Socket',
-      'img': 'dreadstone.jpg',
+      'img': 'majestic_zircon.jpg',
       'desc': 'test',
       'sub': [
         {

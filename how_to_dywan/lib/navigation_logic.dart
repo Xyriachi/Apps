@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:how_to_dywan/categories/sub/basic_sub.dart';
-import 'package:how_to_dywan/categories/sub/addons_sub.dart';
+import 'package:how_to_dywan/categories/sub/video_sub.dart';
 import 'package:how_to_dywan/categories/sub/advanced_sub.dart';
 import 'package:how_to_dywan/categories/sub/tactics_sub.dart';
 import 'package:how_to_dywan/categories/sub_cat_template.dart';

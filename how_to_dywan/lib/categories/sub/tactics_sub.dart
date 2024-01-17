@@ -17,8 +17,8 @@ class TacticsSub extends StatelessWidget {
         List sectionData = [
           'mechanics.jpg',
           'tactics.jpg',
-          'Czyli jak nie umrzeć... chyba.',
-          'Czyli jak udawać, że coś wiesz.'
+          'Co zrobić, żeby nie zginąć?',
+          'Czemu tu się tyle dzieje!?'
         ];
         List tacticsData = [
           {

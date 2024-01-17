@@ -19,6 +19,7 @@ class IconList extends StatelessWidget {
               child: GestureDetector(
                 onTap: () {
                   showDialog(
+                    barrierColor: Colors.black.withOpacity(0.6),
                     context: context,
                     builder: (_) {
                       return Dialog(
