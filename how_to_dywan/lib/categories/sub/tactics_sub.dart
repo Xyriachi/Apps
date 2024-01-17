@@ -14,18 +14,31 @@ class TacticsSub extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SelectedDifficultyCubit, SelectedDifficultyState>(
       builder: (context, state) {
+        List sectionData = [
+          'mechanics.jpg',
+          'tactics.jpg',
+          'Czyli jak nie umrzeć... chyba.',
+          'Czyli jak udawać, że coś wiesz.'
+        ];
         List tacticsData = [
           {
             'source': 'icc',
-            'data': ICC().getIccList(context
-                .watch<SelectedDifficultyCubit>()
-                .state
-                .selectedDifficulty),
+            'data': ICC().getIccList(
+                context
+                    .watch<SelectedDifficultyCubit>()
+                    .state
+                    .selectedDifficulty,
+                sectionData),
             'type': '',
           },
           {
             'source': 'rs',
-            'data': RS().getRsList(),
+            'data': RS().getRsList(
+                context
+                    .watch<SelectedDifficultyCubit>()
+                    .state
+                    .selectedDifficulty,
+                sectionData),
             'type': '',
           },
           {

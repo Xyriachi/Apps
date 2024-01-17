@@ -14,6 +14,8 @@ class TacticsTemplate extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SelectedDifficultyCubit, SelectedDifficultyState>(
       builder: (context, state) {
+        List difficulty =
+            context.watch<SelectedDifficultyCubit>().state.selectedDifficulty;
         return PageView.builder(
           itemCount: data.length,
           itemBuilder: (context, firstIndex) {
@@ -22,7 +24,19 @@ class TacticsTemplate extends StatelessWidget {
             ];
             List<Map> tacticsData = [data[firstIndex]['data'][1]];
             return ListView(children: [
+              Padding(
+                padding: const EdgeInsets.all(15),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    '${data[firstIndex]['name']} ${difficulty[0]} ${difficulty[1] == 'hc' ? 'Heroic' : 'Normal'}',
+                    style: Theme.of(context).textTheme.titleLarge,
+                    softWrap: true,
+                  ),
+                ),
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
                       onPressed: () {
@@ -30,17 +44,30 @@ class TacticsTemplate extends StatelessWidget {
                             .read<SelectedDifficultyCubit>()
                             .selectSecond('nm');
                       },
-                      child: const Text('Normal')),
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        child: Text('Normal'),
+                      )),
+                  const SizedBox(
+                    width: 15,
+                  ),
                   ElevatedButton(
                       onPressed: () {
                         context
                             .read<SelectedDifficultyCubit>()
                             .selectSecond('hc');
                       },
-                      child: const Text('Heroic')),
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        child: Text('Heroic'),
+                      )),
                 ],
               ),
+              const SizedBox(
+                height: 5,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
                       onPressed: () {
@@ -48,21 +75,28 @@ class TacticsTemplate extends StatelessWidget {
                             .read<SelectedDifficultyCubit>()
                             .selectFirst('10');
                       },
-                      child: const Text('10-osobowy')),
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        child: Text('10-osobowy'),
+                      )),
+                  const SizedBox(
+                    width: 15,
+                  ),
                   ElevatedButton(
                       onPressed: () {
                         context
                             .read<SelectedDifficultyCubit>()
                             .selectFirst('25');
                       },
-                      child: const Text('25-osobowy')),
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        child: Text('25-osobowy'),
+                      )),
                 ],
               ),
-              Text(context
-                  .watch<SelectedDifficultyCubit>()
-                  .state
-                  .selectedDifficulty
-                  .toString()),
+              const SizedBox(
+                height: 5,
+              ),
               IconNestedList(data: mechanicsData, source: source),
               IconList(data: tacticsData, source: source),
               ListView.builder(
@@ -73,7 +107,14 @@ class TacticsTemplate extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.all(8),
                     child: tacticsData[0]['sub'][index]['type'] == 'header'
-                        ? Text(tacticsData[0]['sub'][index]['text'])
+                        ? Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              tacticsData[0]['sub'][index]['text'],
+                              style: Theme.of(context).textTheme.titleLarge,
+                              softWrap: true,
+                            ),
+                          )
                         : tacticsData[0]['sub'][index]['type'] == 'image'
                             ? InteractiveViewer(
                                 minScale: 1.0,
@@ -82,7 +123,10 @@ class TacticsTemplate extends StatelessWidget {
                                     'assets/images/$source/${tacticsData[0]['sub'][index]['src']}'),
                               )
                             : tacticsData[0]['sub'][index]['type'] == 'string'
-                                ? Text(tacticsData[0]['sub'][index]['text'])
+                                ? Text(
+                                    tacticsData[0]['sub'][index]['text'],
+                                    softWrap: true,
+                                  )
                                 : const SizedBox(),
                   );
                 },
@@ -93,5 +137,4 @@ class TacticsTemplate extends StatelessWidget {
       },
     );
   }
-//TODO tactics template
 }

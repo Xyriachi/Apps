@@ -19,16 +19,21 @@ class MainApp extends StatelessWidget {
       providers: [
         BlocProvider<SelectedScreenCubit>(
           create: (context) => SelectedScreenCubit(),
-        ),BlocProvider<SelectedDifficultyCubit>(
+        ),
+        BlocProvider<SelectedDifficultyCubit>(
           create: (context) => SelectedDifficultyCubit(),
         ),
       ],
       child: MaterialApp(
         theme: ThemeData(
-          useMaterial3: true,
-          colorScheme: const ColorScheme.dark(),
-          cardTheme: const CardTheme(color: Color.fromARGB(255, 28, 28, 34)),
-        ),
+            useMaterial3: true,
+            colorScheme: const ColorScheme.dark(),
+            cardTheme: const CardTheme(color: Color.fromARGB(255, 28, 28, 34)),
+            elevatedButtonTheme: ElevatedButtonThemeData(
+                style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all(Colors.white),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color.fromARGB(255, 28, 28, 34))))),
         home: BlocBuilder<SelectedScreenCubit, SelectedScreenState>(
           builder: (context, state) {
             return WillPopScope(

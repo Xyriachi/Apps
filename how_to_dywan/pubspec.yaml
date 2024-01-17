@@ -31,6 +31,7 @@ flutter:
     - assets/images/opener/
     - assets/images/spells/
     - assets/images/icc/
+    - assets/images/rs/
     - assets/images/talents/affi/
     - assets/images/talents/demo/
     - assets/images/talents/destro/

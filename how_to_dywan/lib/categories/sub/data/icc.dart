@@ -1,14 +1,14 @@
 class ICC {
-  getIccList(selectedType) {
+  getIccList(selectedType, sectionData) {
     List iccList = [
       {
         'name': 'Lord Marrowgar',
         'data': [
           {
             'name': 'Mechaniki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[0],
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': sectionData[2],
             'sub': [
               {
                 'subName': 'Bone Spike Graveyard',
@@ -52,9 +52,9 @@ class ICC {
           },
           {
             'name': 'Taktyki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[1],
             'desc': '',
-            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
+            'shortDesc': sectionData[3],
             'sub': [
               {
                 'type': 'header',
@@ -114,9 +114,9 @@ class ICC {
         'data': [
           {
             'name': 'Mechaniki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[0],
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': sectionData[2],
             'sub': [
               {
                 'subName': 'Death and Decay',
@@ -162,9 +162,9 @@ class ICC {
           },
           {
             'name': 'Taktyki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[1],
             'desc': '',
-            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
+            'shortDesc': sectionData[3],
             'sub': [
               {
                 'type': 'header',
@@ -229,9 +229,9 @@ class ICC {
         'data': [
           {
             'name': 'Mechaniki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[0],
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': sectionData[2],
             'sub': [
               {
                 'subName': 'Below Zero',
@@ -253,9 +253,9 @@ class ICC {
           },
           {
             'name': 'Taktyki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[1],
             'desc': '',
-            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
+            'shortDesc': sectionData[3],
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {
@@ -311,9 +311,9 @@ class ICC {
         'data': [
           {
             'name': 'Mechaniki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[0],
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': sectionData[2],
             'sub': [
               {
                 'subName': 'Mark of the Fallen Champion',
@@ -346,9 +346,9 @@ class ICC {
           },
           {
             'name': 'Taktyki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[1],
             'desc': '',
-            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
+            'shortDesc': sectionData[3],
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {
@@ -397,9 +397,9 @@ class ICC {
         'data': [
           {
             'name': 'Mechaniki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[0],
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': sectionData[2],
             'sub': [
               {
                 'subName': 'Gas Spore',
@@ -444,9 +444,9 @@ class ICC {
           },
           {
             'name': 'Taktyki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[1],
             'desc': '',
-            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
+            'shortDesc': sectionData[3],
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {
@@ -494,9 +494,9 @@ class ICC {
         'data': [
           {
             'name': 'Mechaniki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[0],
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': sectionData[2],
             'sub': [
               {
                 'subName': 'Ooze Flood',
@@ -548,9 +548,9 @@ class ICC {
           },
           {
             'name': 'Taktyki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[1],
             'desc': '',
-            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
+            'shortDesc': sectionData[3],
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               if (selectedType[1] == 'hc')
@@ -619,9 +619,9 @@ class ICC {
         'data': [
           {
             'name': 'Mechaniki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[0],
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': sectionData[2],
             'sub': [
               {
                 'subName': 'Slime Puddle',
@@ -675,9 +675,9 @@ class ICC {
           },
           {
             'name': 'Taktyki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[1],
             'desc': '',
-            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
+            'shortDesc': sectionData[3],
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {
@@ -824,9 +824,9 @@ class ICC {
         'data': [
           {
             'name': 'Mechaniki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[0],
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': sectionData[2],
             'sub': [
               {
                 'subName': 'Kinetic Bomb',
@@ -873,9 +873,9 @@ class ICC {
           },
           {
             'name': 'Taktyki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[1],
             'desc': '',
-            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
+            'shortDesc': sectionData[3],
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {
@@ -945,9 +945,9 @@ class ICC {
         'data': [
           {
             'name': 'Mechaniki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[0],
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': sectionData[2],
             'sub': [
               {
                 'subName': 'Vampiric Bite',
@@ -989,9 +989,9 @@ class ICC {
           },
           {
             'name': 'Taktyki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[1],
             'desc': '',
-            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
+            'shortDesc': sectionData[3],
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {
@@ -1054,9 +1054,9 @@ class ICC {
         'data': [
           {
             'name': 'Mechaniki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[0],
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': sectionData[2],
             'sub': [
               {
                 'subName': 'Mana Void',
@@ -1083,9 +1083,9 @@ class ICC {
           },
           {
             'name': 'Taktyki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[1],
             'desc': '',
-            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
+            'shortDesc': sectionData[3],
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {
@@ -1139,9 +1139,9 @@ class ICC {
         'data': [
           {
             'name': 'Mechaniki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[0],
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': sectionData[2],
             'sub': [
               {
                 'subName': 'Frost Beacon',
@@ -1189,9 +1189,9 @@ class ICC {
           },
           {
             'name': 'Taktyki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[1],
             'desc': '',
-            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
+            'shortDesc': sectionData[3],
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {'type': 'image', 'src': 'sindragosa_phase_1.png'},
@@ -1323,9 +1323,9 @@ class ICC {
         'data': [
           {
             'name': 'Mechaniki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[0],
             'desc': '',
-            'shortDesc': 'Czyli jak nie umrzeć... chyba.',
+            'shortDesc': sectionData[2],
             'sub': [
               {
                 'subName': 'Defile',
@@ -1400,9 +1400,9 @@ class ICC {
           },
           {
             'name': 'Taktyki',
-            'img': 'mechanics.jpg',
+            'img': sectionData[1],
             'desc': '',
-            'shortDesc': 'Czyli jak udawać, że coś wiesz.',
+            'shortDesc': sectionData[3],
             'sub': [
               {'type': 'header', 'text': 'Faza 1:'},
               {
