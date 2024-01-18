@@ -20,7 +20,7 @@ class SubCategoriesTemplate extends StatelessWidget {
                     ? AdvancedList().getAdvancedList()
                     : state.selectedScreen.first == 'tactics'
                         ? TacticsList().getTacticsList()
-                        : AddonsList().getVideoList();
+                        : VideoList().getVideoList();
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 6),
           child: ListView.builder(

@@ -21,7 +21,7 @@ class NavigationLogic extends StatelessWidget {
                     ? const AdvancedSub()
                     : state.selectedScreen.first == 'tactics'
                         ? const TacticsSub()
-                        : const AddonsSub()
+                        : const VideoSub()
             : const SubCategoriesTemplate();
       },
     );

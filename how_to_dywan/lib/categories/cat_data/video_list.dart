@@ -1,11 +1,10 @@
-class AddonsList {
-  List<Map<String, String>> addonsList = [
-    {'title': 'Han', 'subtitle': 'Test'},
-    {'title': 'Sebciu', 'subtitle': 'Test'},
-    {'title': 'Tango', 'subtitle': 'Test'},
+class VideoList {
+  List<Map<String, String>> videoList = [
+    {'title': 'Han', 'subtitle': 'TODO'},
+    {'title': 'Sebciu', 'subtitle': 'Dużo postaci i każdą potrafi grać.'},
   ];
 //add videos
   getVideoList() {
-    return addonsList;
+    return videoList;
   }
 }

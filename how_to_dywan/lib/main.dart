@@ -4,6 +4,7 @@ import 'package:how_to_dywan/bottom_nav_bar.dart';
 import 'package:how_to_dywan/navigation_logic.dart';
 import 'package:how_to_dywan/state/selected_screen_cubit.dart';
 import 'package:how_to_dywan/state/selected_difficulty_cubit.dart';
+import 'package:how_to_dywan/state/youtube_api_data.dart';
 import 'package:how_to_dywan/top_app_bar.dart';
 
 void main() {
@@ -22,6 +23,9 @@ class MainApp extends StatelessWidget {
         ),
         BlocProvider<SelectedDifficultyCubit>(
           create: (context) => SelectedDifficultyCubit(),
+        ),
+        BlocProvider<YoutubeApiDataCubit>(
+          create: (context) => YoutubeApiDataCubit(),
         ),
       ],
       child: MaterialApp(
@@ -53,7 +57,7 @@ class MainApp extends StatelessWidget {
                       content: Align(
                         alignment: Alignment.center,
                         child: Text(
-                          'Naciśnij ponownie aby wyjść',
+                          'Naciśnij ponownie aby wyjść.',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -83,7 +87,7 @@ class MainApp extends StatelessWidget {
                         content: Align(
                           alignment: Alignment.center,
                           child: Text(
-                            'Naciśnij ponownie aby wyjść',
+                            'Naciśnij ponownie aby wyjść.',
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
