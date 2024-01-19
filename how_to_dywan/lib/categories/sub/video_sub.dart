@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,14 +26,13 @@ class VideoSub extends StatelessWidget {
             'UCk3EsBFj4p5oAknxswX2tsg'
           ];
           const String apiKey = 'AIzaSyCRGWgZVu7gfSGygegGzS_RP0NyxDlOF9M';
-          const maxResults = 6;
+          const maxResults = 12;
           getUrl(channelId) {
             String url =
                 'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=$channelId&type=video&eventType=completed&order=date&maxResults=$maxResults&key=$apiKey';
             return url;
           }
 
-          // ignore: prefer_typing_uninitialized_variables
           List response = [];
           if (stateB.state.youtubeApiData.isEmpty) {
             http.Response newResponse;
@@ -54,11 +52,12 @@ class VideoSub extends StatelessWidget {
             for (var item in items) {
               Map tempMap = {
                 'title': item['snippet']['title'].toString(),
-                'id': item['id']['videoId'].toString()
+                'id': item['id']['videoId'].toString(),
+                'img': item['snippet']['thumbnails']['high']['url'].toString(),
               };
               videoDataList.add(tempMap);
             }
-            print(videoDataList); // Wyświetla tytuł filmu
+            print(videoDataList);
           } else {
             throw Exception('Nie udało się załadować filmów.');
           }

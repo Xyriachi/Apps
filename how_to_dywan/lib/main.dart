@@ -47,39 +47,9 @@ class MainApp extends StatelessWidget {
             final stateA = context.watch<SelectedScreenCubit>().state;
             List backPressTime = [];
             return WillPopScope(
-              onWillPop: () async {
-                backPressTime.add(DateTime.now());
-                if (backPressTime.length < 2) {
-                  if (stateA.selectedScreen[0] == 'basic') {
-                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                      duration: Duration(seconds: 2),
-                      backgroundColor: Color.fromARGB(255, 28, 28, 34),
-                      content: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          'Naciśnij ponownie aby wyjść.',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ));
-                  } else {
-                    if (stateA.selectedScreen[1] == 'none') {
-                      context
-                          .read<SelectedScreenCubit>()
-                          .selectAll(['basic', 'none']);
-                    } else {
-                      context
-                          .read<SelectedScreenCubit>()
-                          .selectAll([stateA.selectedScreen[0], 'none']);
-                    }
-                  }
-
-                  return false;
-                } else if (backPressTime.length == 2) {
-                  if (backPressTime[1].difference(backPressTime[0]).inSeconds <
-                      2) {
-                    return true;
-                  } else {
+                onWillPop: () async {
+                  backPressTime.add(DateTime.now());
+                  if (backPressTime.length < 2) {
                     if (stateA.selectedScreen[0] == 'basic') {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         duration: Duration(seconds: 2),
@@ -104,28 +74,51 @@ class MainApp extends StatelessWidget {
                       }
                     }
 
-                    backPressTime.removeAt(0);
                     return false;
-                  }
-                }
+                  } else if (backPressTime.length == 2) {
+                    if (backPressTime[1]
+                            .difference(backPressTime[0])
+                            .inSeconds <
+                        2) {
+                      return true;
+                    } else {
+                      if (stateA.selectedScreen[0] == 'basic') {
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(const SnackBar(
+                          duration: Duration(seconds: 2),
+                          backgroundColor: Color.fromARGB(255, 28, 28, 34),
+                          content: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'Naciśnij ponownie aby wyjść.',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ));
+                      } else {
+                        if (stateA.selectedScreen[1] == 'none') {
+                          context
+                              .read<SelectedScreenCubit>()
+                              .selectAll(['basic', 'none']);
+                        } else {
+                          context
+                              .read<SelectedScreenCubit>()
+                              .selectAll([stateA.selectedScreen[0], 'none']);
+                        }
+                      }
 
-                return false;
-              },
-              child: const Scaffold(
-                appBar: TopAppBar(),
-                body: NavigationLogic(),
-                // NestedScrollView(
-                //   floatHeaderSlivers: true,
-                //   headerSliverBuilder: (BuildContext context, bool isScrolled) {
-                //     return [
-                //       const TopAppBar(),
-                //     ];
-                //   },
-                //   body: const NavigationLogic(),
-                // ),
-                bottomNavigationBar: BottomNavBar(),
-              ),
-            );
+                      backPressTime.removeAt(0);
+                      return false;
+                    }
+                  }
+
+                  return false;
+                },
+                child: const Scaffold(
+                  appBar: TopAppBar(),
+                  body: NavigationLogic(),
+                  bottomNavigationBar: BottomNavBar(),
+                ));
           },
         ),
       ),
