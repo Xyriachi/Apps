@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:how_to_dywan/categories/sub/templates/components/on_tap_dialog.dart';
 
 class TalentList extends StatelessWidget {
   const TalentList({super.key, required this.data, required this.source});
@@ -38,44 +39,58 @@ class TalentList extends StatelessWidget {
                                 Border.all(color: Colors.black87, width: 3)),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(3),
-                          child: Stack(
-                            fit: StackFit.expand,
-                            children: [
-                              data[mainIndex].firstWhere((element) =>
-                                          element['pos'] == index)['count'] >
-                                      0
-                                  ? Image.asset(
-                                      'assets/images/$source/${mainIndex == 0 ? 'affi' : mainIndex == 1 ? 'demo' : 'destro'}/${data[mainIndex].firstWhere((element) => element['pos'] == index)['icon']}.jpg',
-                                      fit: BoxFit.cover,
-                                    )
-                                  : Image.asset(
-                                      'assets/images/$source/${mainIndex == 0 ? 'affi' : mainIndex == 1 ? 'demo' : 'destro'}/${data[mainIndex].firstWhere((element) => element['pos'] == index)['icon']}.jpg',
-                                      fit: BoxFit.cover,
-                                      color: Colors.grey,
-                                      colorBlendMode: BlendMode.saturation,
-                                    ),
-                              if (data[mainIndex].firstWhere((element) =>
-                                      element['pos'] == index)['count'] !=
-                                  0)
-                                Align(
-                                  alignment: Alignment.bottomRight,
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(3),
-                                    child: Container(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 3),
-                                      color: Colors.black,
-                                      child: Text(
-                                        data[mainIndex]
-                                            .firstWhere((element) =>
-                                                element['pos'] ==
-                                                index)['count']
-                                            .toString(),
+                          child: GestureDetector(
+                            onTap: () {
+                              showDialog(
+                                barrierColor: Colors.black.withOpacity(0.6),
+                                context: context,
+                                builder: (_) {
+                                  return OnTapDialog(
+                                      data: data[mainIndex],
+                                      firstIndex: data[mainIndex]
+                                          .firstWhere((element) =>
+                                              element['pos'] == index)['index']
+                                          .toInt(),
+                                      source:
+                                          '$source/${mainIndex == 0 ? 'affi' : mainIndex == 1 ? 'demo' : 'destro'}');
+                                },
+                              );
+                            },
+                            child: Stack(
+                              fit: StackFit.expand,
+                              children: [
+                                data[mainIndex].firstWhere((element) =>
+                                            element['pos'] == index)['count'] >
+                                        0
+                                    ? Image.asset(
+                                        'assets/images/$source/${mainIndex == 0 ? 'affi' : mainIndex == 1 ? 'demo' : 'destro'}/${data[mainIndex].firstWhere((element) => element['pos'] == index)['img']}',
+                                        fit: BoxFit.cover,
+                                      )
+                                    : Image.asset(
+                                        'assets/images/$source/${mainIndex == 0 ? 'affi' : mainIndex == 1 ? 'demo' : 'destro'}/${data[mainIndex].firstWhere((element) => element['pos'] == index)['img']}',
+                                        fit: BoxFit.cover,
+                                        color: Colors.grey,
+                                        colorBlendMode: BlendMode.saturation,
+                                      ),
+                                if (data[mainIndex].firstWhere((element) =>
+                                        element['pos'] == index)['count'] !=
+                                    0)
+                                  Align(
+                                    alignment: Alignment.bottomRight,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(3),
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 3),
+                                        color: Colors.black,
+                                        child: Text(
+                                          '${data[mainIndex].firstWhere((element) => element['pos'] == index)['count'].toString()}/${data[mainIndex].firstWhere((element) => element['pos'] == index)['maxCount'].toString()}',
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       )
@@ -87,7 +102,4 @@ class TalentList extends StatelessWidget {
       },
     );
   }
-//TODO add onClick description
-//TODO rewrite talents description
-//TODO add option to change talent count; when changing count, description should also change
 }

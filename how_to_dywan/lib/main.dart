@@ -32,7 +32,9 @@ class MainApp extends StatelessWidget {
         theme: ThemeData(
             useMaterial3: true,
             colorScheme: const ColorScheme.dark(),
-            cardTheme: const CardTheme(color: Color.fromARGB(255, 28, 28, 34)),
+            cardTheme: const CardTheme(
+                color: Color.fromARGB(255, 28, 28, 34),
+                surfaceTintColor: Color.fromARGB(255, 28, 28, 34)),
             elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ButtonStyle(
                     overlayColor: MaterialStateProperty.all<Color>(

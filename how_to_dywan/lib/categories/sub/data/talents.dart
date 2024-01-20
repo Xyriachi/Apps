@@ -1,267 +1,296 @@
 class Talents {
   List affi = [
     {
-      'icon': 'improved-curse-of-agony',
+      'img': 'improved-curse-of-agony.jpg',
       'name': 'Improved Curse of Agony',
-      'desc': 'Increases the damage done by your Curse of Agony by 10%.',
+      'desc': 'Zwiększa obrażenia, zadawane przez Curse of Agony o 10%.',
       'count': 2,
       'maxCount': 2,
       'pos': 0,
+      'index': 0,
     },
     {
-      'icon': 'suppression',
+      'img': 'suppression.jpg',
       'name': 'Suppression',
       'desc':
-          'Increases your chance to hit with spells by 3%, and reduces the mana cost of your Affliction spells by 6%.',
+          'Zwiększa szansę na trafienie Spellami o 3% i zmniejsza koszt many Spelli Affliction o 6%.',
       'count': 3,
       'maxCount': 3,
       'pos': 1,
+      'index': 1,
     },
     {
-      'icon': 'improved-corruption',
+      'img': 'improved-corruption.jpg',
       'name': 'Improved Corruption',
       'desc':
-          'Increases the damage done by your Corruption by 10%, and increases the critical strike chance of your Seed of Corruption by 5%.',
+          'Zwiększa obrażenia, zadawane przez Corruption o 10% i zwiększa szansę na trafienie krytyczne Seed of Corruption o 5%.',
       'count': 5,
       'maxCount': 5,
       'pos': 2,
+      'index': 2,
     },
     //
     {
-      'icon': 'improved-curse-of-weakness',
+      'img': 'improved-curse-of-weakness.jpg',
       'name': 'Improved Curse of Weakness',
       'desc':
-          'Increases the amount of attack power reduced by your Curse of Weakness by 20%.',
+          'Zwiększa attack power, redukowany przez Curse of Weakness o 20%.',
       'count': 0,
       'maxCount': 2,
       'pos': 4,
+      'index': 3,
     },
     {
-      'icon': 'improved-drain-soul',
+      'img': 'improved-drain-soul.jpg',
       'name': 'Improved Drain Soul',
       'desc':
-          'Returns 15% of your maximum mana if the target is killed by you while you drain its soul. In addition, your Affliction spells generate 20% less threat.',
+          'Zwraca 15% many, jeśli Target zostanie zabity, podczas Castu Drain Soula. Dodatkowo, Twoje Spelle Affliction generują o 20% mniejszy threat.',
       'count': 0,
       'maxCount': 2,
       'pos': 5,
+      'index': 4,
     },
     {
-      'icon': 'improved-life-tap',
+      'img': 'improved-life-tap.jpg',
       'name': 'Improved Life Tap',
-      'desc':
-          'Increases the amount of Mana awarded by your Life Tap spell by 20%.',
+      'desc': 'Zwiększa ilość many, otrzymywanej po użyciu Life Tap o 20%.',
       'count': 0,
       'maxCount': 2,
       'pos': 6,
+      'index': 5,
     },
     {
-      'icon': 'soul-siphon',
+      'img': 'soul-siphon.jpg',
       'name': 'Soul Siphon',
       'desc':
-          'Increases the amount drained by your Drain Life and Drain Soul spells by an additional 6% for each of your Affliction effects on the target, up to a maximum of 18% additional effect.',
+          'Wzmacnia Drain Life i Drain Soul o dodatkowe 6% za każdy efekt Affliction na targecie, maksymalnie do 18%.',
       'count': 2,
       'maxCount': 2,
       'pos': 7,
+      'index': 6,
     },
     {
-      'icon': 'improved-fear',
+      'img': 'improved-fear.jpg',
       'name': 'Improved Fear',
       'desc':
-          'Causes your Fear spell to inflict a Nightmare on the target when the fear effect ends. The Nightmare effect reduces the target\'s movement speed by 30% for 5 seconds.',
+          'Sprawia, że Fear nakłada debuff Nightmare na Target w momencie, w którym kończy się Fear. Nightmare zmniejsza prędkość poruszania się Targetu o 30% przez 5 sekund.',
       'count': 0,
       'maxCount': 2,
       'pos': 8,
+      'index': 7,
     },
     {
-      'icon': 'fel-concentration',
+      'img': 'fel-concentration.jpg',
       'name': 'Fel Concentration',
       'desc':
-          'Reduces the pushback suffered from damaging attacks while casting Drain Life, Drain Mana, Drain Soul, Unstable Affliction, and Haunt spells by 70%.',
+          'Redukuje cofanie się Cast Barów, spowodowane otrzymaniem obrażeń podczas Castowania Drain Life, Drain Mana, Drain Soul, Unstable Affliction i Haunt o 70%.',
       'count': 3,
       'maxCount': 3,
       'pos': 9,
+      'index': 8,
     },
     {
-      'icon': 'amplify-curse',
+      'img': 'amplify-curse.jpg',
       'name': 'Amplify Curse',
-      'desc': 'Reduces the global cooldown of your Curses by 1 sec.',
+      'desc': 'Zmniejsza Global Cooldown klątw o 1 sekundę.',
       'count': 0,
       'maxCount': 1,
       'pos': 10,
+      'index': 9,
     },
     //
     {
-      'icon': 'grim-reach',
+      'img': 'grim-reach.jpg',
       'name': 'Grim Reach',
-      'desc': 'Increases the range of your Affliction spells by 20%.',
+      'desc': 'Zwiększa zasięg Spelli Affliction o 20%.',
       'count': 0,
       'maxCount': 2,
       'pos': 12,
+      'index': 10,
     },
     {
-      'icon': 'nightfall',
+      'img': 'nightfall.jpg',
       'name': 'Nightfall',
       'desc':
-          'Gives your Corruption and Drain Life spells a 4% chance to cause you to enter a Shadow Trance state after damaging the opponent. The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%.',
+          'Corruption i Drain Life mają 4% szansy otrzymanie buffa Shadow Trance po zadaniu obrażeń. Shadow Trance redukuje Cast Time następnego Shadow Bolta o 100%.',
       'count': 2,
       'maxCount': 2,
       'pos': 13,
+      'index': 11,
     },
     //
     {
-      'icon': 'empowered-corruption',
+      'img': 'empowered-corruption.jpg',
       'name': 'Empowered Corruption',
       'desc':
-          'Increases the damage of your Corruption spell by an amount equal to 36% of your spell power.',
+          'Zwiększa obrażenia zadawane przez Corruption o 36% Twojego Spell Powera.',
       'count': 3,
       'maxCount': 3,
       'pos': 15,
+      'index': 12,
     },
     {
-      'icon': 'shadow-embrace',
+      'img': 'shadow-embrace.jpg',
       'name': 'Shadow Embrace',
       'desc':
-          'Your Shadow Bolt and Haunt spells apply the Shadow Embrace effect, increasing all shadow periodic damage dealt to the target by you by 5%, and reduces all periodic healing done to the target by 10%. Lasts for 12 seconds. Stacks up to 3 times.',
+          'Shadow Bolt i Haunt nakładają efekt Shadow Embrace, zwiększający Shadow DMG zadawany przez Ciebie Targetowi o 5% oraz zmniejszający leczenie Targetu o 10%. Trwa przez 12 sekund. Stackuje się do 3 razy.',
       'count': 5,
       'maxCount': 5,
       'pos': 16,
+      'index': 13,
     },
     {
-      'icon': 'siphon-life',
+      'img': 'siphon-life.jpg',
       'name': 'Siphon Life',
       'desc':
-          'When you deal damage with your Corruption spell, you are instantly healed for 40% of the damage done. In addition, the damage done by your Corruption, Seed of Corruption and Unstable Affliction damage over time effects is increased by 5%.',
+          'Jeśli zadasz obrażenia przy pomocy Corruption, leczysz się za 40% zadanych obrażeń. Dodatkowo, obrażenia zadane przez Corruption, Seed of Corruption i Unstable Affliction są większe o 5%.',
       'count': 1,
       'maxCount': 1,
       'pos': 17,
+      'index': 14,
     },
     {
-      'icon': 'curse-of-exhaustion',
+      'img': 'curse-of-exhaustion.jpg',
       'name': 'Curse of Exhaustion',
       'desc':
-          'Reduces the target\'s movement speed by 30% for 12 seconds. Only one Curse per Warlock can be active on any one target.',
+          'Zmniejsza prędkość poruszania się Targetu o 30% przez 12 sekund. Tylko jedna klątwa na Warlocka może być aktywna na Targecie.',
       'count': 0,
       'maxCount': 1,
       'pos': 18,
+      'index': 15,
     },
     //
     {
-      'icon': 'improved-felhunter',
+      'img': 'improved-felhunter.jpg',
       'name': 'Improved Felhunter',
       'desc':
-          'Your Felhunter regains 8% of its maximum mana each time it hits with its Shadow Bite ability and the cooldown on that ability is reduced by 4 sec. In addition, increases the effect of your Felhunter\'s Fel Intelligence by 10%.',
+          'Felhunter odzyskuje 8% maksymalnej many za każdym razem, jak trafi umiejętnością Shadow Bite, a Cooldown tej umiejętności jest zmniejszony o 4 sekundy. Dodatkowo, wzmacnia efekt Fel Intelligence Felhuntera o 10%.',
       'count': 2,
       'maxCount': 2,
       'pos': 20,
+      'index': 16,
     },
     {
-      'icon': 'shadow-mastery',
+      'img': 'shadow-mastery.jpg',
       'name': 'Shadow Mastery',
       'desc':
-          'Increases the damage dealt or life drained by your Shadow spells and your Felhunter\'s Shadow Bite ability by 15%.',
+          'Zwiększa zadawane obrażenia lub kradzież życia przez Shadow Spelle oraz umiejętność Shadow Bite Felhuntera o 15%.',
       'count': 5,
       'maxCount': 5,
       'pos': 21,
+      'index': 17,
     },
     //
     //
     {
-      'icon': 'eradication',
+      'img': 'eradication.jpg',
       'name': 'Eradication',
       'desc':
-          'When you deal damage with Corruption, you have 6% chance to increase your spell casting speed by 20% for 10 seconds.',
+          'Jeśli zadasz obrażenia przy pomocy Corruption, masz 6% szansy na zwiększony Cast Time o 20% przez 10 sekund.',
       'count': 3,
       'maxCount': 3,
       'pos': 24,
+      'index': 18,
     },
     {
-      'icon': 'contagion',
+      'img': 'contagion.jpg',
       'name': 'Contagion',
       'desc':
-          'Increases the damage of Curse of Agony, Corruption and Seed of Corruption by 5% and reduces the chance your helpful Affliction spells and damage over time effects will be dispelled by an additional 30%.',
+          'Zwiększa obrażenia zadawane przez Curse of Agony, Corruption i Seed of Corruption o 5% oraz zmniejsza szansę na zdispellowanie twoich Spelli i efektów Affliction o dodatkowe 30%.',
       'count': 5,
       'maxCount': 5,
       'pos': 25,
+      'index': 19,
     },
     {
-      'icon': 'dark-pact',
+      'img': 'dark-pact.jpg',
       'name': 'Dark Pact',
-      'desc':
-          'Drains 1200 of your summoned demon\'s Mana, returning 100% to you.',
+      'desc': 'Przekazuje Tobie 1200 many Twojego demona.',
       'count': 0,
       'maxCount': 1,
       'pos': 26,
+      'index': 20,
     },
     //
     {
-      'icon': 'improved-howl-of-terror',
+      'img': 'improved-howl-of-terror.jpg',
       'name': 'Improved Howl of Terror',
-      'desc':
-          'Reduces the casting time of your Howl of Terror spell by 1.5 sec.',
+      'desc': 'Redukuje Cast Time Howl of Terror o 1.5 sekundy.',
       'count': 0,
       'maxCount': 2,
       'pos': 28,
+      'index': 21,
     },
     //
     {
-      'icon': 'malediction',
+      'img': 'malediction.jpg',
       'name': 'Malediction',
       'desc':
-          'Increases your spell damage by 3%, and increases the periodic critical strike chance of your Corruption and Unstable Affliction spells by 9%.',
+          'Zwiększa obrażenia Twoich Spelli o 3% i szansę na trafienie krytyczne Corruption i Unstable Affliction o 9%.',
       'count': 3,
       'maxCount': 3,
       'pos': 30,
+      'index': 22,
     },
     //
     {
-      'icon': 'deaths-embrace',
+      'img': 'deaths-embrace.jpg',
       'name': 'Death\'s Embrace',
       'desc':
-          'Increases the amount drained by your Drain Life by 30% while your health is at or below 20% health, and increases the damage done by your Shadow spells by 12% when your target is at or below 35% health.',
+          'Zwiększa ilość kradzionego życia przy pomocy Drain Life o 30%, jeśli masz 20% życia lub mniej, oraz zwiększa obrażenia zadawane przez Twoje Shadow Spelle o 12%, jeśli Twój Target ma 35% życia lub mniej.',
       'count': 3,
       'maxCount': 3,
       'pos': 32,
+      'index': 23,
     },
     {
-      'icon': 'unstable-affliction',
+      'img': 'unstable-affliction.jpg',
       'name': 'Unstable Affliction',
-      'desc':
-          'Shadow energy slowly destroys the target, causing 550 damage over 15 seconds. In addition, if the Unstable Affliction is dispelled it will cause 990 damage to the dispeller and silence them for 15 seconds. Only one Unstable Affliction or Immolate per Warlock can be active on any one target.',
+      'desc': [
+        'Energia Shadow powoli niszczy Target, zadając 550 obrażeń przez 15 sekund. Ponadto, jeśli Unstable Affliction zostanie zdispellowane, zada 990 obrażeń dispellującemu i nałoży efekt silence na 15 sekund.',
+        'Nie możesz używać jednocześnie Unstable Affliction i Immolate na Targecie.',
+      ],
       'count': 1,
       'maxCount': 1,
       'pos': 33,
+      'index': 24,
     },
     {
-      'icon': 'pandemic',
+      'img': 'pandemic.jpg',
       'name': 'Pandemic',
       'desc':
-          'Grants the periodic damage from your Corruption and Unstable Affliction spells the ability to critically hit for 100% increased damage, and increases the critical strike damage bonus of your Haunt spell by 100%.',
+          'Corruption i Unstable Affliction zadają o 100% więcej obrażeń krytycznych, a Haunt ma zwiększony bonus do obrażeń krytycznych o 100%.',
       'count': 1,
       'maxCount': 1,
       'pos': 34,
+      'index': 25,
     },
     //
     //
     {
-      'icon': 'everlasting-affliction',
+      'img': 'everlasting-affliction.jpg',
       'name': 'Everlasting Affliction',
       'desc':
-          'Your Corruption and Unstable Affliction spells gain an additional 5% of your bonus spell damage, and your Drain Life, Drain Soul, Shadow Bolt, and Haunt spells have a 100% chance to reset the duration of your Corruption spell on the target.',
+          'Corruption i Unstable Affliction zyskują dodatkowe 5% Twojego bonusowego Spell DMG, a Drain Life, Drain Soul, Shadow Bolt i Haunt mają 100% szansy na zresetowanie czasu trwania Corruption na Targecie.',
       'count': 5,
       'maxCount': 5,
       'pos': 37,
+      'index': 26,
     },
     //
     //
     //
     {
-      'icon': 'haunt',
+      'img': 'haunt.jpg',
       'name': 'Haunt',
-      'desc':
-          'You send a ghostly soul into the target, dealing 405 to 473 Shadow damage and increasing all damage done by your Shadow damage-over-time effects on the target by 20% for 12 seconds. When the Haunt spell ends or is dispelled, the soul returns to you, healing you for 100% of the damage it did to the target.',
+      'desc': [
+        'Wysyłasz duszę do Targetu, zadając 405 do 473 Shadow DMG i zwiększając wszystkie obrażenia zadawane przez Shadow DoTki na Targecie o 20% przez 12 sekund.',
+        'Gdy Haunt kończy się lub zostaje zdispellowany, dusza wraca do Ciebie, lecząc Cię za 100% obrażeń, które zadała.',
+      ],
       'count': 1,
       'maxCount': 1,
       'pos': 41,
+      'index': 27,
     },
     //
     //
@@ -269,269 +298,303 @@ class Talents {
 
   List demo = [
     {
-      'icon': 'improved-healthstone',
+      'img': 'improved-healthstone.jpg',
       'name': 'Improved Healthstone',
-      'desc':
-          'Increases the amount of Health restored by your Healthstone by 20%.',
+      'desc': 'Zwiększa ilość życia odnawianego przez Healthstone o 20%.',
       'count': 0,
       'maxCount': 2,
       'pos': 0,
+      'index': 0,
     },
     {
-      'icon': 'improved-imp',
+      'img': 'improved-imp.jpg',
       'name': 'Improved Imp',
       'desc':
-          'Increases the effect of your Imp\'s Firebolt, Fire Shield, and Blood Pact spells by 30%.',
+          'Zwiększa effect Spelli Firebolt, Fire Shield i Blood Pact Impa o 30%.',
       'count': 0,
       'maxCount': 3,
       'pos': 1,
+      'index': 1,
     },
     {
-      'icon': 'demonic-embrace',
+      'img': 'demonic-embrace.jpg',
       'name': 'Demonic Embrace',
-      'desc': 'Increases your total Stamina by 10%.',
+      'desc': 'Zwiększa Twoją Staminę o 10%.',
       'count': 0,
       'maxCount': 3,
       'pos': 2,
+      'index': 2,
     },
     {
-      'icon': 'fel-synergy',
+      'img': 'fel-synergy.jpg',
       'name': 'Fel Synergy',
       'desc':
-          'You have a 100% chance to heal your pet for 15% of the amount of spell damage done by you.',
+          'Masz 100% szansy na wyleczenie swojego demona za 15% zadanych przez Ciebie obrażeń.',
       'count': 0,
       'maxCount': 2,
       'pos': 3,
+      'index': 3,
     },
     {
-      'icon': 'improved-health-funnel',
+      'img': 'improved-health-funnel.jpg',
       'name': 'Improved Health Funnel',
       'desc':
-          'Increases the amount of Health transferred by your Health Funnel spell by 20% and reduces the health cost by 20%. In addition, your summoned Demon takes 30% less damage while under the effect of your Health Funnel.',
+          'Zwiększa ilość życia transferowanego przez Health Funnel o 20% i zmniejsza koszt życia o 20%. Dodatkowo, Twój przyzwany demon otrzymuje o 30% mniej obrażeń, jeśli jest pod wpływem Health Funnel.',
       'count': 0,
       'maxCount': 2,
       'pos': 4,
+      'index': 4,
     },
     {
-      'icon': 'demonic-brutality',
+      'img': 'demonic-brutality.jpg',
       'name': 'Demonic Brutality',
       'desc':
-          'Increases the effectiveness of your Voidwalker\'s Torment, Consume Shadows, Sacrifice and Suffering spells by 30%, and increases the attack power bonus on your Felguard\'s Demonic Frenzy effect by 3%.',
+          'Zwiększa efektywność Spelli Torment, Consume Shadows, Sacrifice i Suffering Voidwalkera o 30% i zwiększa bonusowy Atack Power z efektu Demonic Frenzy Felguarda o 3%.',
       'count': 0,
       'maxCount': 3,
       'pos': 5,
+      'index': 5,
     },
     {
-      'icon': 'fel-vitality',
+      'img': 'fel-vitality.jpg',
       'name': 'Fel Vitality',
       'desc':
-          'Increases the Stamina and Intellect of your Imp, Voidwalker, Succubus, Felhunter and Felguard by 15% and increases your maximum health and mana by 3%.',
+          'Zwiększa Staminę i Intellect demonów o 15% i zwiększa Twoje maksymalne życie i manę o 3%.',
       'count': 0,
       'maxCount': 3,
       'pos': 6,
+      'index': 6,
     },
     //
     {
-      'icon': 'improved-succubus',
+      'img': 'improved-succubus.jpg',
       'name': 'Improved Succubus',
       'desc':
-          'Reduces the cast time of your Succubus\' Seduction by 66%, and increases the duration of your Succubus\' Seduction and Lesser Invisibility spells by 30%.',
+          'Redukuje Cast Time Seduction Succuba o 66% i zwiększa czas trwania Seduction i Lesser Invisibility Succuba o 30%.',
       'count': 0,
       'maxCount': 3,
       'pos': 8,
+      'index': 7,
     },
     {
-      'icon': 'soul-link',
+      'img': 'soul-link.jpg',
       'name': 'Soul Link',
       'desc':
-          'When active, 20% of all damage taken by the caster is taken by your Imp, Voidwalker, Succubus, Felhunter, Felguard, or enslaved demon instead. That damage cannot be prevented. Lasts as long as the demon is active and controlled.',
+          'Jeśli aktywne, 20% otrzymanych obrażeń zostaje przekierowane na demona. Tym obrażeniom nie można zapobiegać. Trwa tak długo, jak demon jest aktywny i kontrolowany przez Ciebie.',
       'count': 0,
       'maxCount': 1,
       'pos': 9,
+      'index': 8,
     },
     {
-      'icon': 'fel-domination',
+      'img': 'fel-domination.jpg',
       'name': 'Fel Domination',
       'desc':
-          'Your next Imp, Voidwalker, Succubus, Felhunter or Felguard Summon spell has its casting time reduced by 5.5 sec and its Mana cost reduced by 50%.',
+          'Przyzwanie następnego demona jest krótsze o 5.5 sekundy, a koszt many zmniejszony o 50%.',
       'count': 0,
       'maxCount': 1,
       'pos': 10,
+      'index': 9,
     },
     {
-      'icon': 'demonic-aegis',
+      'img': 'demonic-aegis.jpg',
       'name': 'Demonic Aegis',
-      'desc':
-          'Increases the effectiveness of your Demon Armor and Fel Armor spells by 30%.',
+      'desc': 'Zwiększa efektywność Demon Armor i Fel Armor o 30%.',
       'count': 0,
       'maxCount': 3,
       'pos': 11,
+      'index': 10,
     },
     //
     {
-      'icon': 'unholy-power',
+      'img': 'unholy-power.jpg',
       'name': 'Unholy Power',
       'desc':
-          'Increases the damage done by your Voidwalker, Succubus, Felhunter and Felguard\'s melee attacks and your Imp\'s Firebolt by 20%.',
+          'Zwiększa obrażenia melee zadawane przez demony (Voidwalker, Succubus, Felhunter i Felguard) oraz obrażenia zadawane przez Firebolt Impa o 20%.',
       'count': 0,
       'maxCount': 5,
       'pos': 13,
+      'index': 11,
     },
     {
-      'icon': 'master-summoner',
+      'img': 'master-summoner.jpg',
       'name': 'Master Summoner',
       'desc':
-          'Reduces the casting time of your Imp, Voidwalker, Succubus, Felhunter and Fel Guard Summoning spells by 4 sec and the Mana cost by 40%.',
+          'Redukuje Cast Time przyzwania demona o 4 sekundy i koszt many o 40%.',
       'count': 0,
       'maxCount': 2,
       'pos': 14,
+      'index': 12,
     },
     //
     {
-      'icon': 'mana-feed',
+      'img': 'mana-feed.jpg',
       'name': 'Mana Feed',
       'desc':
-          'When you gain mana from Drain Mana or Life Tap spells, your summoned demon gains 100% of the mana you gain.',
+          'Jeśli otrzymujesz manę z Drain Mana lub Life Tap, Twój demon otrzymuje tyle samo many.',
       'count': 0,
       'maxCount': 1,
       'pos': 16,
+      'index': 13,
     },
     //
     {
-      'icon': 'master-conjuror',
+      'img': 'master-conjuror.jpg',
       'name': 'Master Conjuror',
       'desc':
-          'Increases the combat ratings gained from your conjured Firestone and Spellstone by 300%.',
+          'Zwiększa statystyki otrzymywane z Firestone i Spellstone o 300%.',
       'count': 0,
       'maxCount': 2,
       'pos': 18,
+      'index': 14,
     },
     //
     //
     {
-      'icon': 'master-demonologist',
+      'img': 'master-demonologist.jpg',
       'name': 'Master Demonologist',
-      'desc': "Grants both the Warlock and the summoned demon an effect as long as that demon is active."
-          "Imp - Increases your Fire damage by 5%, and increases the critical effect chance of your Fire spells by 5%."
-          "Voidwalker - Reduces Physical damage taken by 10%."
-          "Succubus - Increases your Shadow damage by 5%, and increases the critical effect chance of your Shadow spells by 5%."
-          "Felhunter - Reduces all spell damage taken by 10%."
-          "Felguard - Increases all damage done by 5%, and reduces all damage taken by 5%.",
+      'desc': [
+        'Daje Tobie i demonowi jakiś efekt, w zależności od tego, który demon jest aktywny:',
+        'Imp - Zwiększa Fire DMG o 5% i szansę na trafienie krytyczne Fire Spelli o 5%.',
+        'Voidwalker - Zmniejsza otrzymywane obrażenia fizyczne o 10%.',
+        'Succubus - Zwiększa Shadow DMG o 5% i szansę na trafienie krytyczne Shadow Spelli o 5%.',
+        'Felhunter - Zmniejsza otrzymywane obrażenia od Spelli o 10%.',
+        'Felguard - Zwiększa zadawane obrażenia o 5% i zmniejsza otrzymywane obrażenia o 5%',
+      ],
       'count': 0,
       'maxCount': 5,
       'pos': 21,
+      'index': 15,
     },
     {
-      'icon': 'molten-core',
+      'img': 'molten-core.jpg',
       'name': 'Molten Core',
-      'desc': 'Increases the duration of your Immolate by 9 sec, and you have a 12% chance to gain the Molten Core effect when your Corruption deals damage. The Molten Core effect empowers your next 3 Incinerate or Soul Fire spells cast within 15 seconds.'
-          'Incinerate - Increases damage done by 18% and reduces cast time by 30%.'
-          'Soul Fire - Increases damage done by 18% and increases critical strike chance by 15%.',
+      'desc': [
+        'Zwiększa czas trwania Immolate o 9 sekund i daje 12% szansy na otrzymanie efektu Molten Core, jak Corruption zada obrażenia.',
+        'Molten Core wzmacnia następne 3 Casty Incinerate lub Soul Fire. Efekt znika po wykorzystaniu tych 3 Castów lub po upływie 15 sekund.',
+        'Incinerate - Zwiększa zadawane obrażenia o 18% i redukuje Cast Time o 30%.',
+        'Soul Fire - Zwiększa zadawane obrażenia o 18% i zwiększa szansę na trafienie krytyczne o 15%.',
+      ],
       'count': 0,
       'maxCount': 3,
       'pos': 22,
+      'index': 16,
     },
     //
     {
-      'icon': 'demonic-resilience',
+      'img': 'demonic-resilience.jpg',
       'name': 'Demonic Resilience',
       'desc':
-          'Reduces the chance you\'ll be critically hit by melee and spells by 3% and reduces all damage your summoned demon takes by 15%.',
+          'Zmniejsza szansę na otrzymanie trafienia krytycznego o 3% i zmniejsza obrażenia otrzymywane przez demona o 15%.',
       'count': 0,
       'maxCount': 3,
       'pos': 24,
+      'index': 17,
     },
     {
-      'icon': 'demonic-empowerment',
+      'img': 'demonic-empowerment.jpg',
       'name': 'Demonic Empowerment',
-      'desc': 'Grants the Warlock\'s summoned demon Empowerment.'
-          'Imp - Increases the Imp\'s spell critical strike chance by 20% for 30 seconds.'
-          'Voidwalker - Increases the Voidwalker\'s health by 20%, and its threat generated from spells and attacks by 20% for 20 seconds.'
-          'Succubus - Instantly vanishes, causing the Succubus to go into an improved Invisibility state. The vanish effect removes all stuns, snares and movement impairing effects from the Succubus.'
-          'Felhunter - Dispels all magical effects from the Felhunter.'
-          'Felguard - Increases the Felguard\'s attack speed by 20% and breaks all stun, snare and movement impairing effects and makes your Felguard immune to them for 15 seconds.',
+      'desc': 'Daje demonowi efekt Empowerment:'
+          'Imp - Zwiększa demonowi szansę na trafienie krytyczne o 20% przez 30 sekund.'
+          'Voidwalker - Zwiększa życie demona o 20% i Threat generowany przez niego o 20% przez 20 sekund.'
+          'Succubus - Natychmiast znika. Efekt Vanish usuwa wszystkie stuny i efekty utrudniające ruch.'
+          'Felhunter - Usuwa wszystkie magiczne efekty z Felhuntera.'
+          'Felguard - Zwiększa szybkość ataków Felguarda o 20%, usuwa wszystkie stuny i efekty utrudniające ruch z Felguarda i chroni go przez tymi efektami przez 15 sekund.',
       'count': 0,
       'maxCount': 1,
       'pos': 25,
+      'index': 18,
     },
     {
-      'icon': 'demonic-knowledge',
+      'img': 'demonic-knowledge.jpg',
       'name': 'Demonic Knowledge',
       'desc':
-          'Increases your spell damage by an amount equal to 12% of the total of your active demon\'s Stamina plus Intellect.',
+          'Zwiększa Twoje obrażenia od Spelli o 12% Staminy i Intellectu demona.',
       'count': 0,
       'maxCount': 3,
       'pos': 26,
+      'index': 19,
     },
     //
     //
     {
-      'icon': 'demonic-tactics',
+      'img': 'demonic-tactics.jpg',
       'name': 'Demonic Tactics',
-      'desc':
-          'Increases melee and spell critical strike chance for you and your summoned demon by 10%.',
+      'desc': 'Zwiększa Tobie i demonowi szansę na trafienie krytyczne o 10%.',
       'count': 0,
       'maxCount': 5,
       'pos': 29,
+      'index': 20,
     },
     {
-      'icon': 'decimation',
+      'img': 'decimation.jpg',
       'name': 'Decimation',
       'desc':
-          'When you Shadowbolt, Incinerate or Soul Fire a target that is at or below 35% health, the cast time of your Soul Fire spell is reduced by 40% for 10 seconds. Soul Fires cast under the effect of Decimation cost no shard.',
+          'Kiedy Twój Shadowbolt, Incinerate lub Soul Fire trafi w Target, który ma 35% życia lub mniej, Cast Time Soul Fire jest zmniejszony o 40% przez 10 sekund. Soul Fire, podczas trwania efektu Decimation, nie używa shardów.',
       'count': 0,
       'maxCount': 2,
       'pos': 30,
+      'index': 21,
     },
     //
     {
-      'icon': 'improved-demonic-tactics',
+      'img': 'improved-demonic-tactics.jpg',
       'name': 'Improved Demonic Tactics',
       'desc':
-          'Increases your summoned demon\'s critical strike chance equal to 30% of your critical strike chance.',
+          'Zwiększa demonowi szansę na trafienie krytyczne o 30% Twojej szansy na trafienie krytyczne.',
       'count': 0,
       'maxCount': 3,
       'pos': 32,
+      'index': 22,
     },
     {
-      'icon': 'summon-felguard',
+      'img': 'summon-felguard.jpg',
       'name': 'Summon Felguard',
-      'desc': 'Summons a Felguard under the command of the Warlock.',
+      'desc': 'Przyzywa Felguarda pod kontrolę Warlocka.',
       'count': 0,
       'maxCount': 1,
       'pos': 33,
+      'index': 23,
     },
     {
-      'icon': 'nemesis',
+      'img': 'nemesis.jpg',
       'name': 'Nemesis',
       'desc':
-          'Reduces the cooldown of your Demonic Empowerment, Metamorphosis, and Fel Domination spells by 30%.',
+          'Redukuje Cooldown Demonic Empowerment, Metamorphosis i Fel Domination o 30%.',
       'count': 0,
       'maxCount': 3,
       'pos': 34,
+      'index': 24,
     },
     //
     //
     {
-      'icon': 'demonic-pact',
+      'img': 'demonic-pact.jpg',
       'name': 'Demonic Pact',
-      'desc':
-          'Increases your spell damage by 10%, and your pet\'s criticals apply the Demonic Pact effect to your party or raid members. Demonic Pact increases spell power by 10% of your Spell Damage for 45 seconds. This effect has a 20 sec cooldown. Does not work on Enslaved demons.',
+      'desc': [
+        'Zwiększa Spell DMG o 10%, a trafienia krytyczne Twojego demona nakładają efekt Demonic Pact na całe party lub rajd.',
+        'Demonic Pact zwiększa Spell Power o 10% Twojego Spell Damage przez 45 sekund.',
+        'Ten efekt można odnowić po 20 sekundach od poprzedniego odnowienia.',
+      ],
       'count': 0,
       'maxCount': 5,
       'pos': 37,
+      'index': 25,
     },
     //
     //
     //
     {
-      'icon': 'metamorphosis',
+      'img': 'metamorphosis.jpg',
       'name': 'Metamorphosis',
-      'desc':
-          'You transform into a Demon for 30 seconds. This form increases your armor by 600%, damage by 20%, reduces the chance you\'ll be critically hit by melee attacks by 6% and reduces the duration of stun and snare effects by 50%. You gain some unique demon abilities in addition to your normal abilities. 3 minute cooldown.',
+      'desc': [
+        'Zamieniasz się w demona na 30 sekund. Ta forma zwiększa Twój Armor o 600%, obrażenia o 20%, zmniejsza szansę na otrzymanie trafienia krytycznego od ataków melee o 6% i zmniejsza czas trwania stunów o 50%.',
+        'Otrzymujesz dodatkowo unikalne dla demona umiejętności. Cooldown trwa 3 minuty.'
+      ],
       'count': 0,
       'maxCount': 1,
       'pos': 41,
+      'index': 26,
     },
     //
     //
@@ -540,250 +603,276 @@ class Talents {
   List destro = [
     //
     {
-      'icon': 'improved-shadow-bolt',
+      'img': 'improved-shadow-bolt.jpg',
       'name': 'Improved Shadow Bolt',
       'desc':
-          'Increases the damage done by your Shadow Bolt spell by 10%, and your Shadow Bolt has a 100% chance to cause your target to be vulnerable to spell damage, increasing spell critical strike chance against that target by 5%. Effect lasts 30 seconds.',
+          'Zwiększa obrażenia zadawane przez Shadow Bolt o 10%. Shadow Bolt ma 100% szansy na to, że Target stanie się podatny na obrażenia od Spelli, zwiększając szansę na trafienie krytyczne przeciwko Targetowi o 5%. Efekt trwa 30 sekund.',
       'count': 5,
       'maxCount': 5,
       'pos': 1,
+      'index': 0,
     },
     {
-      'icon': 'bane',
+      'img': 'bane.jpg',
       'name': 'Bane',
       'desc':
-          'Reduces the casting time of your Shadow Bolt. Chaos Bolt and Immolate spells by 0.5 sec and your Soul Fire spell by 2 sec.',
+          'Redukuje Cast Time Spelli Shadow Bolt, Chaos Bolt i Immolate o 0.5 sekundy i Soul Fire o 2 sekundy.',
       'count': 5,
       'maxCount': 5,
       'pos': 2,
+      'index': 1,
     },
     //
     {
-      'icon': 'aftermath',
+      'img': 'aftermath.jpg',
       'name': 'Aftermath',
       'desc':
-          'Increases the periodic damage done by your Immolate by 6%, and your Conflagrate has a 100% chance to daze the target for 5 seconds.',
+          'Zwiększa obrażenia zadawane przez Immolate o 6%, a Conflagrate ma 100% szansy na nałożenie efektu Daze na Target na 5 sekund.',
       'count': 0,
       'maxCount': 2,
       'pos': 4,
+      'index': 2,
     },
     {
-      'icon': 'molten-skin',
+      'img': 'molten-skin.jpg',
       'name': 'Molten Skin',
-      'desc': 'Reduces all damage taken by 6%.',
+      'desc': 'Zmniejsza otrzymywane obrażenia o 6%.',
       'count': 0,
       'maxCount': 3,
       'pos': 5,
+      'index': 3,
     },
     {
-      'icon': 'cataclysm',
+      'img': 'cataclysm.jpg',
       'name': 'Cataclysm',
-      'desc': 'Reduces the Mana cost of your Destruction spells by 10%.',
+      'desc': 'Zmniejsza koszt many Spelli Destruction o 10%.',
       'count': 0,
       'maxCount': 3,
       'pos': 6,
+      'index': 4,
     },
     //
     {
-      'icon': 'demonic-power',
+      'img': 'demonic-power.jpg',
       'name': 'Demonic Power',
       'desc':
-          'Reduces the cooldown of your Succubus\' Lash of Pain spell by 6 sec. and reduces the casting time of your Imp\'s Firebolt spell by 1 sec.',
+          'Redukuje Cooldown Lash of Pain Succuba o 6 sekund i Cast Time Fireboltu Impa o 1 sekundę.',
       'count': 0,
       'maxCount': 2,
       'pos': 8,
+      'index': 5,
     },
     {
-      'icon': 'shadowburn',
+      'img': 'shadowburn.jpg',
       'name': 'Shadowburn',
       'desc':
-          'Instantly blasts the target for 450 to 502 Shadow damage. If the target dies within 5 seconds of Shadowburn, and yields experience or honor, the caster gains a Soul Shard.',
+          'Natychmiast wysadza Target za 450 do 502 Shadow DMG. Jeśli Target umrze w ciągu 5 sekund od użycia Shadowburn i da doświadczenie lub honor, caster otrzymuje Soul Shard.',
       'count': 0,
       'maxCount': 1,
       'pos': 9,
+      'index': 6,
     },
     {
-      'icon': 'ruin',
+      'img': 'ruin.jpg',
       'name': 'Ruin',
       'desc':
-          'Increases the critical strike damage bonus of your Destruction spells and your Imp\'s Firebolt spell by 100%.',
+          'Zwiększa bonus do obrażeń krytycznych Spelli Destruction i Fireboltu Impa o 100%.',
       'count': 5,
       'maxCount': 5,
       'pos': 10,
+      'index': 7,
     },
     //
     {
-      'icon': 'intensity',
+      'img': 'intensity.jpg',
       'name': 'Intensity',
       'desc':
-          'Reduces the pushback suffered from damaging attacks while casting or channeling any Destruction spell by 70%.',
+          'Redukuje cofanie się Cast Barów, spowodowane otrzymaniem obrażeń podczas Castowania Spelli Destruction o 70%.',
       'count': 1,
       'maxCount': 2,
       'pos': 12,
+      'index': 8,
     },
     {
-      'icon': 'destructive-reach',
+      'img': 'destructive-reach.jpg',
       'name': 'Destructive Reach',
       'desc':
-          'Increases the range of your Destruction spells by 20% and reduces threat caused by Destruction spells by 20%.',
+          'Zwiększa zasięg Spelli Destruction o 20% i zmniejsza Threat generowany przez nie o 20%.',
       'count': 0,
       'maxCount': 2,
       'pos': 13,
+      'index': 9,
     },
     //
     {
-      'icon': 'improved-searing-pain',
+      'img': 'improved-searing-pain.jpg',
       'name': 'Improved Searing Pain',
-      'desc':
-          'Increases the critical strike chance of your Searing Pain spell by 10%.',
+      'desc': 'Zwiększa szansę na trafienie krytyczne Searing Pain o 10%.',
       'count': 0,
       'maxCount': 3,
       'pos': 15,
+      'index': 10,
     },
     {
-      'icon': 'backlash',
+      'img': 'backlash.jpg',
       'name': 'Backlash',
-      'desc':
-          'Increases your critical strike chance with spells by an additional 3% and gives you a 25% chance when hit by a physical attack to reduce the cast time of your next Shadow Bolt or Incinerate spell by 100%. This effect lasts null and will not occur more than once every 8.',
+      'desc': [
+        'Zwiększa szansę na trafienie krytyczne Spellami o 3% i daje 25% szansy na to, żeby po otrzymaniu obrażeń fizycznych zmniejszyć Cast Time następnego Shadow Bolta lub Incinerate o 100%.',
+        'Ten efekt trwa 8 sekund i nie pojawi się częściej, niż raz na 8 sekund.'
+      ],
       'count': 0,
       'maxCount': 3,
       'pos': 16,
+      'index': 11,
     },
     {
-      'icon': 'improved-immolate',
+      'img': 'improved-immolate.jpg',
       'name': 'Improved Immolate',
-      'desc': 'Increases the damage done by your Immolate spell by 30%.',
+      'desc': 'Zwiększa obrażenia zadawane przez Immolate o 30%.',
       'count': 0,
       'maxCount': 3,
       'pos': 17,
+      'index': 12,
     },
     {
-      'icon': 'devastation',
+      'img': 'devastation.jpg',
       'name': 'Devastation',
-      'desc':
-          'Increases the critical strike chance of your Destruction spells by 5%.',
+      'desc': 'Zwiększa szansę na trafienie krytyczne Spelli Destruction o 5%.',
       'count': 0,
       'maxCount': 1,
       'pos': 18,
+      'index': 13,
     },
     //
     {
-      'icon': 'nether-protection',
+      'img': 'nether-protection.jpg',
       'name': 'Nether Protection',
       'desc':
-          'After being hit with a spell, you have a 30% chance to gain Nether Protection, reducing all damage by that spell school by 30% for 8 seconds.',
+          'Po otrzymaniu obrażeń od Spelli, masz 30% szansy na otrzymanie efektu Nether Protection, zmniejszającego obrażenia otrzymywane od tego drzewka Spelli o 30% przez 8 sekund.',
       'count': 0,
       'maxCount': 3,
       'pos': 20,
+      'index': 14,
     },
     //
     {
-      'icon': 'emberstorm',
+      'img': 'emberstorm.jpg',
       'name': 'Emberstorm',
       'desc':
-          'Increases the damage done by your Fire spells by 15% and reduces the cast time of your Incinerate spell by 0.25 sec.',
+          'Zwiększa obrażenia od Fire Spelli o 15% i redukuje Cast Time Incinerate o 0.25 sekundy.',
       'count': 0,
       'maxCount': 5,
       'pos': 22,
+      'index': 15,
     },
     //
     //
     {
-      'icon': 'conflagrate',
+      'img': 'conflagrate.jpg',
       'name': 'Conflagrate',
       'desc':
-          'Consumes an Immolate or Shadowflame effect on the enemy target to instantly deal damage equal to 60% of your Immolate or Shadowflame, and causes an additional 40% damage over 6 seconds.',
+          'Zużywa efekt Immolate lub Shadowflame na Targecie, żeby natychmiast zadać obrażenia równe 60% obrażeń Immolate lub Shadowflame i zadaje dodatkowe 40% obrażeń przez 6 sekund.',
       'count': 0,
       'maxCount': 1,
       'pos': 25,
+      'index': 16,
     },
     {
-      'icon': 'soul-leach',
+      'img': 'soul-leach.jpg',
       'name': 'Soul Leach',
       'desc':
-          'Gives your Shadow Bolt, Shadowburn, Chaos Bolt, Soul Fire, Incinerate, Searing Pain and Conflagrate spells a 30% chance to return health equal to 20% of the damage caused.',
+          'Shadow Bolt, Shadowburn, Chaos Bolt, Soul Fire, Incinerate, Searing Pain i Conflagrate mają 30% szansy na przywrócenie Twojego życia w ilości równej 20% zadanych obrażeń.',
       'count': 0,
       'maxCount': 3,
       'pos': 26,
+      'index': 17,
     },
     {
-      'icon': 'pyroclasm',
+      'img': 'pyroclasm.jpg',
       'name': 'Pyroclasm',
       'desc':
-          'When you critically strike with Searing Pain or Conflagrate, your Fire and Shadow spell damage is increased by 6% for 10 seconds.',
+          'Kiedy trafisz krytycznie Spellami Searing Pain lub Conflagrate, Twój Fire i Shadow Spell DMG zostają zwiększone o 6% przez 10 sekund.',
       'count': 0,
       'maxCount': 3,
       'pos': 27,
+      'index': 18,
     },
     //
     {
-      'icon': 'shadow-and-flame',
+      'img': 'shadow-and-flame.jpg',
       'name': 'Shadow and Flame',
       'desc':
-          'Your Shadow Bolt, Shadowburn, Chaos Bolt and Incinerate spells gain an additional 20% of your bonus spell damage effects.',
+          'Shadow Bolt, Shadowburn, Chaos Bolt i Incinerate otrzymują dodatkowe 20% twoich bonusowych obrażeń od Spelli.',
       'count': 0,
       'maxCount': 5,
       'pos': 29,
+      'index': 19,
     },
     {
-      'icon': 'improved-soul-leach',
+      'img': 'improved-soul-leach.jpg',
       'name': 'Improved Soul Leach',
       'desc':
-          'Your Soul Leech effect also restores mana to you and your summoned demon equal to 2% of maximum mana, and has a 100% chance to grant up to 10 party or raid members mana regeneration equal to 1% of maximum mana per 5 sec. Lasts for 15 seconds.',
+          'Efekt Soul Leech przywraca również 2% maksymalnej many Tobie i demonowi i ma 100% szansy na zregenerowanie 10 osobom w party lub w rajdzie 1% maksymalnej many co 5 sekund. Efekt trwa 15 sekund.',
       'count': 0,
       'maxCount': 2,
       'pos': 30,
+      'index': 20,
     },
     //
     {
-      'icon': 'backdraft',
+      'img': 'backdraft.jpg',
       'name': 'Backdraft',
       'desc':
-          'When you cast Conflagrate, the cast time and global cooldown of your next three Destruction spells is reduced by 30%. Lasts 15 seconds.',
+          'Kiedy Castujesz Conflagrate, Cast Time i Global Cooldown następnych 3 Spelli Destruction jest zmniejszony o 30%. Efekt trwa 15 sekund.',
       'count': 0,
       'maxCount': 3,
       'pos': 32,
+      'index': 21,
     },
     {
-      'icon': 'shadowfury',
+      'img': 'shadowfury.jpg',
       'name': 'Shadowfury',
       'desc':
-          'Shadowfury is unleashed, causing 968 to 1152 Shadow damage and stunning all enemies within 8 yds for 3 seconds.',
+          'Spell Shadowfury zostaje uwolniony, zadając 968 do 1152 Shadow DMG i nakładając stun na wszystkich wrogów w zasięgu 8 yardów na 3 sekundy.',
       'count': 0,
       'maxCount': 1,
       'pos': 33,
+      'index': 22,
     },
     {
-      'icon': 'empowered-imp',
+      'img': 'empowered-imp.jpg',
       'name': 'Empowered Imp',
       'desc':
-          'Increases the damage done by your Imp by 30%, and all critical hits done by your Imp have a 100% chance to increase your spell critical hit chance for your next spell by 100%. This effect lasts 8 seconds.',
+          'Zwiększa obrażenia zadawane przez Impa o 30%, a wszystkie trafienia krytyczne, zadane przez Impa mają 100% szansy na zwiększenie szansy na trafienia krytyczne następnych Spelli o 100%. Efekt trwa 8 sekund.',
       'count': 0,
       'maxCount': 3,
       'pos': 34,
+      'index': 23,
     },
     //
     //
     {
-      'icon': 'fire-and-brimestone',
+      'img': 'fire-and-brimestone.jpg',
       'name': 'Fire and Brimestone',
       'desc':
-          'Increases the damage done by your Incinerate and Chaos Bolt spells to targets afflicted by your Immolate by 10%, and the critical strike chance of your Conflagrate spell is increased by 25%.',
+          'Zwiększa obrażenia zadawane przez Incinerate i Chaos Bolt Targetom z efektem Immolate o 10% i zwiększa szansę na trafienie krytyczne Conflagrate o 25%.',
       'count': 0,
       'maxCount': 5,
       'pos': 37,
+      'index': 24,
     },
     //
     //
     //
     {
-      'icon': 'chaos-bolt',
+      'img': 'chaos-bolt.jpg',
       'name': 'Chaos Bolt',
       'desc':
-          'Sends a bolt of chaotic fire at the enemy, dealing 1429 to 1813 Fire damage. Chaos Bolt cannot be resisted, and pierces through all absorption effects.',
+          'Wystrzeliwuje we wroga kulę chaotycznego ognia, zadając 1429 do 1813 Fire DMG. Chaos Bolt nie może zostać zablokowany i przebija się przez wszystkie efekty absorbcji obrażeń.',
       'count': 0,
       'maxCount': 1,
       'pos': 41,
+      'index': 25,
     },
     //
     //

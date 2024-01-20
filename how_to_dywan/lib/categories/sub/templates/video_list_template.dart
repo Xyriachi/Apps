@@ -7,54 +7,101 @@ class VideoListTemplate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      physics: const NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      children: [
-        data == []
-            ? const Text('Ładowanie...')
-            : ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: data.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: GestureDetector(
-                      onTap: () async {
-                        final String videoUrl =
-                            "https://www.youtube.com/watch?v=${data[index]['id']}";
-                        if (await canLaunchUrl(Uri.parse(videoUrl))) {
-                          await launchUrl(Uri.parse(videoUrl));
-                        } else {
-                          throw 'Could not launch $videoUrl';
-                        }
-                      },
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          AspectRatio(
-                            aspectRatio: 16 / 10,
-                            child: Image(
-                              fit: BoxFit.fitWidth,
-                              image: NetworkImage(data[index]['img']),
-                              height: 360,
-                            ),
+    return Padding(
+      padding: const EdgeInsets.only(top: 4, bottom: 2),
+      child: ListView(
+        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        children: [
+          data == []
+              ? const Text('Ładowanie...')
+              : ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: data.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 4, horizontal: 2),
+                      child: GestureDetector(
+                        onTap: () async {
+                          final String videoUrl =
+                              "https://www.youtube.com/watch?v=${data[index]['id']}";
+                          if (await canLaunchUrl(Uri.parse(videoUrl))) {
+                            await launchUrl(Uri.parse(videoUrl));
+                          } else {
+                            throw 'Could not launch $videoUrl';
+                          }
+                        },
+                        child: Card(
+                          child: Row(
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 8, right: 4),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Image(
+                                        image: NetworkImage(data[index]['img']),
+                                        // height: 360,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                  flex: 2,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        right: 8, left: 4),
+                                    child: SizedBox(
+                                      height: 100,
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Expanded(
+                                            flex: 1,
+                                            child: Align(
+                                              alignment: Alignment.bottomLeft,
+                                              child: Text(data[index]['title'],
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  softWrap: false,
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .titleMedium),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 4,
+                                          ),
+                                          Expanded(
+                                            flex: 1,
+                                            child: Text(data[index]['desc'],
+                                                // overflow: TextOverflow.ellipsis,
+                                                softWrap: true,
+                                                maxLines: 2,
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .labelMedium),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ))
+                            ],
                           ),
-                          const SizedBox(height: 6),
-                          Align(
-                            alignment: Alignment.center,
-                            child: Text(data[index]['title'],
-                                softWrap: true,
-                                style: Theme.of(context).textTheme.titleMedium),
-                          ),
-                        ],
+                        ),
                       ),
-                    ),
-                  );
-                },
-              ),
-      ],
+                    );
+                  },
+                ),
+        ],
+      ),
     );
   }
 } //TODO make it looking better

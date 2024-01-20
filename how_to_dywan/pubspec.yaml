@@ -18,6 +18,7 @@ dependencies:
   http: ^0.13.6
   youtube_player_flutter: ^8.1.2
   cached_network_image: ^3.2.3
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -37,6 +38,7 @@ flutter:
     - assets/images/consumables/
     - assets/images/opener/
     - assets/images/spells/
+    - assets/images/sub_categories/
     - assets/images/icc/
     - assets/images/rs/
     - assets/images/talents/affi/

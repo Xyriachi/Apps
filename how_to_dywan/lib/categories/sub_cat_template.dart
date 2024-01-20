@@ -36,13 +36,26 @@ class SubCategoriesTemplate extends StatelessWidget {
                           subCategoryList[index]['title'] as String);
                     },
                     child: ListTile(
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 2, horizontal: 16),
                       minLeadingWidth: 32,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
-                      // TODO different icons for different subcategories
-                      leading: const SizedBox(
-                          height: double.infinity,
-                          child: Icon(Icons.anchor_sharp)),
+                      leading: SizedBox(
+                          height: 52,
+                          child:
+                              // Icon(Icons.anchor_sharp)
+                              Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                    color: Colors.black87, width: 2)),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(6),
+                              child: Image.asset(
+                                  'assets/images/sub_categories/${subCategoryList[index]['img']}'),
+                            ),
+                          )),
                       title: Text(subCategoryList[index]['title'] as String),
                       subtitle:
                           Text(subCategoryList[index]['subtitle'] as String),

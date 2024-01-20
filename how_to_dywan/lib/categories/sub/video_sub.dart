@@ -52,6 +52,7 @@ class VideoSub extends StatelessWidget {
             for (var item in items) {
               Map tempMap = {
                 'title': item['snippet']['title'].toString(),
+                'desc': item['snippet']['description'].toString(),
                 'id': item['id']['videoId'].toString(),
                 'img': item['snippet']['thumbnails']['high']['url'].toString(),
               };
