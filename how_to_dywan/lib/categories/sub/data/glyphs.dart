@@ -22,7 +22,7 @@ class Glyphs {
     },
     {
       'name': 'Glyph of Drain Soul',
-      'desc': 'Drain Soul czasem tworzy dodatkowy soul shard.',
+      'desc': 'Drain Soul czasem tworzy dodatkowy Soul Shard.',
       'img': 'minor_glyph.jpg',
       'shortDesc': 'Minor Glyph',
     },

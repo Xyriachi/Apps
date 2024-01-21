@@ -38,6 +38,7 @@ flutter:
     - assets/images/consumables/
     - assets/images/opener/
     - assets/images/spells/
+    - assets/images/addons/
     - assets/images/sub_categories/
     - assets/images/icc/
     - assets/images/rs/

@@ -39,7 +39,7 @@ class AdvancedSub extends StatelessWidget {
       {
         'source': 'addons',
         'data': Addons().getAddonsList(),
-        'type': 'iconList',
+        'type': 'iconNestedList',
       },
     ];
 

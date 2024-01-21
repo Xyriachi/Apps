@@ -51,7 +51,11 @@ class IconList extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                     subtitle: data[firstIndex]['shortDesc'] != null
-                        ? Text(data[firstIndex]['shortDesc'], softWrap: true)
+                        ? Text(
+                            data[firstIndex]['shortDesc'],
+                            softWrap: false,
+                            overflow: TextOverflow.ellipsis,
+                          )
                         : const Text('')),
               ),
             );

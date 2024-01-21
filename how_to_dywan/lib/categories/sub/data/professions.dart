@@ -3,50 +3,60 @@ class Professions {
     {
       'name': 'Engineering',
       'img': 'engineering.jpg',
-      'desc': '',
+      'shortDesc': 'Najlepsza profesja dla casterów.',
+      'desc': [
+        'Najlepsza profesja dla casterów.',
+        'Daje dobre buffy, a Nitro Buty pozwalają szybko uciekać od mechanik.'
+      ],
       'sub': [
         {
           'subName': 'Hyperspeed Accelerators',
           'subImg': 'hyperspeed_accelerators.jpg',
           'subDesc':
-              'Enchant na rękawice, który daje 340 haste przez 12 seconds. 1 minuta cooldownu.',
+              'Enchant na rękawice, który daje 340 haste przez 12 sekund. 1 minuta Cooldownu.',
         },
         {
           'subName': 'Nitro Boosts',
           'subImg': 'nitro_boots.jpg',
-          'subDesc':
-              'Enchant na buty, który zwiększa na chwilę szybkość biegania. Ułatwia unikanie zabójczych mechanik i pozwala szybko się przemieszczać. 3 minuty cooldownu.',
+          'subDesc': [
+            'Enchant na buty, który zwiększa na chwilę szybkość biegania.',
+            'Ułatwia unikanie zabójczych mechanik i pozwala szybko się przemieszczać. 3 minuty Cooldownu.'
+          ],
         },
         {
           'subName': 'Saronite Bombs',
           'subImg': 'saronite_bomb.jpg',
-          'subDesc':
-              'Bomba, która zadaje niewielkie obrażenia Fire wszystkim wrogom w zasięgu 10 yardów. Przy większej grupie wrogów, można zadać sporo dodatkowych obrażeń. 1 minuta cooldownu.',
+          'subDesc': [
+            'Bomba, która zadaje trochę Fire DMG wszystkim wrogom w zasięgu 10 yardów.',
+            'Przy większej grupie wrogów, można zadać sporo dodatkowych obrażeń. 1 minuta Cooldownu.'
+          ],
         },
         {
           'subName': 'MOLL-E',
           'subImg': 'moll_e.jpg',
           'subDesc':
-              'Kieszonkowy Mailbox, który pozwala odbierać maile bez wychodzenia z rajdu. 10 minut cooldownu.',
+              'Kieszonkowy Mailbox, który pozwala odbierać maile bez wychodzenia z rajdu. 10 minut Cooldownu.',
         },
         {
           'subName': 'Jeeves',
           'subImg': 'jeeves.jpg',
           'subDesc':
-              'Robot, który pozwala naprawić swoje przedmioty, daje dostęp do banku i sprzedaje różne przedmioty. 1 godzina cooldownu.',
+              'Robot, który pozwala naprawić swoje przedmioty, daje dostęp do banku i sprzedaje różne przedmioty. 1 godzina Cooldownu.',
         },
       ]
     },
     {
       'name': 'Tailoring',
       'img': 'tailoring.jpg',
-      'desc': '',
+      'shortDesc': 'Kto by nie chciał latać na dywanie?',
+      'desc':
+          'Druga najlepsza profesja dla casterów. Daje dobre staty i latający dywan.',
       'sub': [
         {
           'subName': 'Lightweave Embroidery',
           'subImg': 'lightweave_embroidery.jpg',
           'subDesc':
-              'Enchant na pelerynę, który daje 295 Spell Powera przez 15 sekund. 45 sekund cooldownu.',
+              'Enchant na pelerynę, który daje 295 Spell Powera przez 15 sekund. 45 sekund Cooldownu.',
         },
         {
           'subName': 'Brilliant Spellthread',
@@ -59,7 +69,9 @@ class Professions {
     {
       'name': 'Jewelcrafting',
       'img': 'jewelcrafting.jpg',
-      'desc': '',
+      'shortDesc': 'Bardzo dobry zamiennik dla Tailoringu.',
+      'desc':
+          'Bardzo dobry zamiennik dla Tailoringu. Pozwala też wytwarzać gemy.',
       'sub': [
         {
           'subName': 'Runed Dragon\'s Eye',
@@ -72,7 +84,9 @@ class Professions {
     {
       'name': 'Alchemy',
       'img': 'alchemy.jpg',
-      'desc': '',
+      'shortDesc': 'Przydatne, jeśli używasz dużo flasków i potionów.',
+      'desc':
+          'Wzmacnia efekt Flasków i wydłuża ich działanie. Pozwala też tworzyć flaski i potiony.',
       'sub': [
         {
           'subName': 'Mixology',
@@ -85,7 +99,8 @@ class Professions {
     {
       'name': 'Inscription',
       'img': 'inscription.jpg',
-      'desc': '',
+      'shortDesc': 'Czasem się przyda, ale Warlock nie zmienia glyphów.',
+      'desc': 'Przydatne, jeśli robisz glyphy na inne postacie.',
       'sub': [
         {
           'subName': 'Master\'s Inscription of the Storm',
@@ -98,7 +113,8 @@ class Professions {
     {
       'name': 'Blacksmithing',
       'img': 'blacksmithing.jpg',
-      'desc': '',
+      'shortDesc': 'Raczej nie przydatne dla casterów.',
+      'desc': 'Raczej nie przydatne dla casterów.',
       'sub': [
         {
           'subName': 'Socket Bracer',
@@ -115,7 +131,8 @@ class Professions {
     {
       'name': 'Leatherworking',
       'img': 'leatherworking.jpg',
-      'desc': '',
+      'shortDesc': 'Raczej nie przydatne dla casterów.',
+      'desc': 'Raczej nie przydatne dla casterów.',
       'sub': [
         {
           'subName': 'Fur Lining - Spell Power',
@@ -127,7 +144,8 @@ class Professions {
     {
       'name': 'Enchanting',
       'img': 'enchanting.jpg',
-      'desc': '',
+      'shortDesc': 'Mało daje, ale pozwala robić enchanty.',
+      'desc': 'Mało daje, ale pozwala robić enchanty.',
       'sub': [
         {
           'subName': 'Enchant Ring - Greater Spellpower',

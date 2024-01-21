@@ -2,7 +2,7 @@ class TacticsList {
   List<Map<String, String>> tacticsList = [
     {
       'title': 'Icecrown Citadel',
-      'subtitle': 'Gdzie jest zdrajca, Arthas?',
+      'subtitle': 'Gdzie jest zdrajca Arthas?',
       'img': 'icc.jpg'
     },
     {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:how_to_dywan/categories/sub/templates/components/on_tap_dialog.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class IconNestedList extends StatelessWidget {
   const IconNestedList({super.key, required this.data, required this.source});
@@ -47,8 +48,11 @@ class IconNestedList extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(6),
                             child: Image.asset(
-                                'assets/images/$source/${data[firstIndex]['img']}',
-                                width: 48),
+                              fit: BoxFit.cover,
+                              'assets/images/$source/${data[firstIndex]['img']}',
+                              width: 48,
+                              height: 48,
+                            ),
                           ),
                         ),
                         title: Text(
@@ -56,8 +60,11 @@ class IconNestedList extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                         ),
                         subtitle: data[firstIndex]['shortDesc'] != null
-                            ? Text(data[firstIndex]['shortDesc'],
-                                softWrap: true)
+                            ? Text(
+                                data[firstIndex]['shortDesc'],
+                                softWrap: false,
+                                overflow: TextOverflow.ellipsis,
+                              )
                             : const Text('')),
                   ),
                 ),
@@ -99,8 +106,10 @@ class IconNestedList extends StatelessWidget {
                                             borderRadius:
                                                 BorderRadius.circular(6),
                                             child: Image.asset(
+                                              fit: BoxFit.cover,
                                               'assets/images/$source/${data[firstIndex]['sub'][secondIndex]['subImg']}',
                                               width: 48,
+                                              height: 48,
                                             ),
                                           ),
                                         )),
@@ -123,42 +132,75 @@ class IconNestedList extends StatelessWidget {
                                           ),
                                           Align(
                                             alignment: Alignment.topLeft,
-                                            child: data[firstIndex]['sub']
-                                                        [secondIndex]['subDesc']
-                                                    is String
-                                                ? Text(
-                                                    data[firstIndex]['sub']
+                                            child:
+                                                data[firstIndex]['sub']
                                                             [secondIndex]
-                                                        ['subDesc'],
-                                                    softWrap: true,
-                                                  )
-                                                : Column(
-                                                    children: [
-                                                      ListView.separated(
-                                                        shrinkWrap: true,
-                                                        separatorBuilder:
-                                                            (context, index) {
-                                                          return const SizedBox(
-                                                              height: 10);
-                                                        },
-                                                        itemCount: data[firstIndex]
-                                                                        ['sub'][
-                                                                    secondIndex]
-                                                                ['subDesc']
-                                                            .length,
-                                                        itemBuilder: (context,
-                                                            thirdIndex) {
-                                                          return Text(data[firstIndex]
-                                                                          [
-                                                                          'sub']
-                                                                      [
-                                                                      secondIndex]
-                                                                  ['subDesc']
-                                                              [thirdIndex]);
-                                                        },
+                                                        ['subDesc'] is String
+                                                    ? Text(
+                                                        data[firstIndex]['sub']
+                                                                [secondIndex]
+                                                            ['subDesc'],
+                                                        softWrap: true,
                                                       )
-                                                    ],
-                                                  ),
+                                                    : Column(
+                                                        children: [
+                                                          ListView(
+                                                              shrinkWrap: true,
+                                                              children: [
+                                                                ListView
+                                                                    .separated(
+                                                                  shrinkWrap:
+                                                                      true,
+                                                                  separatorBuilder:
+                                                                      (context,
+                                                                          index) {
+                                                                    return const SizedBox(
+                                                                        height:
+                                                                            10);
+                                                                  },
+                                                                  itemCount: data[firstIndex]['sub']
+                                                                              [
+                                                                              secondIndex]
+                                                                          [
+                                                                          'subDesc']
+                                                                      .length,
+                                                                  itemBuilder:
+                                                                      (context,
+                                                                          thirdIndex) {
+                                                                    return Text(data[firstIndex]['sub'][secondIndex]
+                                                                            [
+                                                                            'subDesc']
+                                                                        [
+                                                                        thirdIndex]);
+                                                                  },
+                                                                ),
+                                                                const SizedBox(
+                                                                  height: 10,
+                                                                ),
+                                                                if (data[firstIndex]['sub']
+                                                                            [
+                                                                            secondIndex]
+                                                                        [
+                                                                        'link'] !=
+                                                                    null)
+                                                                  GestureDetector(
+                                                                      onTap:
+                                                                          () {
+                                                                        launchUrl(Uri.parse(data[firstIndex]['sub'][secondIndex]
+                                                                            [
+                                                                            'link']));
+                                                                      },
+                                                                      child:
+                                                                          Text(
+                                                                        data[firstIndex]['sub'][secondIndex]
+                                                                            [
+                                                                            'link'],
+                                                                        overflow:
+                                                                            TextOverflow.ellipsis,
+                                                                      ))
+                                                              ])
+                                                        ],
+                                                      ),
                                           ),
                                         ],
                                       ),
@@ -181,8 +223,11 @@ class IconNestedList extends StatelessWidget {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(6),
                               child: Image.asset(
-                                  'assets/images/$source/${data[firstIndex]['sub'][secondIndex]['subImg']}',
-                                  width: 36),
+                                fit: BoxFit.cover,
+                                'assets/images/$source/${data[firstIndex]['sub'][secondIndex]['subImg']}',
+                                width: 36,
+                                height: 36,
+                              ),
                             ),
                           ),
                           title: Text(
