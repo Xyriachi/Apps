@@ -23,20 +23,21 @@ class OnTapDialog extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-                padding: const EdgeInsets.only(right: 10),
-                child: Container(
-                  decoration: BoxDecoration(
+            if (source != '')
+              Padding(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6),
+                        border: Border.all(color: Colors.black87, width: 2)),
+                    child: ClipRRect(
                       borderRadius: BorderRadius.circular(6),
-                      border: Border.all(color: Colors.black87, width: 2)),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(6),
-                    child: Image.asset(
-                      'assets/images/$source/${data[firstIndex]['img']}',
-                      width: 48,
+                      child: Image.asset(
+                        'assets/images/$source/${data[firstIndex]['img']}',
+                        width: 48,
+                      ),
                     ),
-                  ),
-                )),
+                  )),
             Expanded(
               child: Column(
                 mainAxisSize: MainAxisSize.min,

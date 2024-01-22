@@ -10,9 +10,6 @@ import 'package:how_to_dywan/top_app_bar.dart';
 void main() {
   runApp(const MainApp());
 }
-//TODO check races, spell list, rotation, opener and consumables
-//TODO check if there is any other streamer in guild and add him to the video list
-//TODO add About Me section with info about me, my guild and hardcore realm
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});

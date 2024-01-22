@@ -3,8 +3,10 @@ class Opener {
     {
       'name': 'Potion of Wild Magic',
       'img': 'potion_of_wild_magic.jpg',
-      'desc':
-          'Najważniejsze jest odnowienie ręcznie Corruption, jeśli buff Devious Minds (10% DMG więcej - buff z 4setu za frosty) pojawi się przed końcem buffa z Potiona.',
+      'desc': [
+        'Najważniejsze jest odnowienie ręcznie Corruption, jeśli buff Devious Minds pojawi się przed końcem buffa z Potiona.',
+        'Jest to buff z 4setu za Emblem of Frost, który daje +10% do obrażeń.',
+      ],
       'shortDesc': 'Użyj 1-2 sekundy przed pullem.',
       'sub': [
         {
@@ -16,7 +18,7 @@ class Opener {
           'subName': 'Shadow Bolt',
           'subImg': 'shadow_bolt.jpg',
           'subDesc':
-              'Główny filler. Nakłada debuff Shadow Mastery na target (+5% Critital Strike Chance).',
+              'Główny filler. Nakłada debuff Shadow Mastery na Target (+5% Critital Strike Chance).',
         },
         {
           'subName': 'Haunt',
@@ -40,13 +42,13 @@ class Opener {
           'subName': 'Shadow Bolt',
           'subImg': 'shadow_bolt.jpg',
           'subDesc':
-              'Główny filler. Nakłada debuff Shadow Mastery na target (+5% Critital Strike Chance).',
+              'Główny filler. Nakłada debuff Shadow Mastery na Target (+5% Critital Strike Chance).',
         },
         {
           'subName': 'Shadow Bolt',
           'subImg': 'shadow_bolt.jpg',
           'subDesc':
-              'Główny filler. Nakłada debuff Shadow Mastery na target (+5% Critital Strike Chance).',
+              'Główny filler. Nakłada debuff Shadow Mastery na Target (+5% Critital Strike Chance).',
         },
       ],
     },
@@ -60,7 +62,7 @@ class Opener {
           'subName': 'Shadow Bolt',
           'subImg': 'shadow_bolt.jpg',
           'subDesc':
-              'Główny filler. Nakłada debuff Shadow Mastery na target (+5% Critital Strike Chance).',
+              'Główny filler. Nakłada debuff Shadow Mastery na Target (+5% Critital Strike Chance).',
         },
         {
           'subName': 'Unstable Affliction',
@@ -89,13 +91,13 @@ class Opener {
           'subName': 'Shadow Bolt',
           'subImg': 'shadow_bolt.jpg',
           'subDesc':
-              'Główny filler. Nakłada debuff Shadow Mastery na target (+5% Critital Strike Chance).',
+              'Główny filler. Nakłada debuff Shadow Mastery na Target (+5% Critital Strike Chance).',
         },
         {
           'subName': 'Shadow Bolt',
           'subImg': 'shadow_bolt.jpg',
           'subDesc':
-              'Główny filler. Nakłada debuff Shadow Mastery na target (+5% Critital Strike Chance).',
+              'Główny filler. Nakłada debuff Shadow Mastery na Target (+5% Critital Strike Chance).',
         },
       ],
     },

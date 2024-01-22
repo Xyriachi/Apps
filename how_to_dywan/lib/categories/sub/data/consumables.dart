@@ -11,14 +11,14 @@ class Consumables {
       'name': 'Potion of Wild Magic',
       'img': 'potion_of_wild_magic.jpg',
       'desc':
-          'Zwiększa Critical Rating o 200 i Spell Power o 200 przez 15 sekund.',
-      'shortDesc': 'Wymagane na trudniejsze bossy.',
+          'Zwiększa Critical Strike Rating o 200 i Spell Power o 200 przez 15 sekund.',
+      'shortDesc': 'Wymagane na trudniejsze Bossy.',
     },
     {
       'name': 'Potion of Speed',
       'img': 'potion_of_speed.jpg',
       'desc': 'Zwiększa Haste Rating o 500 przez 15 sekund.',
-      'shortDesc': 'Wymagane na trudniejsze bossy.',
+      'shortDesc': 'Wymagane na trudniejsze Bossy.',
     },
     {
       'name': 'Fish Feast',
@@ -44,7 +44,7 @@ class Consumables {
     {
       'name': 'Spiced Mammoth Treats',
       'img': 'spiced_mammoth_treats.jpg',
-      'desc': 'Zwiększa Strength i Staminę twojego Peta o 30 przez 1 godzinę.',
+      'desc': 'Zwiększa Strength i Staminę Twojego Peta o 30 przez 1 godzinę.',
       'shortDesc': 'Najlepsze jedzenie dla Peta.',
     },
   ];

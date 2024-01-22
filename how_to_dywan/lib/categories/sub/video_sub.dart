@@ -16,14 +16,24 @@ class VideoSub extends StatelessWidget {
         final stateA = context.watch<SelectedScreenCubit>().state;
         final stateB = context.watch<YoutubeApiDataCubit>();
 
-        int dataIndex = stateA.selectedScreen[1] == 'Han' ? 0 : 1;
+        int dataIndex = stateA.selectedScreen[1] == 'Han'
+            ? 0
+            : stateA.selectedScreen[1] == 'Sebciu'
+                ? 1
+                : stateA.selectedScreen[1] == 'Sharpshady WoTLK'
+                    ? 2
+                    : stateA.selectedScreen[1] == 'Gabernik'
+                        ? 3
+                        : 3;
 
         List videoDataList = [];
 
         Future<void> fetchVideos() async {
           List<String> channelIds = [
             'UCT7t9h2EKeDu62sa1OwY1aQ',
-            'UCk3EsBFj4p5oAknxswX2tsg'
+            'UCk3EsBFj4p5oAknxswX2tsg',
+            'UCAPCVzJVc1mB1PvSygf_VaA',
+            'UCh2HiCpHZbBrscMnnPCyBkQ',
           ];
           const String apiKey = 'AIzaSyCRGWgZVu7gfSGygegGzS_RP0NyxDlOF9M';
           const maxResults = 12;
@@ -58,7 +68,7 @@ class VideoSub extends StatelessWidget {
               };
               videoDataList.add(tempMap);
             }
-            print(videoDataList);
+            // print(videoDataList);
           } else {
             throw Exception('Nie udało się załadować filmów.');
           }

@@ -3,7 +3,12 @@ class Races {
     {
       'name': 'Orc',
       'img': 'orc.jpg',
-      'desc': '',
+      'desc': [
+        'Najlepsza rasa dla Warlocka w Hordzie.',
+        'Daje 165 Spell Powera i zwiększa obrażenia zadawane przez demony o 5%.',
+        'Skrócony czas trwania stunów czasem też się przydaje.',
+      ],
+      'subDesc': 'Najlepsza rasa dla Warlocka w Hordzie.',
       'sub': [
         {
           'subName': 'Blood Fury',
@@ -25,7 +30,12 @@ class Races {
     {
       'name': 'Undead',
       'img': 'undead.jpg',
-      'desc': '',
+      'desc': [
+        'Mogło być lepiej, ale nie jest źle.',
+        'Regeneracja HP raczej nie przyda się na rajdach.',
+        'Czasem na rajdach przydaje się usuwanie stunów, ale Undead nic więcej nie daje.',
+      ],
+      'subDesc': 'Mogło być lepiej, ale nie jest źle.',
       'sub': [
         {
           'subName': 'Will of the Forsaken',
@@ -50,12 +60,17 @@ class Races {
     {
       'name': 'Blood Elf',
       'img': 'blood_elf.jpg',
-      'desc': '',
+      'desc': [
+        'Niezbyt użyteczna rasa dla Warlocka.',
+        'Nie zwiększa zadawanych obrażeń i regeneruje manę, którą i tak dałby nam Life Tap.',
+        'Czasem przydaje się Silence, ale nie działa na Bossach, więc nie warto.',
+      ],
+      'subDesc': 'Niezbyt użyteczna rasa dla Warlocka.',
       'sub': [
         {
           'subName': 'Arcane Torrent',
           'subDesc':
-              'Nakłada Silence na wszystkich wrogów w odległości 8 yardów na 2 sekundy i regeneruje 6% twojej maksymalnej many.',
+              'Nakłada Silence na wszystkich wrogów w odległości 8 yardów na 2 sekundy i regeneruje 6% Twojej maksymalnej many.',
           'subImg': 'arcane_torrent.jpg'
         },
         {
@@ -68,7 +83,12 @@ class Races {
     {
       'name': 'Human',
       'img': 'human.jpg',
-      'desc': '',
+      'desc': [
+        'Najlepsza rasa dla Warlocka w Alliance.',
+        'Daje tylko 3% Spiritu, ale pozwala na usunięcie wszystkich efektów utrudniających ruch lub odbierających kontrolę nad postacią.',
+        'Bardzo przydaje się na PVP, ale nawet na rajdach można zrobić z tego użytek.',
+      ],
+      'subDesc': 'Najlepsza rasa dla Warlocka w Alliance.',
       'sub': [
         {
           'subName': 'The Human Spirit',
@@ -86,7 +106,11 @@ class Races {
     {
       'name': 'Gnome',
       'img': 'gnome.jpg',
-      'desc': '',
+      'desc': [
+        'Rasa porównywalna z Humanem.',
+        'Daje tylko 5% Intellectu, ale pozwala unikać efektów utrudniających lub blokujących ruch.',
+      ],
+      'subDesc': 'Rasa porównywalna z Humanem.',
       'sub': [
         {
           'subName': 'Expansive Mind',

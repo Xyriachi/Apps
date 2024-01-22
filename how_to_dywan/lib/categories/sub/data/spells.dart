@@ -3,14 +3,16 @@ class Spells {
     {
       'name': 'DPS',
       'img': 'shadow_bolt.jpg',
-      'desc': '',
-      'shortDesc': 'Wszystko od DPSu.',
+      'desc': 'Każdy Spell, którego celem jest zadawanie obrażeń Targetowi.',
+      'shortDesc': 'Wszystko od robienia DPSu.',
       'sub': [
         {
           'subName': 'Corruption',
           'subImg': 'corruption.jpg',
-          'subDesc':
-              'Najsilniejsza DoTka. Shadow Bolt, Haunt i Drain Soul odnawiają jej czas trwania dzięki talentowi Everlasting Affliction.',
+          'subDesc': [
+            'Najsilniejsza DoTka.',
+            'Shadow Bolt, Haunt i Drain Soul odnawiają jej czas trwania dzięki talentowi Everlasting Affliction.'
+          ],
         },
         {
           'subName': 'Unstable Affliction',
@@ -33,45 +35,45 @@ class Spells {
           'subName': 'Shadow Bolt',
           'subImg': 'shadow_bolt.jpg',
           'subDesc':
-              'Główny filler. Nakłada debuff Shadow Mastery na target (+5% Critital Strike Chance).',
+              'Główny filler. Nakłada debuff Shadow Mastery na Target (+5% Critital Strike Chance).',
         },
         {
           'subName': 'Drain Soul',
           'subImg': 'drain_soul.jpg',
           'subDesc':
-              'Filler poniżej 25% HP targetu, bo zadaje wtedy 4x większe obrażenia.',
+              'Filler poniżej 25% HP Targetu, bo wtedy zadaje 4x większe obrażenia.',
         },
         {
           'subName': 'Seed of Corruption',
           'subImg': 'seed_of_corruption.jpg',
           'subDesc':
-              'Główny spell AoE. Działa jak DoTka, ale, jeśli target otrzyma wystarczająco dużo obrażeń, wybucha zadając obrażenia AoE.',
+              'Główny Spell AoE. Działa jak DoTka, ale, jeśli Target otrzyma wystarczająco dużo obrażeń, wybucha zadając obrażenia AoE.',
         },
         {
           'subName': 'Rain of Fire',
           'subImg': 'rain_of_fire.jpg',
           'subDesc':
-              'Drugi spell AoE. Zadaje mniejsze obrażenia niż Seed of Corruption, ale nie musisz czekać, aż wybuchnie.',
+              'Drugi Spell AoE. Zadaje mniejsze obrażenia niż Seed of Corruption, ale nie musisz czekać, aż wybuchnie.',
         },
       ],
     },
     {
       'name': 'Proc',
       'img': 'charred_twilight_scale.jpg',
-      'desc': '',
+      'desc': 'Wszystkie buffy, które pojawiają się losowo w trakcie walki.',
       'shortDesc': 'Buffy z % szansą na pojawienie się.',
       'sub': [
         {
           'subName': 'Eradication',
           'subImg': 'eradication.jpg',
           'subDesc':
-              'Każde obrażenia zadane przez Corruption mają 6% szansę na zwiększenie Casting Speed o 20% przez 10 sekund.',
+              'Każde obrażenia zadane przez Corruption mają 6% szansę na zwiększenie Cast Speed o 20% przez 10 sekund.',
         },
         {
           'subName': 'Nightfall',
           'subImg': 'nightfall.jpg',
           'subDesc':
-              'Każde obrażenia zadane przez Corruption i Drain Life mają 4% szansę na to, żeby następny Shadow Bolt był instant castem.',
+              'Każde obrażenia zadane przez Corruption i Drain Life mają 4% szansę na to, żeby następny Shadow Bolt był instant Castem.',
         },
         {
           'subName': 'Devious Minds',
@@ -83,14 +85,15 @@ class Spells {
     {
       'name': 'Buffy',
       'img': 'unending_breath.jpg',
-      'desc': '',
-      'shortDesc': '',
+      'desc':
+          'Wszystkie buffy, które możemy nałożyć na siebie lub kogoś innego.',
+      'shortDesc': 'Buffy, które nie pojawiają się same.',
       'sub': [
         {
           'subName': 'Life Tap',
           'subImg': 'life_tap.jpg',
           'subDesc':
-              'Zamienia część HP na manę. Glyph of Life Tap sprawia, że otrzymujesz buffa na 40 sekund, który zamienia 20% twojego Spiritu na Spell Power.',
+              'Zamienia część HP na manę. Glyph of Life Tap sprawia, że otrzymujesz buffa na 40 sekund, który zamienia 20% Twojego Spiritu na Spell Power.',
         },
         {
           'subName': 'Shadow Ward',
@@ -125,58 +128,58 @@ class Spells {
     {
       'name': 'Debuffy',
       'img': 'shadow_bite.jpg',
-      'desc': '',
-      'shortDesc': '',
+      'desc': 'Wszystko, co nakładamy na Target.',
+      'shortDesc': 'Wszystko, co nakładamy na Target.',
       'sub': [
         {
           'subName': 'Curse of the Elements',
           'subImg': 'curse_of_the_elements.jpg',
           'subDesc':
-              'Zmniejsza Resistance Arcane, Fire, Frost, Nature i Shadow o 165 i zwiększa Magic Damage Taken o 13% przez 5 minut.',
+              'Zmniejsza Arcane, Fire, Frost, Nature i Shadow Resistance o 165 i zwiększa Magic Damage Taken o 13% przez 5 minut.',
         },
         {
           'subName': 'Curse of Tongues',
           'subImg': 'curse_of_tongues.jpg',
           'subDesc':
-              'Wydłuża Cast Time spelli o 30% przez 30 sekund. Sprawia też, że target mówi w języku demonicznym.',
+              'Wydłuża Cast Time Spelli o 30% przez 30 sekund. Sprawia też, że Target mówi w języku demonicznym.',
         },
         {
           'subName': 'Curse of Weakness',
           'subImg': 'curse_of_weakness.jpg',
           'subDesc':
-              'Zmniejsza Attack Power o 478 i armor o 5% przez 2 minuty.',
+              'Zmniejsza Attack Power o 478 i Armor o 5% przez 2 minuty.',
         },
         {
           'subName': 'Curse of Doom',
           'subImg': 'curse_of_doom.jpg',
           'subDesc':
-              'Zadaje spore obrażenia, ale dopiero po 1 minucie. Jeśli target umrze od tych obrażeń, pojawia się Doomguard.',
+              'Zadaje spore obrażenia, ale dopiero po 1 minucie. Jeśli Target umrze od tych obrażeń, pojawia się Doomguard.',
         },
         {
           'subName': 'Banish',
           'subImg': 'banish.jpg',
           'subDesc':
-              'Sprawia, że target nie może nic robić, ale nie można mu zadać obrażeń. Efekt trwa 30 sekund i działa tylko na Demony i Elementale.',
+              'Sprawia, że Target nie może nic robić, ale nie można mu zadać obrażeń. Efekt trwa 30 sekund i działa tylko na Demony i Elementale.',
         },
         {
           'subName': 'Fear',
           'subImg': 'fear.jpg',
           'subDesc':
-              'Target boi się i biega w losowe miejsce przez 20 sekund. Obrażenia mogą przerwać efekt.',
+              'Target boi się i biega w losowe miejsca przez 20 sekund. Obrażenia mogą przerwać efekt.',
         },
         {
           'subName': 'Death Coil',
           'subImg': 'death_coil.jpg',
           'subDesc':
-              'Target otrzymuje niewielkie obrażenia Shadow biega przerażony przez 3 sekundy. Caster leczy się za 300% zadanych obrażeń.',
+              'Target otrzymuje Shadow DMG i biega przerażony przez 3 sekundy. Caster leczy się za 300% zadanych obrażeń.',
         },
       ],
     },
     {
       'name': 'Inne',
       'img': 'soulshard.jpg',
-      'desc': '',
-      'shortDesc': '',
+      'desc': 'Wszystko, co nie pasuje do innych kategorii, a się przydaje.',
+      'shortDesc': 'Pozostałe Spelle.',
       'sub': [
         {
           'subName': 'Create Soulstone',
@@ -187,7 +190,8 @@ class Spells {
         {
           'subName': 'Create Healthstone',
           'subImg': 'create_healthstone.jpg',
-          'subDesc': 'Tworzy kamień, który regeneruje HP po użyciu.',
+          'subDesc':
+              'Tworzy kamień, który regeneruje HP po użyciu. Można dać go innym osobom.',
         },
         {
           'subName': 'Ritual of Souls',
@@ -211,19 +215,19 @@ class Spells {
           'subName': 'Demonic Circle: Teleport',
           'subImg': 'demonic_circle_teleport.jpg',
           'subDesc':
-              'Teleportuje cię do wcześniej stworzonego kręgu, jeśli jesteś w odległości 40 yardów od kręgu.',
+              'Teleportuje Cię do wcześniej stworzonego kręgu, jeśli jesteś w odległości 40 yardów od kręgu.',
         },
         {
           'subName': 'Health Funnel',
           'subImg': 'health_funnel.jpg',
           'subDesc':
-              'Channeling, który leczy twojego demona za pomocą twojego HP.',
+              'Channeling, który leczy Twojego demona za pomocą Twojego HP.',
         },
         {
           'subName': 'Searing Pain',
           'subImg': 'searing_pain.jpg',
           'subDesc':
-              'Szybki Spell, który zadaje niewielkie obrażenia Fire i generuje dużo Threatu. Przydatny do podbijania Kinetic Bomb na ICC.',
+              'Szybki Spell, który zadaje Fire DMG i generuje dużo Threatu. Przydatny do podbijania Kinetic Bomb na ICC.',
         },
         {
           'subName': 'Hellfire',
