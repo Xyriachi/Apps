@@ -32,6 +32,11 @@ class MainApp extends StatelessWidget {
         theme: ThemeData(
             useMaterial3: true,
             colorScheme: const ColorScheme.dark(),
+            dialogTheme: const DialogTheme(
+                backgroundColor: Color.fromARGB(255, 28, 28, 34),
+                surfaceTintColor: Color.fromARGB(255, 28, 28, 34),
+                titleTextStyle: TextStyle(color: Colors.white),
+                contentTextStyle: TextStyle(color: Colors.white)),
             cardTheme: const CardTheme(
                 color: Color.fromARGB(255, 28, 28, 34),
                 surfaceTintColor: Color.fromARGB(255, 28, 28, 34)),
