@@ -16,6 +16,7 @@ class BottomNavBar extends StatelessWidget {
                   top: BorderSide(
                       color: Color.fromARGB(30, 0, 0, 0), width: 4))),
           child: NavigationBar(
+              labelBehavior: NavigationDestinationLabelBehavior.values[0],
               surfaceTintColor: const Color.fromARGB(255, 28, 28, 34),
               backgroundColor: const Color.fromARGB(255, 28, 28, 34),
               onDestinationSelected: (value) => {

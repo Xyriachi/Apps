@@ -7,10 +7,13 @@ class Destinations {
       selectedIcon: Icon(Icons.library_books),
       label: 'Podstawy',
     ),
-    NavigationDestination(
-      icon: Icon(Icons.school_outlined),
-      selectedIcon: Icon(Icons.school),
-      label: 'Zaawansowane',
+    OverflowBox(
+      maxWidth: 500,
+      child: NavigationDestination(
+        icon: Icon(Icons.school_outlined),
+        selectedIcon: Icon(Icons.school),
+        label: 'Zaawansowane',
+      ),
     ),
     NavigationDestination(
       icon: Icon(Icons.menu_book_rounded),

@@ -43,7 +43,12 @@ class TacticsSub extends StatelessWidget {
           },
           {
             'source': 'toc',
-            'data': ToC().getTocList(),
+            'data': ToC().getTocList(
+                context
+                    .watch<SelectedDifficultyCubit>()
+                    .state
+                    .selectedDifficulty,
+                sectionData),
             'type': '',
           },
         ];

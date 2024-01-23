@@ -8,7 +8,7 @@ class Races {
         'Daje 165 Spell Powera i zwiększa obrażenia zadawane przez demony o 5%.',
         'Skrócony czas trwania stunów czasem też się przydaje.',
       ],
-      'subDesc': 'Najlepsza rasa dla Warlocka w Hordzie.',
+      'shortDesc': 'Najlepsza rasa dla Warlocka w Hordzie.',
       'sub': [
         {
           'subName': 'Blood Fury',
@@ -35,7 +35,7 @@ class Races {
         'Regeneracja HP raczej nie przyda się na rajdach.',
         'Czasem na rajdach przydaje się usuwanie stunów, ale Undead nic więcej nie daje.',
       ],
-      'subDesc': 'Mogło być lepiej, ale nie jest źle.',
+      'shortDesc': 'Mogło być lepiej, ale nie jest źle.',
       'sub': [
         {
           'subName': 'Will of the Forsaken',
@@ -65,7 +65,7 @@ class Races {
         'Nie zwiększa zadawanych obrażeń i regeneruje manę, którą i tak dałby nam Life Tap.',
         'Czasem przydaje się Silence, ale nie działa na Bossach, więc nie warto.',
       ],
-      'subDesc': 'Niezbyt użyteczna rasa dla Warlocka.',
+      'shortDesc': 'Niezbyt użyteczna rasa dla Warlocka.',
       'sub': [
         {
           'subName': 'Arcane Torrent',
@@ -88,7 +88,7 @@ class Races {
         'Daje tylko 3% Spiritu, ale pozwala na usunięcie wszystkich efektów utrudniających ruch lub odbierających kontrolę nad postacią.',
         'Bardzo przydaje się na PVP, ale nawet na rajdach można zrobić z tego użytek.',
       ],
-      'subDesc': 'Najlepsza rasa dla Warlocka w Alliance.',
+      'shortDesc': 'Najlepsza rasa dla Warlocka w Alliance.',
       'sub': [
         {
           'subName': 'The Human Spirit',
@@ -110,7 +110,7 @@ class Races {
         'Rasa porównywalna z Humanem.',
         'Daje tylko 5% Intellectu, ale pozwala unikać efektów utrudniających lub blokujących ruch.',
       ],
-      'subDesc': 'Rasa porównywalna z Humanem.',
+      'shortDesc': 'Rasa porównywalna z Humanem.',
       'sub': [
         {
           'subName': 'Expansive Mind',

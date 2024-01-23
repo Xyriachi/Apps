@@ -116,9 +116,32 @@ class TacticsTemplate extends StatelessWidget {
                             ),
                           )
                         : tacticsData[0]['sub'][index]['type'] == 'image'
-                            ? InteractiveViewer(
-                                minScale: 1.0,
-                                maxScale: 4.0,
+                            ? GestureDetector(
+                                onTap: () {
+                                  showDialog(
+                                    barrierColor: Colors.black.withOpacity(0.6),
+                                    context: context,
+                                    builder: (_) {
+                                      return Dialog(
+                                          insetPadding: EdgeInsets.all(12),
+                                          backgroundColor: const Color.fromARGB(
+                                              255, 28, 28, 34),
+                                          surfaceTintColor:
+                                              const Color.fromARGB(
+                                                  255, 28, 28, 34),
+                                          child: InteractiveViewer(
+                                            minScale: 1,
+                                            maxScale: 4,
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Image.asset(
+                                                  'assets/images/$source/${tacticsData[0]['sub'][index]['src']}'),
+                                            ),
+                                          ));
+                                    },
+                                  );
+                                },
                                 child: Image.asset(
                                     'assets/images/$source/${tacticsData[0]['sub'][index]['src']}'),
                               )

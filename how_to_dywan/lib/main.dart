@@ -52,7 +52,8 @@ class MainApp extends StatelessWidget {
                 onWillPop: () async {
                   backPressTime.add(DateTime.now());
                   if (backPressTime.length < 2) {
-                    if (stateA.selectedScreen[0] == 'basic') {
+                    if (stateA.selectedScreen[0] == 'basic' &&
+                        stateA.selectedScreen[1] == 'none') {
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         duration: Duration(seconds: 2),
                         backgroundColor: Color.fromARGB(255, 28, 28, 34),

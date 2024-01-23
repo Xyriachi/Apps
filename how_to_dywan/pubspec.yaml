@@ -42,6 +42,7 @@ flutter:
     - assets/images/sub_categories/
     - assets/images/icc/
     - assets/images/rs/
+    - assets/images/toc/
     - assets/images/talents/affi/
     - assets/images/talents/demo/
     - assets/images/talents/destro/
