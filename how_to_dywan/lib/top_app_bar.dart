@@ -24,34 +24,37 @@ class TopAppBar extends StatelessWidget implements PreferredSizeWidget {
         },
       ),
       actions: [
-        PopupMenuButton(itemBuilder: (BuildContext context) {
-          return [
-            for (var i = 0; i < popupData.length; i++)
-              PopupMenuItem(
-                onTap: () {
-                  Future.delayed(
-                      const Duration(),
-                      () => showDialog(
-                            barrierColor: Colors.black.withOpacity(0.6),
-                            context: context,
-                            builder: (_) {
-                              return OnTapDialog(
-                                data: popupData,
-                                firstIndex: i,
-                                source: '',
-                              );
-                            },
-                          ));
-                },
-                child: Text(popupData[i]['name']),
-              ),
-          ];
-          // const [
-          //   PopupMenuItem(child: Text('TODO')),
-          //   PopupMenuItem(child: Text('TODO')),
-          //   PopupMenuItem(child: Text('TODO')),
-          // ];
-        })
+        PopupMenuButton(
+          itemBuilder: (BuildContext context) {
+            return [
+              for (var i = 0; i < popupData.length; i++)
+                PopupMenuItem(
+                  onTap: () {
+                    Future.delayed(
+                        const Duration(),
+                        () => showDialog(
+                              barrierColor: Colors.black.withOpacity(0.8),
+                              context: context,
+                              builder: (_) {
+                                return OnTapDialog(
+                                  data: popupData,
+                                  firstIndex: i,
+                                  source: '',
+                                );
+                              },
+                            ));
+                  },
+                  child: Text(popupData[i]['name']),
+                ),
+            ];
+          },
+          surfaceTintColor: const Color.fromARGB(255, 28, 28, 34),
+          color: const Color.fromARGB(255, 28, 28, 34),
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12),
+            child: Icon(Icons.more_vert_rounded),
+          ),
+        )
       ],
     );
   }

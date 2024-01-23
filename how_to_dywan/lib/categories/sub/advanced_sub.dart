@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:how_to_dywan/categories/sub/data/consumables.dart';
 import 'package:how_to_dywan/categories/sub/data/opener.dart';
 import 'package:how_to_dywan/categories/sub/data/spells.dart';
+import 'package:how_to_dywan/categories/sub/data/stats.dart';
 import 'package:how_to_dywan/categories/sub/templates/icon_list.dart';
 import 'package:how_to_dywan/categories/sub/templates/icon_nested_list.dart';
 import 'package:how_to_dywan/state/selected_screen_cubit.dart';
@@ -41,6 +42,11 @@ class AdvancedSub extends StatelessWidget {
         'data': Addons().getAddonsList(),
         'type': 'iconNestedList',
       },
+      {
+        'source': 'stats',
+        'data': Stats().getStatList(),
+        'type': 'iconList',
+      },
     ];
 
     getSelectedData(state) {
@@ -54,7 +60,9 @@ class AdvancedSub extends StatelessWidget {
                       ? advancedData[3]['data']
                       : state == 'Addony'
                           ? advancedData[4]['data']
-                          : advancedData[4]['data'];
+                          : state == 'Addony'
+                              ? advancedData[5]['data']
+                              : advancedData[5]['data'];
 
       return selectedData;
     }
@@ -70,7 +78,9 @@ class AdvancedSub extends StatelessWidget {
                       ? advancedData[3]['source']
                       : state == 'Addony'
                           ? advancedData[4]['source']
-                          : advancedData[4]['source'];
+                          : state == 'Addony'
+                              ? advancedData[5]['source']
+                              : advancedData[5]['source'];
 
       return selectedName;
     }
@@ -86,7 +96,9 @@ class AdvancedSub extends StatelessWidget {
                       ? advancedData[3]['type']
                       : state == 'Addony'
                           ? advancedData[4]['type']
-                          : advancedData[4]['type'];
+                          : state == 'Addony'
+                              ? advancedData[5]['type']
+                              : advancedData[5]['type'];
 
       return selectedType;
     }
@@ -95,6 +107,7 @@ class AdvancedSub extends StatelessWidget {
       builder: (context, state) {
         return getSelectedType(state.selectedScreen.last) == 'iconList'
             ? ListView(
+                padding: const EdgeInsets.only(top: 0),
                 shrinkWrap: true,
                 children: [
                   IconList(
@@ -105,6 +118,7 @@ class AdvancedSub extends StatelessWidget {
               )
             : getSelectedType(state.selectedScreen.last) == 'iconNestedList'
                 ? ListView(
+                    padding: const EdgeInsets.only(top: 0),
                     shrinkWrap: true,
                     children: [
                       IconNestedList(

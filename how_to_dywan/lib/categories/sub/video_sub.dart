@@ -77,6 +77,7 @@ class VideoSub extends StatelessWidget {
         fetchVideos();
 
         return ListView(
+          padding: const EdgeInsets.only(top: 0),
           shrinkWrap: true,
           children: [
             VideoListTemplate(

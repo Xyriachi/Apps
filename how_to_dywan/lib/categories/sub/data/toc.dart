@@ -7,7 +7,7 @@ class ToC {
           {
             'name': 'Mechaniki',
             'img': sectionData[0],
-            'desc': '',
+            'desc': sectionData[4],
             'shortDesc': sectionData[2],
             'sub': [
               {
@@ -31,7 +31,7 @@ class ToC {
                 'subName': 'Staggering Stomp',
                 'subImg': 'staggering_stomp.jpg',
                 'subDesc': [
-                  'Boss przerywa Casty i daje Silence na 8s, jeśli ktoś Castował.',
+                  'Boss przerywa Casty i daje Silence na 8s wszystkim, którzy Castowali w range 15 yardów.',
                   'Jeśli żaden Paladyn nie daje Aura Mastery, lepiej nie Castować przez chwilę.',
                 ]
               },
@@ -78,7 +78,7 @@ class ToC {
           {
             'name': 'Taktyki',
             'img': sectionData[1],
-            'desc': '',
+            'desc': sectionData[5],
             'shortDesc': sectionData[3],
             'sub': [
               {
@@ -118,6 +118,12 @@ class ToC {
                   'type': 'string',
                   'text':
                       'Ta osoba podbiega pod Bossa i bije go dalej, a Mdpsy zabijają Snoboldy.',
+                },
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'string',
+                  'text':
+                      'Następne Bossy wychodzą na koniec timera lub po zabiciu Gormoka. Jest więc szansa, że będziemy walczyć z 3 Bossami jednocześnie.',
                 },
               {
                 'type': 'header',
@@ -166,6 +172,12 @@ class ToC {
                 'text':
                     'Co jakiś czas na arenie pojawiają się plamy szlamu, które powiększają się z czasem. Trzeba na nie uważać.',
               },
+              if (selectedType[1] == 'hc')
+                {
+                  'type': 'string',
+                  'text':
+                      'Następne Bossy wychodzą na koniec timera lub po zabiciu Acidmawa i Dreadscale.',
+                },
               {
                 'type': 'header',
                 'text': 'Icehowl',
@@ -214,7 +226,7 @@ class ToC {
           {
             'name': 'Mechaniki',
             'img': sectionData[0],
-            'desc': '',
+            'desc': sectionData[4],
             'shortDesc': sectionData[2],
             'sub': [
               {
@@ -265,7 +277,7 @@ class ToC {
           {
             'name': 'Taktyki',
             'img': sectionData[1],
-            'desc': '',
+            'desc': sectionData[5],
             'shortDesc': sectionData[3],
             'sub': [
               {
@@ -326,7 +338,7 @@ class ToC {
           {
             'name': 'Mechaniki',
             'img': sectionData[0],
-            'desc': '',
+            'desc': sectionData[4],
             'shortDesc': sectionData[2],
             'sub': [
               {
@@ -358,7 +370,7 @@ class ToC {
           {
             'name': 'Taktyki',
             'img': sectionData[1],
-            'desc': '',
+            'desc': sectionData[5],
             'shortDesc': sectionData[3],
             'sub': [
               {
@@ -377,7 +389,7 @@ class ToC {
               {
                 'type': 'string',
                 'text':
-                    'Odsuwaj się od wszystkiego, co Cię goni. Tylko Healer cię nie skrzywdzi.',
+                    'Odsuwaj się od wszystkiego, co Cię goni. Tylko Healer Cię nie skrzywdzi.',
               },
               {
                 'type': 'string',
@@ -404,7 +416,7 @@ class ToC {
           {
             'name': 'Mechaniki',
             'img': sectionData[0],
-            'desc': '',
+            'desc': sectionData[4],
             'shortDesc': sectionData[2],
             'sub': [
               {
@@ -444,7 +456,7 @@ class ToC {
           {
             'name': 'Taktyki',
             'img': sectionData[1],
-            'desc': '',
+            'desc': sectionData[5],
             'shortDesc': sectionData[3],
             'sub': [
               {
@@ -517,7 +529,7 @@ class ToC {
           {
             'name': 'Mechaniki',
             'img': sectionData[0],
-            'desc': '',
+            'desc': sectionData[4],
             'shortDesc': sectionData[2],
             'sub': [
               {
@@ -573,7 +585,7 @@ class ToC {
           {
             'name': 'Taktyki',
             'img': sectionData[1],
-            'desc': '',
+            'desc': sectionData[5],
             'shortDesc': sectionData[3],
             'sub': [
               {
@@ -600,8 +612,12 @@ class ToC {
               {
                 'type': 'string',
                 'text': selectedType[1] == 'hc'
-                    ? 'Co jakiś czas wychodzą 4 Addy. Hunterzy prowadzą je do Block Tanka. Nie ruszamy ich.'
-                    : 'Co jakiś czas wychodzą 2 Addy, które idą pod Bossa. Pierwsze Addy zabijamy, a drugie zostawiamy.',
+                    ? selectedType[0] == '25'
+                        ? 'Co jakiś czas wychodzą 4 Addy. Hunterzy prowadzą je do Block Tanka. Nie ruszamy ich.'
+                        : 'Co jakiś czas wychodzą 2 Addy, które idą pod Bossa. Pierwsze Addy zabijamy, a drugie zostawiamy.'
+                    : selectedType[0] == '25'
+                        ? 'Co jakiś czas wychodzą 2 Addy, które idą pod Bossa. Pierwsze Addy zabijamy, a drugie zostawiamy.'
+                        : 'Co jakiś czas wychodzi 1 Add, który idzie pod Bossa. Pierwszego Adda zabijamy, a drugiego zostawiamy.',
               },
               {
                 'type': 'image',
@@ -651,8 +667,9 @@ class ToC {
               },
               {
                 'type': 'string',
-                'text':
-                    'Addy przestają wychodzić, a losowe osoby dostają debuff Penetrating Cold, który zadaje im obrażenia.',
+                'text': selectedType[1] == 'hc'
+                    ? 'Addy nadal wychodzą, a losowe osoby dostają debuff Penetrating Cold, który zadaje im obrażenia.'
+                    : 'Addy przestają wychodzić, a losowe osoby dostają debuff Penetrating Cold, który zadaje im obrażenia.',
               },
               {
                 'type': 'string',
@@ -671,5 +688,4 @@ class ToC {
     ];
     return tocList;
   }
-//TODO ToC tactics
 }

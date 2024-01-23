@@ -12,6 +12,11 @@ class AdvancedList {
     },
     {'title': 'Opener', 'subtitle': 'Jak zacząć walkę?', 'img': 'opener.jpg'},
     {
+      'title': 'Staty',
+      'subtitle': 'Jak staty wpływają na DPS?',
+      'img': 'stats.jpg'
+    },
+    {
       'title': 'Jedzenie i Mikstury',
       'subtitle': 'Co wziąć na rajd?',
       'img': 'consumables.jpg'

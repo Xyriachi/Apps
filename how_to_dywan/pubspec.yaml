@@ -25,6 +25,12 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^2.0.0
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/how_to_dywan_icon.png"
+  min_sdk_android: 17
+
 flutter:
   uses-material-design: true
   assets:
@@ -39,6 +45,7 @@ flutter:
     - assets/images/opener/
     - assets/images/spells/
     - assets/images/addons/
+    - assets/images/stats/
     - assets/images/sub_categories/
     - assets/images/icc/
     - assets/images/rs/

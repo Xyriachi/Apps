@@ -119,6 +119,7 @@ class BasicSub extends StatelessWidget {
       builder: (context, state) {
         return getSelectedType(state.selectedScreen.last) == 'iconList'
             ? ListView(
+                padding: const EdgeInsets.only(top: 0),
                 shrinkWrap: true,
                 children: [
                   IconList(
@@ -129,6 +130,7 @@ class BasicSub extends StatelessWidget {
               )
             : getSelectedType(state.selectedScreen.last) == 'iconNestedList'
                 ? ListView(
+                    padding: const EdgeInsets.only(top: 0),
                     shrinkWrap: true,
                     children: [
                       IconNestedList(

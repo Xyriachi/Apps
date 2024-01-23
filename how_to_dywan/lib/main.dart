@@ -48,6 +48,7 @@ class MainApp extends StatelessWidget {
           builder: (context) {
             final stateA = context.watch<SelectedScreenCubit>().state;
             List backPressTime = [];
+            // ignore: deprecated_member_use
             return WillPopScope(
                 onWillPop: () async {
                   backPressTime.add(DateTime.now());
@@ -117,11 +118,16 @@ class MainApp extends StatelessWidget {
 
                   return false;
                 },
-                child: const Scaffold(
-                  appBar: TopAppBar(),
-                  body: NavigationLogic(),
-                  bottomNavigationBar: BottomNavBar(),
-                ));
+                child: Scaffold(
+                    appBar: MediaQuery.of(context).orientation ==
+                            Orientation.landscape
+                        ? null
+                        : const TopAppBar(),
+                    body: const NavigationLogic(),
+                    bottomNavigationBar: MediaQuery.of(context).orientation ==
+                            Orientation.landscape
+                        ? null
+                        : const BottomNavBar()));
           },
         ),
       ),

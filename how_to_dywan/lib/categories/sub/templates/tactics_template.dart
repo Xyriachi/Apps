@@ -23,9 +23,14 @@ class TacticsTemplate extends StatelessWidget {
               data[firstIndex]['data'][0],
             ];
             List<Map> tacticsData = [data[firstIndex]['data'][1]];
-            return ListView(children: [
+            return ListView(shrinkWrap: true, children: [
               Padding(
-                padding: const EdgeInsets.all(15),
+                padding: EdgeInsets.only(
+                    bottom: 15,
+                    top: MediaQuery.of(context).orientation ==
+                            Orientation.landscape
+                        ? 5
+                        : 15),
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
@@ -119,11 +124,12 @@ class TacticsTemplate extends StatelessWidget {
                             ? GestureDetector(
                                 onTap: () {
                                   showDialog(
-                                    barrierColor: Colors.black.withOpacity(0.6),
+                                    barrierColor: Colors.black.withOpacity(0.8),
                                     context: context,
                                     builder: (_) {
                                       return Dialog(
-                                          insetPadding: EdgeInsets.all(12),
+                                          insetPadding:
+                                              const EdgeInsets.all(12),
                                           backgroundColor: const Color.fromARGB(
                                               255, 28, 28, 34),
                                           surfaceTintColor:
@@ -142,8 +148,21 @@ class TacticsTemplate extends StatelessWidget {
                                     },
                                   );
                                 },
-                                child: Image.asset(
-                                    'assets/images/$source/${tacticsData[0]['sub'][index]['src']}'),
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      vertical:
+                                          MediaQuery.of(context).orientation ==
+                                                  Orientation.landscape
+                                              ? 6
+                                              : 4,
+                                      horizontal:
+                                          MediaQuery.of(context).orientation ==
+                                                  Orientation.landscape
+                                              ? 20
+                                              : 8),
+                                  child: Image.asset(
+                                      'assets/images/$source/${tacticsData[0]['sub'][index]['src']}'),
+                                ),
                               )
                             : tacticsData[0]['sub'][index]['type'] == 'string'
                                 ? Text(

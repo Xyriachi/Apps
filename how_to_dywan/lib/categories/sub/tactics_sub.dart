@@ -18,7 +18,15 @@ class TacticsSub extends StatelessWidget {
           'mechanics.jpg',
           'tactics.jpg',
           'Co zrobić, żeby nie zginąć?',
-          'Czemu tu się tyle dzieje!?'
+          'Czemu tu się tyle dzieje!?',
+          [
+            'Wszystko, co musisz wiedzieć o tym Bossie, aby go pokonać.',
+            'Bez znajomości mechanik, ciężko będzie walczyć.',
+          ],
+          [
+            'Podstawowe informacje o tym, jak zachować się podczas walki z tym Bossem.',
+            'Jeśli wiesz, co się za chwile stanie, możesz się do tego przygotować i robić większy DPS.',
+          ],
         ];
         List tacticsData = [
           {

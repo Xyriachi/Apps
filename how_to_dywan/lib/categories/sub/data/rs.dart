@@ -7,7 +7,7 @@ class RS {
           {
             'name': 'Mechaniki',
             'img': sectionData[0],
-            'desc': '',
+            'desc': sectionData[4],
             'shortDesc': sectionData[2],
             'sub': [
               {
@@ -43,7 +43,7 @@ class RS {
           {
             'name': 'Taktyki',
             'img': sectionData[1],
-            'desc': '',
+            'desc': sectionData[5],
             'shortDesc': sectionData[3],
             'sub': [
               {
@@ -123,7 +123,7 @@ class RS {
           {
             'name': 'Mechaniki',
             'img': sectionData[0],
-            'desc': '',
+            'desc': sectionData[4],
             'shortDesc': sectionData[2],
             'sub': [
               {
@@ -181,7 +181,7 @@ class RS {
           {
             'name': 'Taktyki',
             'img': sectionData[1],
-            'desc': '',
+            'desc': sectionData[5],
             'shortDesc': sectionData[3],
             'sub': [
               {

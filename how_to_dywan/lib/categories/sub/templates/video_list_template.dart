@@ -8,14 +8,26 @@ class VideoListTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 4, bottom: 2),
+      padding: EdgeInsets.only(
+          top: MediaQuery.of(context).orientation == Orientation.landscape
+              ? 9
+              : 5,
+          bottom: 2,
+          left: MediaQuery.of(context).orientation == Orientation.landscape
+              ? 8
+              : 4,
+          right: MediaQuery.of(context).orientation == Orientation.landscape
+              ? 8
+              : 4),
       child: ListView(
+        padding: const EdgeInsets.only(top: 0),
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         children: [
           data == []
               ? const Text('Ładowanie...')
               : ListView.builder(
+                  padding: const EdgeInsets.only(top: 0),
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: data.length,
@@ -34,6 +46,7 @@ class VideoListTemplate extends StatelessWidget {
                           }
                         },
                         child: Card(
+                          margin: const EdgeInsets.symmetric(vertical: 3),
                           child: Row(
                             children: [
                               Expanded(

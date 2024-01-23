@@ -3,17 +3,23 @@ import 'package:how_to_dywan/categories/sub/templates/components/on_tap_dialog.d
 
 class TalentList extends StatelessWidget {
   const TalentList({super.key, required this.data, required this.source});
-  final silvergridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(
-    crossAxisCount: 4,
-    crossAxisSpacing: 30,
-    mainAxisSpacing: 30,
-  );
 
   final List data;
   final String source;
 
   @override
   Widget build(BuildContext context) {
+    final silvergridDelegate = SliverGridDelegateWithFixedCrossAxisCount(
+      crossAxisCount: 4,
+      crossAxisSpacing:
+          MediaQuery.of(context).orientation == Orientation.landscape
+              ? MediaQuery.of(context).size.width * 0.09
+              : MediaQuery.of(context).size.width * 0.08,
+      mainAxisSpacing:
+          MediaQuery.of(context).orientation == Orientation.landscape
+              ? MediaQuery.of(context).size.width * 0.09
+              : MediaQuery.of(context).size.width * 0.08,
+    );
     return PageView.builder(
       itemCount: data.length,
       itemBuilder: (context, index) {
@@ -25,7 +31,10 @@ class TalentList extends StatelessWidget {
                         'assets/images/$source/${mainIndex == 0 ? 'affi' : mainIndex == 1 ? 'demo' : 'destro'}/background.jpg'),
                     fit: BoxFit.cover)),
             child: GridView.builder(
-              padding: const EdgeInsets.all(20),
+              padding:
+                  MediaQuery.of(context).orientation == Orientation.landscape
+                      ? const EdgeInsets.symmetric(vertical: 40, horizontal: 60)
+                      : const EdgeInsets.all(20),
               itemCount: 44,
               gridDelegate: silvergridDelegate,
               itemBuilder: (context, index) {
@@ -42,7 +51,7 @@ class TalentList extends StatelessWidget {
                           child: GestureDetector(
                             onTap: () {
                               showDialog(
-                                barrierColor: Colors.black.withOpacity(0.6),
+                                barrierColor: Colors.black.withOpacity(0.8),
                                 context: context,
                                 builder: (_) {
                                   return OnTapDialog(

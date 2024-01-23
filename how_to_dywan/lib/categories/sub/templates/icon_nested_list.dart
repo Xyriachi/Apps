@@ -10,8 +10,17 @@ class IconNestedList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 6),
+        padding: EdgeInsets.symmetric(
+            vertical: 6,
+            horizontal:
+                MediaQuery.of(context).orientation == Orientation.landscape
+                    ? 4
+                    : 0),
         child: ListView.builder(
+          padding: EdgeInsets.only(
+              top: MediaQuery.of(context).orientation == Orientation.landscape
+                  ? 4
+                  : 0),
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: data.length,
@@ -23,7 +32,7 @@ class IconNestedList extends StatelessWidget {
                   child: GestureDetector(
                     onTap: () {
                       showDialog(
-                        barrierColor: Colors.black.withOpacity(0.6),
+                        barrierColor: Colors.black.withOpacity(0.8),
                         context: context,
                         builder: (_) {
                           return OnTapDialog(
@@ -76,7 +85,7 @@ class IconNestedList extends StatelessWidget {
                     return GestureDetector(
                       onTap: () {
                         showDialog(
-                          barrierColor: Colors.black.withOpacity(0.6),
+                          barrierColor: Colors.black.withOpacity(0.8),
                           context: context,
                           builder: (_) {
                             return Dialog(
