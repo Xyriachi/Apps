@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 
-class BottomBar extends StatelessWidget {
-  const BottomBar({super.key});
+class BottomBar extends StatefulWidget {
+  const BottomBar(
+      {super.key, required this.onItemTapped, required this.selectedIndex});
+  final Function(int) onItemTapped;
+  final int selectedIndex;
 
+  @override
+  State<BottomBar> createState() => _BottomBarState();
+}
+
+class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
@@ -11,8 +19,9 @@ class BottomBar extends StatelessWidget {
       showUnselectedLabels: false,
       type: BottomNavigationBarType.fixed,
       onTap: (value) {
-        //TODO app navigation
+        widget.onItemTapped(value);
       },
+      currentIndex: widget.selectedIndex,
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home_outlined),
